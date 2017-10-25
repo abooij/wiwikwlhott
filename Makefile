@@ -11,7 +11,7 @@ FLAGS = --standalone \
 				-c css/layout.css
 GHC=ghc
 
-HTML = tutorial.html
+HTML = index.html
 
 # Check if sandbox exists. If it does, then use it instead.
 
