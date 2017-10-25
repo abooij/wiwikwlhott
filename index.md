@@ -15,8 +15,61 @@ First sections:
 
 <hr/>
 
-Confusing aspect 1
-==================
+Variants of HoTT
+===
 
-Some topic
------
+Book HoTT
+---
+
+Cubical type theory
+---
+
+Impredicative prop
+---
+
+HoTT as an approach to MLTT
+---
+
+Proof assistants
+===
+
+General confusion about topology, homotopy, paths, and continuity
+===
+
+Topology
+---
+
+HoTT is *not* a internal language for topology.  TODO: say something
+about modalities that is correct.
+
+Homotopy
+---
+
+Within the HoTT community, "homotopy theory" refers to abstract
+homotopy theory in the sense of, for example, Quillen model
+categories, or more generally homotopy categories.  The category of
+topological spaces and continuous maps is one such model category.
+However, it is not clear if HoTT is an internal language for *all*
+model categories.  In particular, the "homotopy" of HoTT does not
+(necessarily) refer to the homotopies of point-set topology.
+
+Paths and continuity
+---
+
+Continuity of functions on the reals or other metric spaces
+---
+
+Category theory
+===
+
+Topos logic versus HoTT
+---
+
+* toposes as models for types of h-level 0
+* impredicativity
+
+Formalising categories
+---
+
+Semantics
+===
