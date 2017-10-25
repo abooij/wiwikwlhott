@@ -1,0 +1,14 @@
+*.sw[pon]
+*.o
+*.so
+cabal.sandbox.config
+.cabal-sandbox
+dist/
+*.hi
+*.o
+includes
+*.html
+*.epub
+*.agdai
+.stack-work
+tutorial.pdf
