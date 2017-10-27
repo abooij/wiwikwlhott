@@ -4,6 +4,13 @@
 
 Auke Booij
 
+This document is intended to refer to concepts one may not be aware of
+on a first reading of the HoTT book, and give a crude, possible
+unhelpful intuition for them.
+
+**Warning**: I did not check for correctness.  This document may be
+counterproductive.  I did not tell you these things.
+
 Changelog
 ---------
 
