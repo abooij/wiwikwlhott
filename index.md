@@ -21,17 +21,53 @@ Variants of HoTT
 Book HoTT
 ---
 
+Book HoTT is the type theory described in the HoTT book.  It is
+intensional MLTT with a hierarchy of universes indexed by positive
+numerals, and additionally:
+
+* univalence as an axiom (and function extensionality as a theorem),
+* $n$-truncation,
+* suspension types,
+* pushouts,
+* set quotients,
+* the free Cauchy completion of the rationals $\mathbf{R}_C$,
+
+where the computation rules for HITs is given definitionally for
+points but propositionally for higher constructors.
+
 Cubical type theory
 ---
 
-* interval cannot be a type
-* univalence inhabited, but normal form big
+Cubical type theory is a type theory for which univalence is a
+theorem.  It adds an interval _pretype_ which is used to define
+identity types.  This interval is necessarily not a type.
+
+Cubical type theory was implemented in the __cubicaltt__ proof
+assistant and the agda __--cubical__ mode.
+
+Although univalence is a theorem, the normal form is huge (megabytes),
+although it is argued that this is due to the proof rather than the
+design of cubical type theory.
 
 HoTT as an DSL
 ---
 
-Impredicative prop
+Dan Licata argues we should think of HoTT as a language to which we
+add features depending on how we plan to use it, in the same way that
+we write specialized programming languages for specific use-cases.
+For example, cubical type theory is a domain-specific language for
+programming with Kan cubical sets, and real-cohesive HoTT is a
+language for programming topological spaces.  Schulman and Riehl have
+a language for programming $(\infty,1)$-categories.
+
+Impredicative prop / propositional resizing
 ---
+
+The principle that there is only one type of propositions, and it is a
+member of $\mathcal{U}_0$: so all types of propositions are equal, and
+it is a type in the lowest universe.
+
+Assuming this principle, the set of types of any universe is a topos.
 
 HoTT as an approach to MLTT
 ---
@@ -54,7 +90,7 @@ cubicaltt
 Normalization
 ---
 
-General confusion about topology, homotopy, paths, and continuity
+Meta-theory
 ===
 
 Topology
@@ -79,10 +115,44 @@ Paths and continuity
 
 * continuity of functions on the reals or other metric spaces
 
+General confusion arising from names of definitions
+===
+
+Constructors versus elements versus terms
+---
+
+To say that something is a _constructor_ of a type means that the type
+was defined inductively, and that you are picking one of the options
+specifying its datatype.  For example, $\mathbf{N}$ has exactly _two_
+constructors: $0$ and $S$.
+
+To say that something is an _element_ of a type means that it is a
+variable or expression whose type is $\mathbf{N}$.  But that means
+that, in a certain context, you can have an element of type
+$\mathbf{0}$: for example in the context $x:\mathbf{0}$.
+
+Finally, _term_ is a strictly syntactic notion.  As a first
+approximation, something is a term if it is a string of characters
+that, when inserted in a proof assistant, would parse, and have a
+certain type.
+
+Translating claims in natural language to type theory
+---
+
+* there seems to be some miscommunication regarding which statements
+  by HoTTist are internal and which ones are metatheoretical, but I
+  can't make this precise right now.
+
 Types as spaces
 ---
 
 * typal circle versus subset of $R^2$
+
+Sets
+---
+
+* Sets as 0-types
+* hierarchies of sets inside types
 
 Type-theoretical features
 ===
