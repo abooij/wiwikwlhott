@@ -9,7 +9,8 @@ on a first reading of the HoTT book, and give a crude, possible
 unhelpful intuition for them.
 
 **Warning**: I did not check for correctness.  This document may be
-counterproductive.  I did not tell you these things.
+counterproductive.  You didn't get these things from me.
+
 
 Changelog
 ---------
@@ -93,6 +94,7 @@ cubicaltt
 
 * interval is abstract (as opposed to, say, an interval of reals):
   cubical set (though necessarily *not* Kan, see semantics section)
+* earlier iteration: cubical
 
 Normalization
 ---
@@ -217,17 +219,22 @@ Formalising categories
 Semantics
 ===
 
-Fibrations
----
-
 Categories with families
 ---
 
 * necessary to provide set of types, since necessarily cannot make all
   maps types: extensionality.
 
+Fibrations
+---
+
 Simplicial sets
 ---
 
 * presentation in terms of coface and codegeneracy maps is equivalent
   to saying "take all order-preserving morphisms"
+
+Cubical sets
+---
+
+* various iterations
