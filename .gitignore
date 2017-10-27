@@ -12,3 +12,8 @@ includes
 *.agdai
 .stack-work
 *.pdf
+auto/
+*.aux
+*.fdb_latexmk
+*.fls
+*.log

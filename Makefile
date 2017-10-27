@@ -34,3 +34,7 @@ includes: includes.hs
 
 clean:
 	-rm $(CHAPTERS) $(HTML)
+
+logo.svg: logo.tex
+	pdflatex logo.tex
+	pdftocairo -svg logo.pdf logo.svg
