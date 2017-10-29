@@ -266,8 +266,15 @@ There are (at least) three notions of sets:
   intersection of $\pi$ with the graph of $x\mapsto x^2$, as both
   objects are sets.
 * 0-types.  The behavior of 0-types is very close to ZFC sets.  For
-  example, for a map $f$ between two 0-types (but not between arbitrary types), the following are equivalent:
-* A cumulative hierarchy of sets as in e.g. chapter 10.5 of the HoTT book, as an attempt to find a model of an axiomatic set theory like ZFC (although this will likely require choice).
+  example, for a map $f$ between two 0-types (but not between
+  arbitrary types), the following are equivalent:
+    - $f$ is an injection (equal outputs implies equal inputs).
+    - $f$ is an embedding (equal inputs is equivalenc to equal
+      outputs).
+    - $f$ is a monomorphism (with respect to all maps on all types).
+* A cumulative hierarchy of sets as in e.g. chapter 10.5 of the HoTT
+  book, as an attempt to find a model of an axiomatic set theory like
+  ZFC (although this will likely require choice).
 
 Type-theoretical features
 ===
