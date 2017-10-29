@@ -183,6 +183,8 @@ not have any elements, because that claim translates to
 $\neg\mathbf{0}$, that is, $\mathbf{0}\to\mathbf{0}$, which is
 inhabited by the identity function at $\mathbf{0}$.
 
+_Point_ is a synonym for _element_.
+
 Finally, _term_ is a strictly syntactic notion.  As a first
 approximation, something is a term if it is a string of characters
 that, when inserted in a proof assistant, would parse, and have a
@@ -194,7 +196,7 @@ Translating claims in natural language to type theory
 
 * there seems to be some miscommunication regarding which statements
   by HoTTist are internal and which ones are metatheoretical, but I
-  can't make this precise right now.
+  can't find the right words to make this precise right now.
 
 Types as spaces
 ---
@@ -218,9 +220,39 @@ $d:\mathbf{R}^2\times\mathbf{R}^2\to\mathbf{R}$.
 These two circles are completely unrelated, unless you add extra
 syntax or axioms, such as in real-cohesive HoTT.
 
-* continuity and provability: we can't prove that all two points on
-  the circle are equal, even though there is a path between any two
-  points, because we can't continuously pick out a path.
+This can be terribly confusing.  For example, the fact that every map
+in HoTT lifts to a map on the identity types (expressing that if two
+inputs to a function are equal, then we can prove the outputs are
+equal) is explained in the HoTT book by saying that this means the
+function is continuous.  So from the HoTT point of view, all functions
+are "continuous" in that sense.  But in the context of constructive
+analysis _inside_ HoTT, it is not provable that all functions are
+continuous, and in fact it need not be true, for example if one has
+the principle of excluded middle.
+
+Even though the link between types and, say, topolgoical spaces (as
+defined _inside_ HoTT) is broken, the intuition of the internal theory
+of those spaces is still used to prove the impossibility of
+type-theoretical proofs.  For example, it is not provable that any two
+points on the higher-inductive circle are equal, which is somewhat odd
+since in any drawing of a circle there are at least two obvious paths
+between any two points $x$ and $y$.  As a topological
+counter-argument, it is said that the path from $x$ to $y$ cannot be
+chosen in a "continuous" way, in the sense that if you rotate $x$
+along the circle one full rotation, you'll have to make a "jump" in
+your choice of path at some point.  But this counter-argument is
+topological in nature, rather than type-theoretic (although there is a
+way to make it precise type-theoretically).
+
+Indeed, proofs about types such as the higher-inductive circle look
+nothing like their counterparts in topology.  Even still, they satisfy
+_some_ of the same properties: if we define the "homotopy group" of a
+pointed type correctly, then there is some evidence that the
+higher-inductive circles have the same homotopy groups as their
+topological counterparts in classical mathematics.  However, some
+properties are fundamentally different in a seemingly unfixable way:
+as a theorem stated inside type theory, there is only one map $S^1\to
+S^2$, and it is the constant map.
 
 Sets
 ---
