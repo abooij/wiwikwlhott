@@ -179,9 +179,10 @@ element $x$ of type $\mathbf{0}$.
 
 Confusingly, even in the context $x:\mathbf{0}$, where we have the
 element $x$ of type $\mathbf{0}$, we can show that $\mathbf{0}$ does
-not have any elements, because that claim translates to
-$\neg\mathbf{0}$, that is, $\mathbf{0}\to\mathbf{0}$, which is
-inhabited by the identity function at $\mathbf{0}$.
+not have any elements, because the claim "$A$ does not have any
+elements" is formalised as $\neg A$, that is, $A\to\mathbf{0}$, and
+$\mathbf{0}\to\mathbf{0}$ is indeed inhabited (by the identity
+function).
 
 _Point_ is a synonym for _element_.
 
