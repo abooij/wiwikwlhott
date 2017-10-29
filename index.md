@@ -132,9 +132,6 @@ logeq_both_false =
 
 (`empty_rect` is the induction principle for $\mathbf{0}$.)
 
-* tactic language is just a way to construct type-theoretical terms:
-  can get term out of proof by tactics
-
 Agda
 ---
 
@@ -265,7 +262,7 @@ analysis _inside_ HoTT, it is not provable that all functions are
 continuous, and in fact it need not be true, for example if one has
 the principle of excluded middle.
 
-Even though the link between types and, say, topolgoical spaces (as
+Even though the link between types and, say, topological spaces (as
 defined _inside_ HoTT) is broken, the intuition of the internal theory
 of those spaces is still used to prove the impossibility of
 type-theoretical proofs.  For example, it is not provable that any two
@@ -280,14 +277,18 @@ topological in nature, rather than type-theoretic (although there is a
 way to make it precise type-theoretically).
 
 Indeed, proofs about types such as the higher-inductive circle look
-nothing like their counterparts in topology.  Even still, they satisfy
+nothing like their counterparts in topology.  Still, they satisfy
 _some_ of the same properties: if we define the "homotopy group" of a
 pointed type correctly, then there is some evidence that the
 higher-inductive circles have the same homotopy groups as their
-topological counterparts in classical mathematics.  However, some
-properties are fundamentally different in a seemingly unfixable way:
-as a theorem stated inside type theory, there is only one map $S^1\to
-S^2$, and it is the constant map.
+topological counterparts in classical mathematics (in the sense that
+this has been shown for a handful of cases).  However, some properties
+are fundamentally different in a seemingly unfixable way: as a theorem
+stated inside type theory, there is only one map $S^1\to S^2$, and it
+is the constant map.
+
+* this very last point is not a very good example because equality,
+  interpreted topologically, becomes equality of homotopy classes.
 
 Sets
 ---
@@ -299,11 +300,11 @@ There are (at least) three notions of sets:
   from an extensional point of view: for example, we can take the
   intersection of $\pi$ with the graph of $x\mapsto x^2$, as both
   objects are sets.
-* 0-types.  The behavior of 0-types is very close to ZFC sets.  For
+* 0-types, which behave simlar to ZFC sets in some aspects.  For
   example, for a map $f$ between two 0-types (but not between
   arbitrary types), the following are equivalent:
     - $f$ is an injection (equal outputs implies equal inputs).
-    - $f$ is an embedding (equal inputs is equivalenc to equal
+    - $f$ is an embedding (equal inputs is equivalent to equal
       outputs).
     - $f$ is a monomorphism (with respect to all maps on all types).
 * A cumulative hierarchy of sets as in e.g. chapter 10.5 of the HoTT
