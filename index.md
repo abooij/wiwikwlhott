@@ -37,7 +37,7 @@ numerals, and additionally:
 * suspension types,
 * pushouts,
 * set quotients,
-* the free Cauchy completion of the rationals $\mathbf{R}_C$,
+* the free Cauchy completion of the rationals $\mathbf{R}_C\;\;$,
 
 where the computation rules for HITs is given definitionally for
 points but propositionally for higher constructors.
