@@ -233,7 +233,7 @@ Translating claims in natural language to type theory
 Types as spaces
 ---
 
-There are (at least) two different notion of "space" and (at least)
+There are (at least) two different notions of "space" and (at least)
 two different "circles".
 
 First of all, every type is _thought of_ as a space: and so the HIT
@@ -246,7 +246,7 @@ Secondly, there is a certain subset of the real plane $\mathbf{R}^2$
 represents a circle, namely the subtype of points with radius 1.  The
 space-like behavior of such spaces _internal to the theory_ is given
 by whatever notion of space we are interested in: for example,
-$\mathbf{R}^2$ is often studies as a metric space with a metric
+$\mathbf{R}^2$ is often studied as a metric space with a metric
 $d:\mathbf{R}^2\times\mathbf{R}^2\to\mathbf{R}$.
 
 These two circles are completely unrelated, unless you add extra
