@@ -406,20 +406,29 @@ A further complication may be that people consider semantics in
 presheafs on an opposite category, in which case tracing the $op$s
 around can take some effort.
 
-Categories with families
+Categories with families and other structure
 ---
 
-* necessary to provide set of types, since necessarily cannot make all
-  maps types: extensionality.
+Awodey&Warren clarify in "Homotopy theoretic models of identity types"
+(in Proposition 2.1) why we need to restrict our semantics of types.
+Namely, if we start with a category of contexts which is LCCC (since
+we want to interpret dependent products), and if it has identity
+types, and if all morphisms are accepted as semantic types, then the
+identity type is necessarily extensional.
 
 So we want to pick out a certain subset of our maps to represent types
 over contexts.  One naive approach is to just take any category and
 ask for extra data, so that we can tell types apart from arbitrary
-maps.  There are various definitions one can make here, and most of
-them are unsatisfying since they are __not__ invariant under
-equivalence of the underlying category.  For example, there is no
-contextual category on the 1-object 1-morphism category, but there
-_is_ a contextual category in which all objects are terminal.
+maps.  This approach has resulted in various definitions of this extra
+data: categories with families, categories with attributes, contextual
+categories (aka C-system), display map categories, and comprehension
+categories.
+
+These various definitions are unsatisfying since they are __not__
+invariant under equivalence of the underlying category.  For example,
+there is no contextual category on the 1-object 1-morphism category,
+since it needs countably many copies even of the terminal object, but
+there _is_ a contextual category in which all objects are terminal.
 
 Fibrations
 ---
