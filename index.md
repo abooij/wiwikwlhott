@@ -67,6 +67,8 @@ programming with Kan cubical sets, and real-cohesive HoTT is a
 language for programming topological spaces.  Schulman and Riehl have
 a language for programming $(\infty,1)$-categories.
 
+In this sense, HoTT becomes a class of type theories.
+
 Impredicative prop / propositional resizing
 ---
 
@@ -91,7 +93,7 @@ assuming univalence, function extensionality, propositional
 extensionality, or the existence of any HITs.  For example:
 
 * The fact that h-levels are cumulative (if $A$ is an $n$-type then it
-is also an $n+1$-type) does not require univalence.
+is also an $(n+1)$-type) does not require univalence.
 * The groupoid laws of identity types and iterated identity types can
 be proved by simple path inductions.
 * Some propositional truncations exist without assuming the existence
@@ -336,6 +338,74 @@ Topos logic versus HoTT
 Semantics
 ===
 
+Categorical semantics
+---
+
+In the HoTT book, Appendix A.2, the formal type theory is presented by
+giving three types of judgments: contexts judgments (that express that
+some context is well-formed), typing judgments (that express that some
+term is well-formed and has some type), and judgmental equality.
+
+This presentation uses the fact that the type theory is assumed to
+come with (a hierarchy of) universes.  However, semantically, this is
+not convenient to work with.  So when studying semantics, type theory
+is presented with context judgments, type judgments, term judgments,
+and judgmental equality (for types and terms).
+
+For such a type theory, the semantics need to interpret contexts,
+types, and terms, and respect judgmental equality in the sense that if
+two types (say) are judgmentally equal in the type theory, then they
+are semantically equal.  In syntactic models of type theory, this
+equality is automatic since judgmental equality is exactly what is
+divided out when constructing the model.
+
+In categorical semantics, the contexts $\Gamma$ of the type theory are
+interpreted by objects $G$ of the category $\mathcal{C}$ (with the
+morphisms modelling substitutions).  Typically, the empty context
+$\cdot$ (rule ctx-EMP in Appendix A.2) is interpreted by the terminal
+object.  To interpret the context extension rule (ctx-EXT in Appendix
+A.2), we need a semantic context extension.  But to say what that is,
+we first need to understand how to interpret types.
+
+The types in a fixed context $\Gamma$ are interpreted by certain
+morphism $A:GA\to G$ into the interpretation $G$ of that context
+$\Gamma$.  (In the case of HoTT, necessarily not all morphisms are
+eligible - see below.)
+
+Finally, given a semantic context $G$ and a semantic type in that
+context, the terms of that type are interpreted as sections $s:G \to
+GA$ of the morphism $A:GA\to G$ that models the type.
+
+Presheaf semantics
+---
+
+We now consider categorical semantics in the case that the
+underlying category $\mathcal{C}$ of our semantics is a presheaf
+category $\mathbf{Set}^{\mathcal{D}^{op}}$.
+
+Usually, the semantics are somewhat obscured as semantic types are
+presented differently: instead of maps into contexts, a semantic type
+$A$ in the semantic context $G$ (where $G$ is an object of our
+category, that is, a presheaf $G:\mathcal{D}^{op}\to\mathbf{Set}$) is
+defined to be a family of sets $(A_{d,g})_{d\in\mathcal{D},\,g\in
+G(d)}$ together with maps $(A_{d',g'}\to A_{d,G(i)(g')})_{i:d\to
+d',\, g'\in G(d')}$. Additionally, these families are supposed to
+satisfy certain functoriality conditions.
+
+We can translate such families to our presentation above by defining a
+new presheaf $GA$ by $GA(d):=\bigsqcup_{g\in G(d)}A_{d,g}$, and similarly
+for the morphisms, and with the natural transformation $A:GA\to G$
+sending all elements of $A_{d,g}$ to $g\in G(d)$.
+
+Conversely, given a presheaf $GA$ and a natural transformation
+$A:GA\to G$, we define $A_{d,g}:=A^{-1}_d(g)$ (noting that
+$A_{d,g}\subseteq GA(d)$), and the map $A_{d',g'}\to A_{d,G(i)(g')}$
+is defined by restriction of $GA(i):GA(d')\to GA(d)$.
+
+A further complication may be that people consider semantics in
+presheafs on an opposite category, in which case tracing the $op$s
+around can take some effort.
+
 Categories with families
 ---
 
@@ -375,6 +445,9 @@ sometimes refer to the fibrations as _Kan fibrations_.
 So we say which maps are fibrations, so that we can define a
 corresponding (say) CwF out of the model category, which has as the
 types exactly the _fibrations_ into the context.
+
+* various ways to present fibrations: types in context, sigma type,
+  type family
 
 Simplicial sets
 ---
