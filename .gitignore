@@ -17,3 +17,4 @@ auto/
 *.fdb_latexmk
 *.fls
 *.log
+_build/
