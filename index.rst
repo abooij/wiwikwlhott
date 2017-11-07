@@ -32,6 +32,4 @@ Changelog
 
 **0.1**
 
-First sections:
-
--  ???
+first release (?)
