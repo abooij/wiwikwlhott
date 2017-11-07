@@ -3,8 +3,10 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-What I wish I knew when learning HoTT
+What I Wish I Knew When Learning HoTT
 =======================================
+
+Auke Booij
 
 This document is intended to refer to concepts one may not be aware of
 on a first reading of the HoTT book, and give a crude, possible
