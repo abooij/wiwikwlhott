@@ -19,13 +19,14 @@ counterproductive. You didn't get these things from me.
    :maxdepth: 2
    :caption: Contents:
 
-   variants
-   proof-assistants
-   meta
+   classical
    terminology
-   features
+   proof-assistants
    category
    semantics
+   variants
+   features
+   meta
 
 Changelog
 ---------
