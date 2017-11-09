@@ -9,9 +9,10 @@ one is the tactic language that is used to prove theorems. But since
 theorems are interpreted by types, really tactics just construct terms.
 For example:
 
-::
+.. code-block:: coq
 
     Definition logeq_both_false {X Y : UU} : ¬X -> ¬Y -> (X <-> Y).
+
     Proof.
       intros ? ? nx ny.
       split.
@@ -23,7 +24,7 @@ For example:
 
 prints:
 
-::
+.. code-block:: coq
 
     logeq_both_false =
     λ (X Y : UU) (nx : ¬ X) (ny : ¬ Y),
