@@ -35,9 +35,14 @@ out to be inconsistent).
 Translating claims in natural language to type theory
 -----------------------------------------------------
 
--  there seems to be some miscommunication regarding which statements by
-   HoTTist are internal and which ones are metatheoretical, but I can't
-   find the right words to make this precise right now.
+- there seems to be some miscommunication regarding which statements
+  by HoTTist are internal and which ones are metatheoretical, but I
+  can't find the right words to make this precise right now.
+- first attempt: already in classical math, some claims shouldn't be
+  translated literally. for example, the claim "we can prove theorem
+  X" doesn't presume an internal formalisation of the notion of
+  theorem, provability, an understanding of what "we" means, or any
+  kind of modal logic to model the "can".
 
 Types as spaces
 ---------------
@@ -86,17 +91,18 @@ is topological in nature, rather than type-theoretic (although there is
 a way to make it precise type-theoretically).
 
 Indeed, proofs about types such as the higher-inductive circle look
-nothing like their counterparts in topology. Still, they satisfy *some*
-of the same properties: if we define the "homotopy group" of a pointed
-type correctly, then there is some evidence that the higher-inductive
-circles have the same homotopy groups as their topological counterparts
-in classical mathematics (in the sense that this has been shown for a
-handful of cases). However, some properties are fundamentally different
-in a seemingly unfixable way: as a theorem stated inside type theory,
-there is only one map :math:`S^1\to S^2`, and it is the constant map.
-
--  this very last point is not a very good example because equality,
-   interpreted topologically, becomes equality of homotopy classes.
+nothing like their counterparts in topology. Still, they satisfy
+*some* of the same properties: if we define the "homotopy group" of a
+pointed type correctly, then there is some evidence that the
+higher-inductive circles have the same homotopy groups as their
+topological counterparts in classical mathematics (in the sense that
+this has been shown for a handful of cases). However, some properties
+are fundamentally different in a seemingly unfixable way: as a theorem
+stated inside type theory, there do not exist any embeddings
+:math:`S^1\to S^3` - so higher-inductive types can't be naively used
+to formalise knot theory. (One further problem with such an approach
+is that HoTT only allows phrasing things that are invariant under
+homotopy, which things like "non-self-intersecting" are not.)
 
 Sets
 ----
