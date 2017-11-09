@@ -127,3 +127,21 @@ There are (at least) three notions of sets:
 -  A cumulative hierarchy of sets as in e.g. chapter 10.5 of the HoTT
    book, as an attempt to find a model of an axiomatic set theory like
    ZFC (although this will likely require choice).
+
+
+Topology
+--------
+
+HoTT is *not* a internal language for topology. TODO: say something
+about modalities that is correct.
+
+Homotopy
+--------
+
+Within the HoTT community, "homotopy theory" refers to abstract
+homotopy theory in the sense of, for example, Quillen model
+categories, or more generally homotopy categories. The category of
+topological spaces and continuous maps is one such model
+category. However, it is not clear if HoTT is an internal language for
+*all* model categories. In particular, the "homotopy" of HoTT does not
+(necessarily) refer to the homotopies of point-set topology.
