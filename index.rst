@@ -8,9 +8,9 @@ What I Wish I Knew When Learning HoTT
 
 Auke Booij
 
-This document is intended to refer to concepts one may not be aware of
-on a first reading of the HoTT book, and give a crude, possible
-unhelpful intuition for them.
+This document intends to refer to concepts one may not be aware of on
+a first reading of the HoTT book, and give a crude, possible unhelpful
+intuition for them.
 
 **Warning**: I did not check for correctness. This document may be
 counterproductive. You didn't get these things from me.
@@ -34,3 +34,8 @@ Changelog
 **0.1**
 
 first release (?)
+
+Biblography
+---------------
+
+.. bibliography:: refs.bib
