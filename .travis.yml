@@ -1,0 +1,17 @@
+language: python
+python:
+  - "3.6"
+notifications:
+  email: false
+
+
+install:
+  - pip install sphinxcontrib-bibtex
+script:
+  - make html
+deploy:
+  provider: script
+  script: ./deploy_docs.sh
+  skip_cleanup: true
+  on:
+    branch: travis-deployment
