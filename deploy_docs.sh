@@ -12,7 +12,7 @@ cp -a _build/html/* $REPO
 
 pushd $REPO
 
-export MESSAGE="Autoupdate coqdoc documentation from travis
+export MESSAGE="Autoupdate documentation from travis
 
 Generated with 'make html'"
 
