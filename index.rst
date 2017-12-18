@@ -36,3 +36,4 @@ Biblography
 ---------------
 
 .. bibliography:: refs.bib
+   :all:

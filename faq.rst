@@ -38,8 +38,8 @@ Truncation: classical or constructive?
 One understanding of the term "constructivism" is that the logic
 should always pass around explicit constructions, which may in general
 not be unique.  So existential quantifiers are understood to always be
-proved by constructing points, and logical disjunctions are understood
-to always give a choice of a disjunct.
+proved by constructing :term:`points <point>`, and logical disjunctions are
+understood to always give a choice of a disjunct.
 
 From this point of view, the truncation operation seems to be
 non-constructive: indeed, it allows us to pass around a notion of
@@ -50,7 +50,7 @@ least) two problems with this conclusion.
   variants of constructivism.
 - Perhaps more importantly, witnesses *are* passed around.
 
-For the latter, define the type :math:`P` of primes numbers that are
+For the latter, :ref:`define <translating_natural>` the type :math:`P` of primes numbers that are
 the sum of two consecutive primes.  Then it can be shown that
 :math:`P` is a proposition: any two of its elements are equal.
 Moreover, :math:`P` is inhabited, namely by the number 5, being the
@@ -60,14 +60,22 @@ informative: for example, the first projection of *any* proof of
 
 Another striking example of elements of truncated types carrying data
 is given by Nicolai Kraus' function that undoes the truncation map
-:math:`|\,\cdot\,|:\mathbb{N}\to\|\mathbb{N}\|`
+:math:`|\_|:\mathbb{N}\to\|\mathbb{N}\|`
 :cite:`kraus:truncation:invertible`.  In this construction, for any
 natural :math:`n:\mathbb{N}`, we consider the type
-:math:`\operatorname{pathto}(\mathbb{N},n)` of :term:`pointed types`
-equal to the pointed type :math:`(\mathbb{N},n)`.
-:math:`\operatorname{pathto}(\mathbb{N},n)` is then seen to be a
-proposition, which allows us to extract the incoming point :math:`n`,
-even if it was hidden by the truncation map :math:`|\,\cdot\,|`.
+
+.. math::
+   \operatorname{pathto}(\mathbb{N},n)
+   :=
+   \sum_{Y:\sum_{X:\mathcal{U}}X}(Y=(\mathbb{N},n))
+
+of :term:`pointed types <pointed type>` that are equal to the pointed
+type :math:`(\mathbb{N},n)`.  We can show that
+:math:`\operatorname{pathto}(\mathbb{N},n)` is a proposition.  This
+allows us to extract the incoming point :math:`n`, even if it was
+hidden by the truncation map :math:`|\_|`.  This construction
+shows that elements of truncated types can carry so much information
+that we can, in this case, undo the truncation, in a certain sense.
 
 What is the killer application of univalence?
 ------------------------------------------------
@@ -92,9 +100,11 @@ be built in MLTT, univalence can guide you.
 
 .. todo:: add an example of this intuition obtained from univalence
 
-So let me say at least this: *if* one is interested in arbitrary
-types, rather than restricting to sets, univalence leads the way,
-either directly or indirectly.
+*If* one is interested in arbitrary types, rather than restricting to
+sets, univalence leads the way, either directly or indirectly.  It
+clarifies how the identity types behave, and has a clear geometric
+understanding.  It yields results that are natural and correspond very
+well with common mathematical language.
 
 .. todo:: Is this all we can say?  This answer seems a bit
           incoherent...  "What is the final answer?"

@@ -11,7 +11,7 @@ Coq
 
 Coq consists of several layers of programming languages. The most
 famous one is the tactic language that is used to prove theorems. But
-since theorems are interpreted by types, and proofs by elemenst of
+since theorems are interpreted by types, and proofs by elements of
 those types, really tactics just construct terms.  For example:
 
 .. code-block:: coq
@@ -41,22 +41,28 @@ prints:
 Agda
 ----
 
+.. _proof_assistant_cubical:
+
 cubicaltt
 ---------
 
--  interval is abstract (as opposed to, say, an interval of reals):
-   cubical set (though necessarily *not* Kan, see semantics section)
--  earlier iteration: cubical
+.. todo::
+   -  interval is abstract (as opposed to, say, an interval of reals):
+      cubical set (though necessarily *not* Kan, see semantics section)
+   -  earlier iteration: cubical
 
 Normalization
 -------------
 
--  minor gotcha: even if your particular flavor of hott is strongly
-   normalizing (so that all terms reduce to a unique normal form), there
-   are still types without decidable equality, because there is no map
-   inside type theory that computes normal forms of arbitrary terms.
-   find a way to say this without hopping back and forth between
-   meta-theoretical and internal statements.
+.. todo::
+   - minor gotcha: even if your particular flavor of hott is strongly
+     normalizing (so that all terms reduce to a unique normal form),
+     there are still types without decidable equality, because there
+     is no map inside type theory that computes normal forms of
+     arbitrary terms.  find a way to say this without hopping back and
+     forth between meta-theoretical and internal statements.
+
+.. _proof_assistants_libraries:
 
 Libraries
 ---------
@@ -68,4 +74,5 @@ Libraries
 -  examples/ directory in cubicaltt repository
 -  lean
 -  various scientists' personal libraries
--
+
+.. todo:: Quickly specify the rough intentions of each

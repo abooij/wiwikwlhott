@@ -21,6 +21,9 @@ but propositionally for higher constructors.
 Cubical type theory
 -------------------
 
+See also :ref:`the proof assistant section <proof_assistant_cubical>`
+and CCHM :cite:`CCHM:cubical:type:theory`.
+
 Cubical type theory is a type theory for which univalence is a theorem.
 It adds an interval *pretype* which is used to define identity types.
 This interval is necessarily not a type.
@@ -32,16 +35,18 @@ Although univalence is a theorem, the normal form is huge (megabytes),
 although it is argued that this is due to the proof rather than the
 design of cubical type theory.
 
-HoTT as an DSL
+HoTT as a DSL
 --------------
 
-Dan Licata argues we should think of HoTT as a language to which we add
-features depending on how we plan to use it, in the same way that we
-write specialized programming languages for specific use-cases. For
-example, cubical type theory is a domain-specific language for
-programming with Kan cubical sets, and real-cohesive HoTT is a language
-for programming topological spaces. Schulman and Riehl have a language
-for programming :math:`(\infty,1)`-categories.
+Dan Licata `argues
+<http://dlicata.web.wesleyan.edu/pubs/l17small/l17small.pdf>`_ we
+should think of HoTT as a language to which we add features depending
+on how we plan to use it, in the same way that we write specialized
+programming languages for specific use-cases. For example, cubical
+type theory is a domain-specific language for programming with Kan
+cubical sets, and real-cohesive HoTT is a language for programming
+topological spaces. Shulman and Riehl have a language for programming
+:math:`(\infty,1)`-categories :cite:`riehl:shulman:categories`.
 
 In this sense, HoTT becomes a class of type theories.
 
@@ -58,9 +63,8 @@ Assuming this principle, the set of types of any universe is a topos.
 Assuming this principle, some HITs become definable by impredicative
 encoding: e.g. truncation as :math:`\prod_{P:\Omega}(X\to P)\to P`.
 
-UniMath uses propositional resizing in the foundational files
-``Foundations/PartA.v`` and ``Foundations/PartB.v`` to avoid depending
-on univalence early.
+:ref:`UniMath <proof_assistants_libraries>` uses propositional
+resizing.
 
 HoTT as an approach to MLTT
 ---------------------------

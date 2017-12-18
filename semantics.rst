@@ -5,30 +5,48 @@ Categorical semantics
 ---------------------
 
 In the HoTT book, Appendix A.2, the formal type theory is presented by
-giving three types of judgments: contexts judgments (that express that
-some context is well-formed), typing judgments (that express that some
-term is well-formed and has some type), and judgmental equality.
+giving three types of judgments:
 
-This presentation uses the fact that the type theory is assumed to come
-with (a hierarchy of) universes. However, semantically, this is not
-convenient to work with. So when studying semantics, type theory is
-presented with context judgments, type judgments, term judgments, and
-judgmental equality (for types and terms).
+- contexts judgments (that express that some context is well-formed),
+- typing judgments (that express that some term is well-formed and has
+  some type), and
+- appropriate judgmental equality rules.
 
-For such a type theory, the semantics need to interpret contexts, types,
-and terms, and respect judgmental equality in the sense that if two
-types (say) are judgmentally equal in the type theory, then they are
-semantically equal. In syntactic models of type theory, this equality is
-automatic since judgmental equality is exactly what is divided out when
-constructing the model.
+In this presentation, the elements of universes are exactly types.
+This is known as a type universe à la Russell.
 
-In categorical semantics, the contexts :math:`\Gamma` of the type theory
-are interpreted by objects :math:`G` of the category :math:`\mathcal{C}`
-(with the morphisms modelling substitutions). Typically, the empty
-context :math:`\cdot` (rule ctx-EMP in Appendix A.2) is interpreted by
-the terminal object. To interpret the context extension rule (ctx-EXT in
-Appendix A.2), we need a semantic context extension. But to say what
-that is, we first need to understand how to interpret types.
+However, semantically, a different presentation is preferred, in which
+the elements of universes are thought of as *codes* for types, which
+may be instantiated to obtain actual types.  This is known as a type
+universe à la Tarski.  So when studying semantics, type theory is
+presented by:
+
+- context judgments(that express that some context is well-formed),
+- type judgments (that express that some expression is a well-formed type),
+- term judgments (that express that some term is well-formed and has
+  some type), and
+- appropriate judgmental equality rules (for both types and terms).
+
+The semantics of a type theory in this second style needs to interpret
+the three kinds of objects, namely contexts, types, and terms, and it
+needs to respect judgmental equality, in the sense that if two types
+(say) are judgmentally equal in the type theory, then they are
+semantically equal.
+
+One way to construct a semantics of type theory is to take the
+interpretations to be the syntax itself, modulo judgmental equality
+rules.  In such a syntactic models of type theory, the semantics
+respects judgmental equality automatically, since judgmental equality
+is exactly what is divided out when constructing the model.
+
+In categorical semantics, the contexts :math:`\Gamma` of the type
+theory are interpreted by objects :math:`G` of some fixed category
+:math:`\mathcal{C}`, with the morphisms modelling
+substitutions. Typically, the empty context :math:`\cdot` (rule
+ctx-EMP in Appendix A.2) is interpreted by the terminal object. To
+interpret the context extension rule (ctx-EXT in Appendix A.2), we
+need a semantic context extension. But to say what that is, we first
+need to understand how to interpret types.
 
 The types in a fixed context :math:`\Gamma` are interpreted by certain
 morphism :math:`A:GA\to G` into the interpretation :math:`G` of that
@@ -39,6 +57,10 @@ Finally, given a semantic context :math:`G` and a semantic type in that
 context, the terms of that type are interpreted as sections
 :math:`s:G \to GA` of the morphism :math:`A:GA\to G` that models the
 type.
+
+For more information on categorical semantics of type theory with a
+universe à la Tarski, see e.g. Hoffmann
+:cite:`hofmann:syntax:semantics`.
 
 Presheaf semantics
 ------------------
@@ -76,18 +98,23 @@ presheafs on an opposite category, in which case tracing the
 Categories with families and other structure
 --------------------------------------------
 
-Awodey&Warren clarify in "Homotopy theoretic models of identity types"
-(in Proposition 2.1) why we need to restrict our semantics of types.
-Namely, if we start with a category of contexts which is LCCC (since we
-want to interpret dependent products), and if it has identity types, and
-if all morphisms are accepted as semantic types, then the identity type
-is necessarily extensional.
+As a naive attempt at finding semantics for type theory, we interpret
+a context :math:`\Gamma` by an object :math:`G` of some ordinary
+category :math:`\mathcal{C}`, and interpret types in :math:`\Gamma` by
+a map into :math:`G`.  However, such a naive interpretation will not
+allow us to interpret univalent type theories.  In Awodey&Warren
+:cite:`awodey:warren:models`, Proposition 2.1, we see why we need to
+restrict our semantics of types.  Namely, if we start with a category
+of contexts which is LCC (since we want to interpret dependent
+products), and if it has identity types, and if all morphisms are
+accepted as semantic types, then the identity type is necessarily
+extensional.
 
-So we want to pick out a certain subset of our maps to represent types
-over contexts. One naive approach is to just take any category and ask
-for extra data, so that we can tell types apart from arbitrary maps.
-This approach has resulted in various definitions of this extra data:
-categories with families, categories with attributes, contextual
+Instead, we want to pick out a certain subset of our maps to represent
+types over contexts.  One naive approach is to just take any category
+and ask for extra data, so that we can tell types apart from arbitrary
+maps.  This approach has resulted in various definitions of this extra
+data: categories with families, categories with attributes, contextual
 categories (aka C-system), display map categories, and comprehension
 categories.
 
@@ -122,16 +149,16 @@ So we say which maps are fibrations, so that we can define a
 corresponding (say) CwF out of the model category, which has as the
 types exactly the *fibrations* into the context.
 
--  various ways to present fibrations: types in context, sigma type,
-   type family
+.. todo:: various ways to present fibrations: types in context, sigma
+          type, type family
 
 Simplicial sets
 ---------------
 
--  presentation in terms of coface and codegeneracy maps is equivalent
-   to saying "take all order-preserving morphisms"
+.. todo:: presentation in terms of coface and codegeneracy maps is
+          equivalent to saying "take all order-preserving morphisms"
 
 Cubical sets
 ------------
 
--  various iterations
+.. todo:: various iterations
