@@ -12,9 +12,6 @@ This document intends to refer to concepts one may not be aware of on
 a first reading of the HoTT book, and give a crude, possible unhelpful
 intuition for them.
 
-**Warning**: I did not check for correctness. This document may be
-counterproductive. You didn't get these things from me.
-
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
