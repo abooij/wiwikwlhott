@@ -1,13 +1,18 @@
 Proof assistants
 ================
 
+Differences in notation
+---------------------------------------------
+
+.. todo:: Notation of :math:`\Pi` and :math:`\Sigma`: `(x : X) -> A x`, `(x : X) * A x`
+
 Coq
 ---
 
-Coq consists of several layers of programming language. The most famous
-one is the tactic language that is used to prove theorems. But since
-theorems are interpreted by types, really tactics just construct terms.
-For example:
+Coq consists of several layers of programming languages. The most
+famous one is the tactic language that is used to prove theorems. But
+since theorems are interpreted by types, and proofs by elemenst of
+those types, really tactics just construct terms.  For example:
 
 .. code-block:: coq
 
