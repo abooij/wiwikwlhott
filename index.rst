@@ -15,7 +15,7 @@ intuition for them.
 .. toctree::
    :maxdepth: 2
 
-   classical
+   faq
    terminology
    proof-assistants
    category

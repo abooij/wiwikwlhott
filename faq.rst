@@ -1,4 +1,4 @@
-Constructivism
+General FAQ
 ====================================================
 
 What is the point of constructive mathematics?
@@ -59,11 +59,42 @@ informative: for example, the first projection of *any* proof of
 :math:`P` will yield the number 5.
 
 Another striking example of elements of truncated types carrying data
-is given by Nicolai Kraus' function that seems to undo the truncation
-map :math:`|\,\cdot\,|:\mathbb{N}\to\|\mathbb{N}\|` :cite:`kraus:truncation:invertible`.  In this
-construction, given a natural :math:`n:\mathbb{N}`, we consider the
-type :math:`\operatorname{pathto}(\mathbb{N},n)` of :term:`pointed types`
+is given by Nicolai Kraus' function that undoes the truncation map
+:math:`|\,\cdot\,|:\mathbb{N}\to\|\mathbb{N}\|`
+:cite:`kraus:truncation:invertible`.  In this construction, for any
+natural :math:`n:\mathbb{N}`, we consider the type
+:math:`\operatorname{pathto}(\mathbb{N},n)` of :term:`pointed types`
 equal to the pointed type :math:`(\mathbb{N},n)`.
 :math:`\operatorname{pathto}(\mathbb{N},n)` is then seen to be a
 proposition, which allows us to extract the incoming point :math:`n`,
-even if it was hidden by a truncation.
+even if it was hidden by the truncation map :math:`|\,\cdot\,|`.
+
+What is the killer application of univalence?
+------------------------------------------------
+
+NB: The following answer is opinionated.
+
+If one restricts one's attention to sets only, and disregards things
+like higher-inductive types as artificial, then it seems that function
+extensionality and propositional extensionality together suffice for
+the vast majority of mathematics.  Hence, it is quite difficult to
+convince someone, who is only interested in sets, of the importance of
+univalence, as they will never need it.  On the other hand, it is only
+*through* univalence that one naturally encounters types that are not
+sets, namely universes.  However, the motivation for univalence is not
+circular:
+
+Univalence has been, and continues to be, very informative for
+developing intuition in type theory.  It is often possible to obtain
+intuition from univalence, and make an initial estimate whether some
+claim is going to be provable or not.  Even if your entire theory can
+be built in MLTT, univalence can guide you.
+
+.. todo:: add an example of this intuition obtained from univalence
+
+So let me say at least this: *if* one is interested in arbitrary
+types, rather than restricting to sets, univalence leads the way,
+either directly or indirectly.
+
+.. todo:: Is this all we can say?  This answer seems a bit
+          incoherent...  "What is the final answer?"
