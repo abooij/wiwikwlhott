@@ -62,7 +62,7 @@ Another striking example of elements of truncated types carrying data
 is given by Nicolai Kraus' function that seems to undo the truncation
 map :math:`|\,\cdot\,|:\mathbb{N}\to\|\mathbb{N}\|`.  In this
 construction, given a natural :math:`n:\mathbb{N}`, we consider the
-type :math:`\operatorname{pathto}(\mathbb{N},n)` of pointed types
+type :math:`\operatorname{pathto}(\mathbb{N},n)` of :term:`pointed types`
 equal to the pointed type :math:`(\mathbb{N},n)`.
 :math:`\operatorname{pathto}(\mathbb{N},n)` is then seen to be a
 proposition, which allows us to extract the incoming point :math:`n`,

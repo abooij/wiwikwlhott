@@ -27,6 +27,7 @@ counterproductive. You didn't get these things from me.
    variants
    features
    meta
+   glossary
 
 Changelog
 ---------
