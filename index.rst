@@ -14,7 +14,6 @@ intuition for them.
 
 .. toctree::
    :maxdepth: 2
-   :caption: Contents:
 
    classical
    terminology
