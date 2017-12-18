@@ -30,7 +30,7 @@ What is the point of constructive mathematics?
     incisiveness and scope of the information, not the elegencae of
     the format, that is relevant.
 
-    -- Bishop :cite:`Bishop197053`
+    -- Bishop :cite:`bishop:numerical:language`
 
 Truncation: classical or constructive?
 -------------------------------------------------
@@ -60,7 +60,7 @@ informative: for example, the first projection of *any* proof of
 
 Another striking example of elements of truncated types carrying data
 is given by Nicolai Kraus' function that seems to undo the truncation
-map :math:`|\,\cdot\,|:\mathbb{N}\to\|\mathbb{N}\|`.  In this
+map :math:`|\,\cdot\,|:\mathbb{N}\to\|\mathbb{N}\|` :cite:`kraus:truncation:invertible`.  In this
 construction, given a natural :math:`n:\mathbb{N}`, we consider the
 type :math:`\operatorname{pathto}(\mathbb{N},n)` of :term:`pointed types`
 equal to the pointed type :math:`(\mathbb{N},n)`.
