@@ -20,6 +20,8 @@ numerals, and additionally:
 where the computation rules for HITs is given definitionally for points
 but propositionally for higher constructors.
 
+.. _cubical_type_theory:
+
 Cubical type theory
 -------------------
 

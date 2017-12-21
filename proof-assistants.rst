@@ -67,12 +67,49 @@ Normalization
 Libraries
 ---------
 
--  UniMath
--  HoTT/HoTT coq library
--  HoTT-Agda
--  cubical agda library
--  examples/ directory in cubicaltt repository
--  lean
--  various scientists' personal libraries
+UniMath
+^^^^^^^
 
-.. todo:: Quickly specify the rough intentions of each
+In February 2010, Vladimir Voevodsky started writing the *Foundations*
+library to make precise his ideas collected in *A very short note on
+the homotopy λ-calculus*.  Other libraries were
+subsequently built on top of this.  UniMath was founded in spring
+2014, by combining some libraries.
+
+See also Benedikt Ahrens' `UniMath: its origins, present, and future
+<https://unimath.github.io/bham2017/UniMath_origins-present-future.pdf>`_.
+
+The code can be found on `github <https://github.com/UniMath/UniMath/>`_.
+
+HoTT coq library
+^^^^^^^^^^^^^^^^^^^^
+
+Compared to UniMath, this library uses more features of Coq.
+
+The code can be found on `github <https://github.com/HoTT/HoTT/>`_.
+
+HoTT agda library
+^^^^^^^^^^^^^^^^^^^^
+
+The code can be found on `github <https://github.com/HoTT/HoTT-Agda/>`_.
+
+cubicaltt
+^^^^^^^^^^^^^
+
+The cubicaltt compiler, that implements :ref:`cubical_type_theory`,
+ships with code implementing various parts of HoTT.
+
+The code can be found on `github
+<https://github.com/mortberg/cubicaltt/tree/master/examples>`_.
+
+Other libraries
+^^^^^^^^^^^^^^
+
+- The `cubical agda library by Dan Licata et
+  al. <https://github.com/dlicata335/hott-agda>`_, which aims to
+  optimize some homotopical proofs in a type theory in which the
+  higher constructors of HITs satisfy a *typal* computation rule,
+  rather than a judgmental one.
+- The Lean proof assistant includes HoTT libraries (work of Floris van
+   Doorn et al.).
+- Various scientists have a personal library for doing HoTT.
