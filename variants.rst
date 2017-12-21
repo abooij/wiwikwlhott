@@ -13,6 +13,8 @@ numerals, and additionally:
 -  suspension types,
 -  pushouts,
 -  set quotients,
+-  the cumulative hierarchy :math:`V`,
+-  the surreal numbers :math:`\mathsf{No}`,
 -  the free Cauchy completion of the rationals :math:`\mathbf{R}_C`,
 
 where the computation rules for HITs is given definitionally for points
