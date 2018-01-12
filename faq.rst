@@ -92,31 +92,32 @@ that we can, in this case, undo the truncation, in a certain sense.
 What is the killer application of univalence?
 ------------------------------------------------
 
-NB: The following answer is opinionated.
+This is the wrong question in the same sense that one shouldn't ask
+"What is the killer application of the extensionality axiom in ZFC?"
+Univalence is an extensionality axiom in the same sense that ZFC's
+extensionality axiom is one.  The ZFC axiom says that if two sets have
+the same elements, then they are equal as sets.  Univalence,
+similarly, characterizes equality of types in terms of equivalences.
 
-If one restricts one's attention to sets only, and disregards things
-like higher-inductive types as artificial, then it seems that function
-extensionality and propositional extensionality together suffice for
-the vast majority of mathematics.  Hence, it is quite difficult to
-convince someone, who is only interested in sets, of the importance of
-univalence, as they will never need it.  On the other hand, it is only
-*through* univalence that one naturally encounters types that are not
-sets, namely universes.  However, the motivation for univalence is not
-circular:
+In the end, foundations of mathematics are to be used to prove
+mathematical theorems.  Univalence helps us to phrase and prove
+theorems in a certain style, namely that of univalent mathematics.  It
+is often possible to obtain intuition from univalence, and make an
+initial estimate whether some claim is going to be provable or not.
+Even if your entire theory can be built in MLTT, univalence can guide
+you.  It allows us to phrase and prove theorems that are natural and
+correspond very well with informal mathematics.
 
-Univalence has been, and continues to be, very informative for
-developing intuition in type theory.  It is often possible to obtain
-intuition from univalence, and make an initial estimate whether some
-claim is going to be provable or not.  Even if your entire theory can
-be built in MLTT, univalence can guide you.
+Why isn't there an induction principle for the universe?
+-------------------------------------------------------
 
-.. todo:: add an example of this intuition obtained from univalence
+All the basic types in MLTT seem to come with an induction or
+coinduction principle, so why not the universe?
 
-*If* one is interested in arbitrary types, rather than restricting to
-sets, univalence leads the way, either directly or indirectly.  It
-clarifies how the identity types behave, and has a clear geometric
-understanding.  It yields results that are natural and correspond very
-well with common mathematical language.
+.. todo::
+   answer.
 
-.. todo:: Is this all we can say?  This answer seems a bit
-          incoherent...  "What is the final answer?"
+   - Π-types are coinductive
+   - being able to tell types apart would e.g. prove LEM
+   - internal universes a la tarski via induction-recursion are not
+     complete
