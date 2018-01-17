@@ -59,21 +59,27 @@ truth without passing around the underlying witnesses.  There are (at
 least) two problems with this conclusion.
 
 - This understanding of constructivism is correct only for certain
-  variants of constructivism.
+  variants of constructive logic.
 - Perhaps more importantly, witnesses *are* passed around.
 
-For the latter, :ref:`define <translating_natural>` the type :math:`P` of primes numbers that are
-the sum of two consecutive primes.  Then it can be shown that
-:math:`P` is a proposition: any two of its elements are equal.
-Moreover, :math:`P` is inhabited, namely by the number 5, being the
-sum of 2 and 3.  But the proof of :math:`P` is indeed very
-informative: for example, the first projection of *any* proof of
-:math:`P` will yield the number 5.
+For the latter, :ref:`define <translating_natural>` the type :math:`P`
+of primes numbers that are the sum of two consecutive primes.  So
+:math:`P` is a :math:`\Sigma`-type.  Then it can be shown that
+:math:`P` is a proposition: any two of its elements are equal.  The
+proof of this is essentially the same as the proof that there is at
+most one prime that is the sum of two consecutive primes.  Moreover,
+the type :math:`P` is inhabited.  One constructs an element of
+:math:`P` by pairing the number 5 with a proof that 5 is the sum of 2
+and 3, which are also primes.  But any proof of the *proposition*
+:math:`P` is indeed very informative: for example, the first
+projection of *any* proof of :math:`P` (recall that :math:`P` is a
+:math:`\Sigma`-type, and as such we can take the first and second
+projections of its elements) will yield the number 5.
 
 Another striking example of elements of truncated types carrying data
 is given by Nicolai Kraus' function that undoes the truncation map
 :math:`|\_|:\mathbb{N}\to\|\mathbb{N}\|`
-:cite:`kraus:truncation:invertible`.  In this construction, for any
+:cite:`kraus:truncation:invertible` [#truncnotation]_.  In this construction, for any
 natural :math:`n:\mathbb{N}`, we consider the type
 
 .. math::
@@ -88,6 +94,19 @@ allows us to extract the incoming point :math:`n`, even if it was
 hidden by the truncation map :math:`|\_|`.  This construction
 shows that elements of truncated types can carry so much information
 that we can, in this case, undo the truncation, in a certain sense.
+
+.. rubric:: footnotes
+
+.. [#truncnotation] Note that :math:`|\_|` is the *truncation map*,
+                    that sends a point :math:`x:X` to its *truncation*
+                    :math:`|x|`, an element of the *truncated type*
+                    :math:`\|X\|`.
+
+What is the difference between a type and its truncation?
+---------------------------------------------------------
+
+.. todo::
+   answer.
 
 What is the killer application of univalence?
 ------------------------------------------------
@@ -109,7 +128,7 @@ you.  It allows us to phrase and prove theorems that are natural and
 correspond very well with informal mathematics.
 
 Why isn't there an induction principle for the universe?
--------------------------------------------------------
+--------------------------------------------------------
 
 All the basic types in MLTT seem to come with an induction or
 coinduction principle, so why not the universe?

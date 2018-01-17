@@ -3,8 +3,11 @@ Glossary
 
 .. glossary::
 
-   point
+   constructor
    element
+   point
+   term
+   proof
       See :ref:`constr_elems_pts`.
 
 

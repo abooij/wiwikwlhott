@@ -4,8 +4,8 @@ General confusion arising from names of definitions
 
 .. _constr_elems_pts:
 
-Constructors versus elements versus points versus terms
----------------------------------------------------------
+Constructors versus elements versus points versus terms versus proof
+--------------------------------------------------------------------
 
 To say that something is a *constructor* of a type :math:`A` means that
 the type :math:`A` was defined inductively, and that you are picking one
@@ -27,7 +27,7 @@ element :math:`x` of type :math:`\mathbf{0}`, we can show that
 that is, :math:`A\to\mathbf{0}`, and :math:`\mathbf{0}\to\mathbf{0}` is
 indeed inhabited (by the identity function).
 
-*Point* is a synonym for *element*.
+*Point* and *proof* are synonyms for *element*.
 
 Finally, *term* is a strictly syntactic notion. As a first
 approximation, something is a term if it is a string of characters that,
