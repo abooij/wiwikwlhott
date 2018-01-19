@@ -105,8 +105,16 @@ that we can, in this case, undo the truncation, in a certain sense.
 What is the difference between a type and its truncation?
 ---------------------------------------------------------
 
-.. todo::
-   answer.
+If :math:`X` is an arbitrary type, then its truncation :math:`\|X\|`
+is inhabited (i.e. has elements) if and only if :math:`X` is.
+However, by definition, :math:`\|X\|` is a proposition.
+
+This means that any two elements :math:`x,y:X` give rise to elements
+:math:`|x|,|y|:\|X\|`.  However, since :math:`\|X\|` is a proposition,
+we also have a proof that the identity type :math:`|x|=_{\|X\|}|y|` is
+inhabited.  So you can think of :math:`\|X\|` as the type :math:`X`,
+but with extra identities added, as well as higher identities, so that
+it becomes a proposition.
 
 What is the killer application of univalence?
 ------------------------------------------------
@@ -133,10 +141,11 @@ Why isn't there an induction principle for the universe?
 All the basic types in MLTT seem to come with an induction or
 coinduction principle, so why not the universe?
 
-.. todo::
-   answer.
-
-   - Π-types are coinductive
-   - being able to tell types apart would e.g. prove LEM
-   - internal universes a la tarski via induction-recursion are not
-     complete
+Having any kind of induction principle on the universe is undesirable
+because we think of the universe as being *open*, in the sense that we
+don't want to intentionally restrict the types that our theory can
+handle.  For example, in a given univalent type theory, we may
+introduce additional type constructors, such as certain homotopical
+constructors, after a body of theory has already been formalized in
+that type theory.  We want our existing theory to stay valid even if
+new type constructors are introduced.

@@ -29,6 +29,9 @@ indeed inhabited (by the identity function).
 
 *Point* and *proof* are synonyms for *element*.
 
+.. todo::
+   "proof" vs "provable"
+
 Finally, *term* is a strictly syntactic notion. As a first
 approximation, something is a term if it is a string of characters that,
 when inserted in a proof assistant, would parse, and have a certain
