@@ -23,7 +23,7 @@ In **logic**, one often sees
 where :math:`A` and :math:`B` are now seen as syntactic expressions,
 and in particular the expression :math:`B` may use the variable
 :math:`x` of type :math:`A`.  Hence the "evaluation" of :math:`B` at
-:math:`x` is dropped, relative to the mathematical notation.
+:math:`x` is dropped, compared to the mathematical notation.
 
 In **Agda-style** proof assistants, :math:`\Pi`-types are denoted
 
@@ -85,6 +85,11 @@ prints:
          : ∏ X Y : UU, ¬ X → ¬ Y → X <-> Y
 
 (``empty_rect`` is the induction principle for :math:`\mathbf{0}`.)
+
+.. todo::
+
+   Replace example with one that uses as few syntax features as
+   possible.
 
 Agda
 ----
