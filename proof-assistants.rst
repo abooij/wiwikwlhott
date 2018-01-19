@@ -48,7 +48,10 @@ In **Coq-style** proof assistants, the :math:`\Pi`-types are denoted
 
    forall x : A, B x
 
-and the :math:`\Sigma`-types as in Agda.
+which may be somewhat confusing since the "forall-quantifier"
+:math:`\forall` is used in HoTT solely for logical notation of
+propositions as in Definition 3.7.1 in the HoTT book.
+:math:`\Sigma`-types are written as in Agda.
 
 Many libraries define their own notation for :math:`\Pi`- and
 :math:`\Sigma`-types, commonly making use of unicode support of the
