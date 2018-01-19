@@ -1,6 +1,8 @@
 Semantics
 =========
 
+.. _categorical_semantics:
+
 Categorical semantics
 ---------------------
 

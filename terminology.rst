@@ -1,11 +1,10 @@
 General confusion arising from names of definitions
 ===================================================
 
-
 .. _constr_elems_pts:
 
-Constructors versus elements versus points versus terms versus proof
---------------------------------------------------------------------
+Constructors versus elements versus points versus terms versus proofs
+---------------------------------------------------------------------
 
 To say that something is a *constructor* of a type :math:`A` means that
 the type :math:`A` was defined inductively, and that you are picking one
@@ -63,6 +62,8 @@ Translating claims in natural language to type theory
    X" doesn't presume an internal formalisation of the notion of
    theorem, provability, an understanding of what "we" means, or any
    kind of modal logic to model the "can".
+
+.. _types_as_spaces:
 
 Types as spaces
 ---------------

@@ -3,6 +3,16 @@ Glossary
 
 .. glossary::
 
+   type
+   object
+   space
+
+      Type and space are synonyms.  Object may be used as another
+      synonym, but it may also refer to the interpretation of contexts
+      in the chosen :ref:`categorical_semantics`.
+
+      See also :ref:`types_as_spaces`.
+
    constructor
    element
    point
