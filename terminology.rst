@@ -29,8 +29,18 @@ indeed inhabited (by the identity function).
 
 *Point* and *proof* are synonyms for *element*.
 
-.. todo::
-   "proof" vs "provable"
+However, when we claim that some theorem is or is not *provable*, then
+this is a meta-theoretic claim.  For example, we may say that, in pure
+HoTT, the principle of excluded middle (which, being a logical claim,
+is itself encoded as some type, namely
+:math:`PEM=\prod_{P:\mathsf{Prop}}P+\neg P`) is not *provable*:
+indeed, homotopy type theory is consistent with excluded middle, but
+also with its negation.  However, we can't say that the type
+:math:`PEM` has no elements, for this would be interpreted by the
+statement that the type :math:`PEM` is *empty*, that is, that excluded
+middle is *false*!  And in pure HoTT we can't prove that :math:`PEM`
+is false, again, because we want to be consistent both with excluded
+middle and its negation.
 
 Finally, *term* is a strictly syntactic notion. As a first
 approximation, something is a term if it is a string of characters that,
