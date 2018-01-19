@@ -4,7 +4,55 @@ Proof assistants
 Differences in notation
 ---------------------------------------------
 
-.. todo:: Notation of :math:`\Pi` and :math:`\Sigma`: `(x : X) -> A x`, `(x : X) * A x`
+Scientists use a variety of notations for :math:`\Pi`- and
+:math:`\Sigma`-types, primarily depending on the field they are working in.
+
+The **mathematical** notation for these types normally looks like
+
+.. math::
+   \prod_{x:A}B(x) \qquad \sum_{x:A}B(x)
+
+Here, :math:`B:A\to\mathcal{U}` is a dependent type, seen as a
+function, evaluated at the point :math:`x:A`.
+
+In **logic**, one often sees
+
+.. math::
+   \prod_{x:A}B \qquad \sum_{x:A}B
+
+where :math:`A` and :math:`B` are now seen as syntactic expressions,
+and in particular the expression :math:`B` may use the variable
+:math:`x` of type :math:`A`.  Hence the "evaluation" of :math:`B` at
+:math:`x` is dropped, relative to the mathematical notation.
+
+In **Agda-style** proof assistants, :math:`\Pi`-types are denoted
+
+.. code-block:: agda
+
+   (x : A) -> B x
+
+and :math:`\Sigma`-types as
+
+.. code-block:: agda
+
+   (x : A) * B x
+
+The motivation behind these notations is that ``(x : A) -> B x`` is
+like a visual generalization of the independent function type ``A ->
+B``, and that ``(x : A) * B x`` is a visual generalization of the
+independent product type ``A * B``.
+
+In **Coq-style** proof assistants, the :math:`\Pi`-types are denoted
+
+.. code-block:: coq
+
+   forall x : A, B x
+
+and the :math:`\Sigma`-types as in Agda.
+
+Many libraries define their own notation for :math:`\Pi`- and
+:math:`\Sigma`-types, commonly making use of unicode support of the
+underlying language.
 
 Coq
 ---
@@ -79,19 +127,19 @@ subsequently built on top of this.  UniMath was founded in spring
 See also Benedikt Ahrens' `UniMath: its origins, present, and future
 <https://unimath.github.io/bham2017/UniMath_origins-present-future.pdf>`_.
 
-The code can be found on `github <https://github.com/UniMath/UniMath/>`_.
+The code can be found on the `UniMath github <https://github.com/UniMath/UniMath/>`_.
 
 HoTT coq library
 ^^^^^^^^^^^^^^^^^^^^
 
 Compared to UniMath, this library uses more features of Coq.
 
-The code can be found on `github <https://github.com/HoTT/HoTT/>`_.
+The code can be found on the `HoTT github <https://github.com/HoTT/HoTT/>`_.
 
 HoTT agda library
 ^^^^^^^^^^^^^^^^^^^^
 
-The code can be found on `github <https://github.com/HoTT/HoTT-Agda/>`_.
+The code can be found on the `HoTT-Agda github <https://github.com/HoTT/HoTT-Agda/>`_.
 
 cubicaltt
 ^^^^^^^^^^^^^
@@ -99,11 +147,11 @@ cubicaltt
 The cubicaltt compiler, that implements :ref:`cubical_type_theory`,
 ships with code implementing various parts of HoTT.
 
-The code can be found on `github
+The code can be found on the `cubicaltt github
 <https://github.com/mortberg/cubicaltt/tree/master/examples>`_.
 
 Other libraries
-^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^
 
 - The `cubical agda library by Dan Licata et
   al. <https://github.com/dlicata335/hott-agda>`_, which aims to
