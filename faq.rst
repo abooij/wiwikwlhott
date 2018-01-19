@@ -21,7 +21,7 @@ mathematical questions that classical logic cannot provide.
    viewpoint hints at a truth: The most urgent task of the
    constructivist is to give predictive embodiment to the ideas and
    techniques of classical mathematics.  Classical mathematics is not
-   totally divorced from reality.  On the contrayr, most of it has a
+   totally divorced from reality.  On the contrary, most of it has a
    strongly constructive cast.  Much of the constructivization of
    classical mathematics is therefore routine; constructive versions
    of many standard results are readily at hand.  This makes it easy
