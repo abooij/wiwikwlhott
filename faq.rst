@@ -60,7 +60,8 @@ least) two problems with this conclusion.
 
 - This understanding of constructivism is correct only for certain
   variants of constructive logic.
-- Perhaps more importantly, witnesses *are* passed around.
+- Perhaps more importantly, witnesses *are* passed
+  around. [#proofirrelevance]_
 
 For the latter, :ref:`define <translating_natural>` the type :math:`P`
 of primes numbers that are the sum of two consecutive primes.  So
@@ -101,6 +102,10 @@ that we can, in this case, undo the truncation, in a certain sense.
                     that sends a point :math:`x:X` to its *truncation*
                     :math:`|x|`, an element of the *truncated type*
                     :math:`\|X\|`.
+
+.. [#proofirrelevance] The fact that witnesses are important also for
+                       propositions shows that the logic of
+                       propositions is not *proof irrelevant*.
 
 What is the difference between a type and its truncation?
 ---------------------------------------------------------
