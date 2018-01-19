@@ -1,6 +1,22 @@
 Type-theoretical features
 =========================
 
+Impredicative prop / propositional resizing
+-------------------------------------------
+
+The principle that there is only one type :math:`\Omega` of
+propositions, and it is a member of :math:`\mathcal{U}_0`: so all types
+of propositions :math:`\mathsf{Prop}_i` are equal, and it is a type in
+the lowest universe.
+
+Assuming this principle, the set of types of any universe is a topos.
+
+Assuming this principle, some HITs become definable by impredicative
+encoding: e.g. truncation as :math:`\prod_{P:\Omega}(X\to P)\to P`.
+
+:ref:`UniMath <proof_assistants_libraries>` uses propositional
+resizing.
+
 {induction,recursion}-{induction,recursion}
 -------------------------------------------
 

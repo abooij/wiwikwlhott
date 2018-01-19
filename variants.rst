@@ -33,11 +33,16 @@ It adds an interval *pretype* which is used to define identity types.
 This interval is necessarily not a type.
 
 Cubical type theory was implemented in the **cubicaltt** proof assistant
-and the agda **--cubical** mode.
+and the agda ``--cubical`` mode.
 
 Although univalence is a theorem, the normal form is huge (megabytes),
 although it is argued that this is due to the proof rather than the
 design of cubical type theory.
+
+.. todo::
+
+   NB: cubical sets != cubical TT. cubical sets has semantics in *two*
+   type theories: book hott and cubicaltt.
 
 HoTT as a DSL
 --------------
@@ -53,22 +58,6 @@ topological spaces. Shulman and Riehl have a language for programming
 :math:`(\infty,1)`-categories :cite:`riehl:shulman:categories`.
 
 In this sense, HoTT becomes a class of type theories.
-
-Impredicative prop / propositional resizing
--------------------------------------------
-
-The principle that there is only one type :math:`\Omega` of
-propositions, and it is a member of :math:`\mathcal{U}_0`: so all types
-of propositions :math:`\mathsf{Prop}_i` are equal, and it is a type in
-the lowest universe.
-
-Assuming this principle, the set of types of any universe is a topos.
-
-Assuming this principle, some HITs become definable by impredicative
-encoding: e.g. truncation as :math:`\prod_{P:\Omega}(X\to P)\to P`.
-
-:ref:`UniMath <proof_assistants_libraries>` uses propositional
-resizing.
 
 HoTT as an approach to MLTT
 ---------------------------
