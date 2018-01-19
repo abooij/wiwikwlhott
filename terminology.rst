@@ -1,5 +1,5 @@
-General confusion arising from names of definitions
-===================================================
+Confusion arising from choice of terminology
+============================================
 
 .. _constr_elems_pts:
 
