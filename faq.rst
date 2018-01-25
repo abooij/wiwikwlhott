@@ -146,6 +146,12 @@ Why isn't there an induction principle for the universe?
 All the basic types in MLTT seem to come with an induction or
 coinduction principle, so why not the universe?
 
+Induction principles are a form of *pattern matching*.  That means
+that if a type :math:`X` has an induction principle, and you have a
+point :math:`x:X`, then you may, under various conditions, assume that
+:math:`x` is of a certain form.  In other words, all induction
+principles limit possibilities.
+
 Having any kind of induction principle on the universe is undesirable
 because we think of the universe as being *open*, in the sense that we
 don't want to intentionally restrict the types that our theory can
@@ -154,3 +160,11 @@ introduce additional type constructors, such as certain homotopical
 constructors, after a body of theory has already been formalized in
 that type theory.  We want our existing theory to stay valid even if
 new type constructors are introduced.
+
+On top of such an induction principle being undesirable, it is a
+constructive taboo.  Namely, if we could tell the empty type
+:math:`\mathbf{0}` and the unit type :math:`\mathbf{1}` apart, that
+is, if we had a function :math:`f:\mathcal{U}\to\mathbf{2}` from the
+universe to the booleans that outputs :math:`\mathsf{false}` for
+:math:`\mathbf{0}` and :math:`\mathsf{true}` for :math:`\mathbf{1}`,
+then we could prove the principle of excluded middle.
