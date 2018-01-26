@@ -192,9 +192,9 @@ that we can, in this case, undo the truncation, in a certain sense.
 What is the difference between a type and its truncation?
 ---------------------------------------------------------
 
-If :math:`X` is an arbitrary type, then its truncation :math:`\|X\|`
-is inhabited (i.e. has elements) if and only if :math:`X` is.
-However, by definition, :math:`\|X\|` is a proposition.
+For any type :math:`X`, its truncation :math:`\|X\|` is inhabited
+(i.e. has elements) if and only if :math:`X` is.  However, by
+definition, :math:`\|X\|` is a proposition.
 
 This means that any two elements :math:`x,y:X` give rise to elements
 :math:`|x|,|y|:\|X\|`.  However, since :math:`\|X\|` is a proposition,

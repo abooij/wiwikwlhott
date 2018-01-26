@@ -13,11 +13,12 @@ has exactly *two* constructors: :math:`0` and :math:`S`. But since, for
 example, :math:`S` has type :math:`\mathbf{N}\to\mathbf{N}`,
 constructors of a type are not always elements of that type.
 
-To say that something is an *element* of a type :math:`A` means that it
-is a variable or expression whose type is :math:`A`. But that means
-that, in some non-trivial context, you can have an element of type
-:math:`\mathbf{0}`: for example in the context :math:`x:\mathbf{0}`, we
-have the element :math:`x` of type :math:`\mathbf{0}`.
+To say that something is an *element* of a type :math:`A` means that
+it is a variable or expression whose type is :math:`A`. But that means
+that, in some non-trivial :term:`context`, you can have an element of
+type :math:`\mathbf{0}`: for example in the context
+:math:`x:\mathbf{0}`, we have the element :math:`x` of type
+:math:`\mathbf{0}`.
 
 Confusingly, even in the context :math:`x:\mathbf{0}`, where we have the
 element :math:`x` of type :math:`\mathbf{0}`, we can show that

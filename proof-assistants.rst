@@ -51,7 +51,7 @@ In **Coq-style** proof assistants, the :math:`\Pi`-types are denoted
 which may be somewhat confusing since the "forall-quantifier"
 :math:`\forall` is used in HoTT solely for logical notation of
 propositions as in Definition 3.7.1 in the HoTT book.
-:math:`\Sigma`-types are written as in Agda, and also as
+:math:`\Sigma`-types are written as in Agda, but also as
 
 .. code-block:: coq
 

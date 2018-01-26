@@ -43,3 +43,17 @@ Glossary
       principle of excluded middle only says we can decide the truth
       of :math:`\neg P`, that is, it tells us :math:`\neg P + \neg
       \neg P`.
+
+   context
+
+      All mathematical claims are made in a certain context.  For
+      example, ":math:`\phi` is an isomorphism that sends :math:`g` to
+      :math:`h(x)+3`" only makes sense if we know that :math:`phi`,
+      :math:`g` and :math:`h` are variables of a certain type.  In the
+      logic of type theory, the concept of contexts plays an extremely
+      central role, and the truth and interpretation of every type and
+      term depends on the context we're in.  So a context is just a
+      list of fresh variables with type declarations.  For more
+      information, see e.g. Appendix A.2 of the HoTT book, or a source
+      on semantics of type theory such as
+      :cite:`hofmann:syntax:semantics`.
