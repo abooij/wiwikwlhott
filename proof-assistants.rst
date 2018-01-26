@@ -74,8 +74,6 @@ those types, really tactics just construct terms.  For example:
 
 .. code-block:: coq
 
-   aoeu
-
    Definition decidablepaths_equiv
               (A : Type) {B : Type} (f : A -> B) `{IsEquiv A B f}
    : DecidablePaths A -> DecidablePaths B.
