@@ -74,32 +74,35 @@ those types, really tactics just construct terms.  For example:
 
 .. code-block:: coq
 
-    Definition logeq_both_false {X Y : UU} : ¬X -> ¬Y -> (X <-> Y).
+   aoeu
 
-    Proof.
-      intros ? ? nx ny.
-      split.
-      - intros x. induction (nx x).
-      - intros y. induction (ny y).
-    Defined.
-
-    Print logeq_both_false.
+   Definition decidablepaths_equiv
+              (A : Type) {B : Type} (f : A -> B) `{IsEquiv A B f}
+   : DecidablePaths A -> DecidablePaths B.
+   Proof.
+     intros d x y.
+     destruct (d (f^-1 x) (f^-1 y)) as [e|ne].
+     - apply inl. exact ((eisretr f x)^ @ ap f e @ eisretr f y).
+     - apply inr; intros p. apply ne, ap, p.
+   Defined.
 
 prints:
 
 .. code-block:: coq
 
-    logeq_both_false =
-    λ (X Y : UU) (nx : ¬ X) (ny : ¬ Y),
-    (λ (x : X) (e:=nx x), empty_rect (λ _ : ∅, Y) e),, (λ (y : Y) (e:=ny y), empty_rect (λ _ : ∅, X) e)
-         : ∏ X Y : UU, ¬ X → ¬ Y → X <-> Y
+   decidablepaths_equiv@{Top.115 Top.116} =
+   fun (A B : Type) (f : A -> B) (H : IsEquiv f) (d : DecidablePaths A) (x y : B) =>
+   let d0 := d (_^-1 x) (_^-1 y) in
+   match d0 with
+   | inl e => inl (((eisretr _ x)^ @ ap f e) @ eisretr _ y)
+   | inr ne => inr (fun p : x = y => ne (ap f^-1 p))
+   end
 
-(``empty_rect`` is the induction principle for :math:`\mathbf{0}`.)
+With some imagination, it can be seen that this is just a
+type-theoretical expression: ``fun`` indicates a lambda expression,
+``match`` is a case analysis, etcetera.
 
-.. todo::
-
-   Replace example with one that uses as few syntax features as
-   possible.
+(The above is an example from the :ref:`hott_coq`.)
 
 Agda
 ----
@@ -144,10 +147,13 @@ See also Benedikt Ahrens' `UniMath: its origins, present, and future
 
 The code can be found on the `UniMath github <https://github.com/UniMath/UniMath/>`_.
 
-HoTT coq library
+.. _hott_coq:
+
+HoTT Coq library
 ^^^^^^^^^^^^^^^^^^^^
 
-Compared to UniMath, this library uses more features of Coq.
+Compared to UniMath, this library uses more features of Coq.  See the
+paper for a description :cite:`bauer:hott:library`.
 
 The code can be found on the `HoTT github <https://github.com/HoTT/HoTT/>`_.
 
