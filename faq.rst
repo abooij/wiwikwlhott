@@ -1,6 +1,88 @@
 General FAQ
 ====================================================
 
+Will HoTT help me with my higher-dimensional zoggblobs?
+----------------------------------------------------------
+
+There is a widespread misconception that doing proofs and computations
+for arbitrary higher-dimensional mathematical objects is easier in
+HoTT, supposedly because HoTT supports higher-dimensional structures
+natively.  The reality is more involved than this.
+
+Higher-dimensional variants of mathematical objects are often
+specified by coherence conditions in several, or even infinitely many,
+dimensions.  HoTT offers a new approach here, in the sense that some
+higher-dimensional mathematical objects have been described very
+succinctly in HoTT.  We give some notable examples.
+
+If one interprets **equivalences** of types (as defined in
+e.g. chapter 2.4 of the HoTT book) in homotopical semantics, such as
+simplicial sets, one obtains weak homotopy equivalences.  Normally, a
+weak homotopy equivalence is a continuous map, satisfying the
+condition that all its induced maps on homotopy groups are
+isomorphisms.  The fact that all this is expressed by the concise
+definitions of chapter 2.4 is an example of the expressive power of
+HoTT.
+
+Similarly, we can define when a type is :math:`n`-**truncated**,
+without having to state any requirements above dimension :math:`n`.
+Namely, if a type is :math:`n`-truncated, it is also automatically
+:math:`(n+1)`-truncated.
+
+**Univalence** will let you translate results along things that should
+be considered the same.  A predicate that holds for a type :math:`A`
+automatically also holds for an equivalent :math:`B`.
+
+Now let's suppose you take the widely-known definition of
+higher-dimensional zoggblobs from classical mathematics, and naively
+translate it to type theory.  Then it is likely you lose this
+automatic invariance, for exactly the same reasons that you didn't
+used to have it in classical mathematics in the first place.  We give
+some examples.
+
+.. todo::
+   Think about some examples.
+
+   - :math:`(\infty,1)`-categories
+   - double categories
+
+     - give a def of lax double functors and coherence for them.  if
+       hott claims that it comes with an infty-categorical structure,
+       then it should automatically give the higher coherence axioms.
+     - double category of cobordisms
+
+   - knot theory
+   - semi-simplicial types
+
+   - 2-category theory
+
+     - there are different notions of functors: lax, strict, pseudo.
+       not all of these (e.g. strict) are invariant under equivalence
+       of 2-categories.  if you define 2-categories so that they
+       typally equal iff they are equivalent (as 2-categories), then
+       you won't be able to define strict functors on these
+       2-categories.
+     - this is good and bad at the same time.
+
+   - hott won't automatically help you, in fact, the research is about
+     which definitions give you which kind of help.
+
+   - e.g. poincare conjecture: if you have a space homotopic to
+     :math:`S^n`, then, under some conditions, it is diffeomorphic to
+     :math:`S^n`.  whether or not this is provable depends completely on
+     how you modelled differential structures.  for example, there are
+     many different ways to use modalities to add differential
+     structures to type theory.  under the (seemingly) obvious way to
+     model differential structures, such a result may be provably false.
+
+   - you can ask of :math:`S^n`, what kind of categorical universal
+     properties does it have in different categories of spaces.  you
+     can ask what kind of categorical universal properties :math:`S^n`
+     has as a type.  these are all different questions, possibly with
+     different answers.
+
+.. todo:: see also: types vs spaces
+
 What is the point of constructive mathematics?
 ----------------------------------------------------------------------------------------
 
