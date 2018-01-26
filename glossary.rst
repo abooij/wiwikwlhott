@@ -48,7 +48,7 @@ Glossary
 
       All mathematical claims are made in a certain context.  For
       example, ":math:`\phi` is an isomorphism that sends :math:`g` to
-      :math:`h(x)+3`" only makes sense if we know that :math:`phi`,
+      :math:`h(x)+3`" only makes sense if we know that :math:`\phi`,
       :math:`g` and :math:`h` are variables of a certain type.  In the
       logic of type theory, the concept of contexts plays an extremely
       central role, and the truth and interpretation of every type and

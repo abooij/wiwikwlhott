@@ -23,7 +23,7 @@ may be instantiated to obtain actual types.  This is known as a type
 universe à la Tarski.  So when studying semantics, type theory is
 presented by:
 
-- context judgments(that express that some context is well-formed),
+- context judgments (that express that some context is well-formed),
 - type judgments (that express that some expression is a well-formed type),
 - term judgments (that express that some term is well-formed and has
   some type), and
