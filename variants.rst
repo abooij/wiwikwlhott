@@ -26,11 +26,16 @@ Cubical type theory
 -------------------
 
 See also :ref:`the proof assistant section <proof_assistant_cubical>`
-and CCHM :cite:`CCHM:cubical:type:theory`.
+and CCHM :cite:`CCHM:cubical:type:theory`.  To get started
+understanding cubical type theory, it may be worth reading the demo
+code from the proof assistant.
 
-Cubical type theory is a type theory for which univalence is a theorem.
-It adds an interval *pretype* which is used to define identity types.
-This interval is necessarily not a type.
+Cubical type theory is a type theory for which univalence is a
+theorem.  It adds an interval *pretype* which is used to define
+identity types.  This interval is necessarily not a type.  In
+practice, this means that you can talk about the type :math:`I\to A`
+of functions from the interval to a type, but you can not talk about
+the interval :math:`I` as a free-standing type.
 
 Cubical type theory was implemented in the **cubicaltt** proof assistant
 and the agda ``--cubical`` mode.
