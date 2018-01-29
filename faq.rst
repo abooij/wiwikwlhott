@@ -7,13 +7,16 @@ Will HoTT help me with my higher-dimensional zoggblobs?
 There is a widespread misconception that doing proofs and computations
 for arbitrary higher-dimensional mathematical objects is easier in
 HoTT, supposedly because HoTT supports higher-dimensional structures
-natively.  The reality is more involved than this.
+natively.  The reality is more involved than this, because there are
+many kinds of higher-dimensional structure, and HoTT implements one of
+them.
 
 Higher-dimensional variants of mathematical objects are often
-specified by coherence conditions in several, or even infinitely many,
-dimensions.  HoTT offers a new approach here, in the sense that some
-higher-dimensional mathematical objects have been described very
-succinctly in HoTT.  We give some notable examples.
+specified by data in countably many dimensions, together with
+coherence conditions in all those dimensions.  HoTT offers a new
+approach here, in the sense that some higher-dimensional mathematical
+objects have been described finitely and very succinctly in HoTT.  We
+give some notable examples.
 
 If one interprets **equivalences** of types (as defined in
 e.g. chapter 2.4 of the HoTT book) in homotopical semantics, such as
@@ -27,18 +30,22 @@ HoTT.
 Similarly, we can define when a type is :math:`n`-**truncated**,
 without having to state any requirements above dimension :math:`n`.
 Namely, if a type is :math:`n`-truncated, it is also automatically
-:math:`(n+1)`-truncated.
+:math:`(n+1)`-truncated.  Just like the previous example, this claim
+is true both as a statement in HoTT, and as a claim about the
+homotopical semantics of HoTT.
 
-**Univalence** will let you translate results along things that should
-be considered the same.  A predicate that holds for a type :math:`A`
-automatically also holds for an equivalent :math:`B`.
+Univalence will let you translate results along things that should be
+considered the same.  A predicate that holds for a type :math:`A`
+automatically also holds :math:`B` if there is an equivalence from
+:math:`A` to :math:`B`.
 
-Now let's suppose you take the widely-known definition of
-higher-dimensional zoggblobs from classical mathematics, and naively
-translate it to type theory.  Then it is likely you lose this
-automatic invariance, for exactly the same reasons that you didn't
-used to have it in classical mathematics in the first place.  We give
-some examples.
+If you naively translate the widely-known definition of
+higher-dimensional zoggblobs from classical mathematics into HoTT,
+then it is likely you don't have such automatic invariance of
+predicates along zoggblobs that are considered equivalent.  This
+breaks for essentially the same reasons that you didn't used to have
+the invariance in classical mathematics in the first place. We state some examples.
+
 
 .. todo::
    Think about some examples.
@@ -80,6 +87,10 @@ some examples.
      can ask what kind of categorical universal properties :math:`S^n`
      has as a type.  these are all different questions, possibly with
      different answers.
+
+   - sometimes HoTT *does* do a better job: e.g. claims about
+     (infty-)groupoids are automatically invariant. but depends on the
+     way you state this.
 
 .. todo:: see also: types vs spaces
 

@@ -67,6 +67,8 @@ underlying language.
 Coq
 ---
 
+.. todo:: say something about ``Prop`` and ``Set`` and ``Type``
+
 Coq consists of several layers of programming languages. The most
 famous one is the tactic language that is used to prove theorems. But
 since theorems are interpreted by types, and proofs by elements of
