@@ -64,6 +64,9 @@ Many libraries define their own notation for :math:`\Pi`- and
 :math:`\Sigma`-types, commonly making use of unicode support of the
 underlying language.
 
+Finally, inductively defined types in proof assistants correspond to
+:ref:`w_types`.
+
 Coq
 ---
 

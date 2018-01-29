@@ -23,6 +23,8 @@ resizing.
 .. todo:: they are different, and neither is a generalisation of the
           other: see forsberg's papers
 
+.. _w_types:
+
 W-types
 --------
 
