@@ -1,6 +1,11 @@
 Proof assistants
 ================
 
+.. todo::
+   add redprl
+
+   https://github.com/RedPRL/sml-redprl
+
 Differences in notation
 ---------------------------------------------
 
@@ -67,6 +72,11 @@ underlying language.
 Finally, inductively defined types in proof assistants correspond to
 :ref:`w_types`.
 
+.. todo::
+
+   is the last thing true? up to homotopy, maybe. computational
+   behavior is not specified the same way.
+
 Coq
 ---
 
@@ -120,17 +130,6 @@ cubicaltt
       cubical set (though necessarily *not* Kan, see semantics section)
    -  earlier iteration: cubical
 
-Normalization
--------------
-
-.. todo::
-   - minor gotcha: even if your particular flavor of hott is strongly
-     normalizing (so that all terms reduce to a unique normal form),
-     there are still types without decidable equality, because there
-     is no map inside type theory that computes normal forms of
-     arbitrary terms.  find a way to say this without hopping back and
-     forth between meta-theoretical and internal statements.
-
 .. _proof_assistants_libraries:
 
 Libraries
@@ -174,6 +173,22 @@ ships with code implementing various parts of HoTT.
 The code can be found on the `cubicaltt github
 <https://github.com/mortberg/cubicaltt/tree/master/examples>`_.
 
+Lean
+^^^^
+
+The Lean proof assistant includes HoTT libraries (work of Floris van
+Doorn et al.).
+
+.. todo::
+
+   lean 2 supports hott and has a (rather large) hott library, if you
+   include the spectral libray.
+
+   lean 3 doesn't support hott directly, because of changes to the
+   kernel, but nonetheless there is an experimental library for this.
+
+
+
 Other libraries
 ^^^^^^^^^^^^^^^
 
@@ -182,6 +197,4 @@ Other libraries
   optimize some homotopical proofs in a type theory in which the
   higher constructors of HITs satisfy a *typal* computation rule,
   rather than a judgmental one.
-- The Lean proof assistant includes HoTT libraries (work of Floris van
-   Doorn et al.).
 - Various scientists have a personal library for doing HoTT.

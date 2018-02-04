@@ -57,3 +57,9 @@ Glossary
       information, see e.g. Appendix A.2 of the HoTT book, or a source
       on semantics of type theory such as
       :cite:`hofmann:syntax:semantics`.
+
+   HIT
+   higher-inductive type
+
+   n-type
+   truncated type

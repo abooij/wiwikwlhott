@@ -137,6 +137,10 @@ constructive mathematics", available on `youtube
 <https://www.youtube.com/watch?v=zmhd8clDd_Y>`_.  This talk was turned
 into a paper published in 2016 :cite:`bauer:five:stages`.
 
+.. todo::
+
+   explicitly list some of the topics that andrej talks about
+
 Truncation: classical or constructive?
 -------------------------------------------------
 
@@ -200,8 +204,8 @@ that we can, in this case, undo the truncation, in a certain sense.
                        propositions shows that the logic of
                        propositions is not *proof irrelevant*.
 
-What is the difference between a type and its truncation?
----------------------------------------------------------
+What is the difference between a type and its propositional truncation?
+-----------------------------------------------------------------------
 
 For any type :math:`X`, its truncation :math:`\|X\|` is inhabited
 (i.e. has elements) if and only if :math:`X` is.  However, by
@@ -261,3 +265,8 @@ is, if we had a function :math:`f:\mathcal{U}\to\mathbf{2}` from the
 universe to the booleans that outputs :math:`\mathsf{false}` for
 :math:`\mathbf{0}` and :math:`\mathsf{true}` for :math:`\mathbf{1}`,
 then we could prove the principle of excluded middle.
+
+.. todo::
+
+   if you have something like induction-recursion, you're always free
+   to define something like your own universe of codes for types

@@ -20,6 +20,12 @@ numerals, and additionally:
 where the computation rules for HITs is given definitionally for points
 but propositionally for higher constructors.
 
+.. todo::
+
+   you have an unspecified ability to higher inductive types, and
+   there are some examples. but it is never specified what is the
+   allowed kind of hit, etc
+
 .. _cubical_type_theory:
 
 Cubical type theory
@@ -46,8 +52,19 @@ design of cubical type theory.
 
 .. todo::
 
-   NB: cubical sets != cubical TT. cubical sets has semantics in *two*
-   type theories: book hott and cubicaltt.
+   there are variants of cubicaltt itself: "gothenburg" cubicaltt,
+   computational type theory, conor mcbride's work "cubical
+   adventures"
+
+.. todo::
+
+   NB: cubical sets != cubical TT. cubical sets is a semantics of
+   *two* type theories: book hott and cubicaltt.
+
+.. todo::
+
+   you have identity types, and path types, and they are
+   computationally not the same (although they are htpy-equiv).
 
 HoTT as a DSL
 --------------
@@ -79,3 +96,6 @@ extensionality, or the existence of any HITs. For example:
 -  Some propositional truncations exist without assuming the existence
    of any HITs or propositional resizing, such as the type of
    fixed-points of any constant endomap :math:`f` on :math:`X`.
+
+.. todo::
+   computational higher type theory

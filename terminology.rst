@@ -1,6 +1,12 @@
 Confusion arising from choice of terminology
 ============================================
 
+.. todo::
+   Path vs Id
+
+.. todo::
+   should there be a separate cubical page?
+
 .. _constr_elems_pts:
 
 Constructors versus elements versus points versus terms versus proofs
@@ -64,6 +70,15 @@ Translating claims in natural language to type theory
    theorem, provability, an understanding of what "we" means, or any
    kind of modal logic to model the "can".
 
+.. todo::
+
+   set cover axiom.  :math:`(A:Type)\to \|(B:Set)\times(f:B\to A surjection)\|`
+
+   sets cover page on nlab: https://ncatlab.org/nlab/show/n-types+cover
+
+   similar to in toposes: you can prove there exists something, but
+   there might not be a global element
+
 .. _types_as_spaces:
 
 Types as spaces
@@ -115,16 +130,22 @@ a way to make it precise type-theoretically).
 Indeed, proofs about types such as the higher-inductive circle look
 nothing like their counterparts in topology. Still, they satisfy
 *some* of the same properties: if we define the "homotopy group" of a
-pointed type correctly, then there is some evidence that the
-higher-inductive circles have the same homotopy groups as their
-topological counterparts in classical mathematics (in the sense that
-this has been shown for a handful of cases). However, some properties
-are fundamentally different in a seemingly unfixable way: as a theorem
-stated inside type theory, there do not exist any embeddings
-:math:`S^1\to S^3` - so higher-inductive types can't be naively used
-to formalise knot theory. (One further problem with such an approach
-is that HoTT only allows phrasing things that are invariant under
-homotopy, which things like "non-self-intersecting" are not.)
+pointed type correctly, then the higher-inductive circles seem to have
+the same homotopy groups as their topological counterparts in
+classical mathematics (in the sense that this has been shown for a
+handful of cases). However, some properties are fundamentally
+different in a seemingly unfixable way: as a theorem stated inside
+type theory, there do not exist any embeddings :math:`S^1\to S^3` - so
+higher-inductive types can't be naively used to formalise knot
+theory. (One further problem with such an approach is that HoTT only
+allows phrasing things that are invariant under homotopy, which things
+like "non-self-intersecting" are not.)
+
+.. todo::
+
+   by shulman and lumsdaine's paper, by pushouts, we have all spheres,
+   (even if not in a universe). so everything we can hope to prove
+   about the homotopy groups must be the same as classically.
 
 .. rubric:: footnotes
 
@@ -157,6 +178,8 @@ There are (at least) three notions of sets:
    book, as an attempt to find a model of an axiomatic set theory like
    ZFC (although this will likely require choice).
 
+.. todo::
+   "material" set theory
 
 Topology
 --------
@@ -172,6 +195,6 @@ Within the HoTT community, "homotopy theory" refers to abstract
 homotopy theory in the sense of, for example, Quillen model
 categories, or more generally homotopy categories. The category of
 topological spaces and continuous maps is one such model
-category. However, it is not clear if HoTT is an internal language for
-*all* model categories. In particular, the "homotopy" of HoTT does not
+category. However, HoTT is not an internal language for *all* model
+categories. In particular, the "homotopy" of HoTT does not
 (necessarily) refer to the homotopies of point-set topology.

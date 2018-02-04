@@ -1,6 +1,20 @@
 Semantics
 =========
 
+Intended models
+-----------------
+
+.. todo::
+
+   write: what do we want, and how far did we get
+
+   kapulkin et al. tribes. sometimes, have models in LCC infty-cats.
+
+   shulman's papers: models of hott in some presentations of some
+   infty-toposes ("reedy category stuff")
+
+   knapp et al.
+
 .. _categorical_semantics:
 
 Categorical semantics
@@ -61,7 +75,7 @@ context, the terms of that type are interpreted as sections
 type.
 
 For more information on categorical semantics of type theory with a
-universe à la Tarski, see e.g. Hoffmann
+universe à la Tarski, see e.g. Hofmann
 :cite:`hofmann:syntax:semantics`.
 
 Presheaf semantics
@@ -164,3 +178,8 @@ Cubical sets
 ------------
 
 .. todo:: various iterations
+
+:math:`\infty`-toposes
+------------------------
+
+.. todo:: write
