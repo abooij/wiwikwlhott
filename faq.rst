@@ -13,10 +13,9 @@ them.
 
 Higher-dimensional variants of mathematical objects are often
 specified by data in countably many dimensions, together with
-coherence conditions in all those dimensions.  HoTT offers a new
-approach here, in the sense that some higher-dimensional mathematical
-objects have been described finitely and very succinctly in HoTT.  We
-give some notable examples.
+coherence conditions in all those dimensions.  Still, some
+higher-dimensional can be described finitely and very succinctly in
+HoTT.  We give some notable examples.
 
 If one interprets **equivalences** of types (as defined in
 e.g. chapter 2.4 of the HoTT book) in homotopical semantics, such as
@@ -31,21 +30,20 @@ Similarly, we can define when a type is :math:`n`-**truncated**,
 without having to state any requirements above dimension :math:`n`.
 Namely, if a type is :math:`n`-truncated, it is also automatically
 :math:`(n+1)`-truncated.  Just like the previous example, this claim
-is true both as a statement in HoTT, and as a claim about the
-homotopical semantics of HoTT.
+about truncatedness is true both as a statement in HoTT, and as a
+claim about the homotopical semantics of HoTT.
 
 Univalence will let you translate results along things that should be
 considered the same.  A predicate that holds for a type :math:`A`
 automatically also holds :math:`B` if there is an equivalence from
 :math:`A` to :math:`B`.
 
-If you naively translate the widely-known definition of
-higher-dimensional zoggblobs from classical mathematics into HoTT,
-then it is likely you don't have such automatic invariance of
-predicates along zoggblobs that are considered equivalent.  This
-breaks for essentially the same reasons that you didn't used to have
-the invariance in classical mathematics in the first place. We state some examples.
-
+Suppose you naively translate the widely-known definition of
+higher-dimensional zoggblobs from classical mathematics into HoTT.  It
+is unlikely you'll have such automatic invariance of predicates along
+zoggblobs that are considered equivalent [#breaks]_.  It is unlikely
+you are automatically able to make use of the higher-dimensional
+structure of types of MLTT.  We state some examples.
 
 .. todo::
    Think about some examples.
@@ -92,7 +90,13 @@ the invariance in classical mathematics in the first place. We state some exampl
      (infty-)groupoids are automatically invariant. but depends on the
      way you state this.
 
-.. todo:: see also: types vs spaces
+See also: :ref:`types_as_spaces`.
+
+.. rubric:: footnotes
+
+.. [#breaks] This tends to break for essentially the same reasons that
+             you didn't used to have the invariance in classical
+             mathematics in the first place.
 
 What is the point of constructive mathematics?
 ----------------------------------------------------------------------------------------
@@ -135,11 +139,33 @@ An accessible and entertaining introduction to constructive
 mathematics is Andrej Bauer's 2013 lecture "Five stages of accepting
 constructive mathematics", available on `youtube
 <https://www.youtube.com/watch?v=zmhd8clDd_Y>`_.  This talk was turned
-into a paper published in 2016 :cite:`bauer:five:stages`.
+into a paper published in 2016 :cite:`bauer:five:stages`.  The five phases are:
 
-.. todo::
+1. Denial: various misconceptions about constructivism, and what is
+   and isn't considered constructive mathematics. Topics include:
 
-   explicitly list some of the topics that andrej talks about
+   - Excluded Middle: false or not?
+   - The difference between "proof *by* a contradiction" and "proof
+     *of* a contradiction".
+   - Choice axioms, and how to spot them.
+
+2. Anger: how constructivism may seem bizarre from a classical point
+   of view.
+3. Bargaining: where constructive logic and mathematics occur
+   naturally. Topics include:
+
+   - Constructive mathematics as a generalization of classical
+     mathematics.
+   - Realizability (i.e. computability) models.
+   - Sheaf models, topos theory, and continuity.
+
+4. Depression: an interpretation of how the relevance of
+   constructivism may be changing over time.
+5. Acceptance: ways to adapt to constructive mathematics, and make use
+   of its power. Topics include:
+
+   - How mathematics may be adapted to do away with excluded middle.
+   - How mathematics may be adapted to do away with choice.
 
 Truncation: classical or constructive?
 -------------------------------------------------
@@ -151,14 +177,15 @@ proved by constructing :term:`points <point>`, and logical disjunctions are
 understood to always give a choice of a disjunct.
 
 From this point of view, the truncation operation seems to be
-non-constructive: indeed, it allows us to pass around a notion of
+non-constructive: namely, it allows us to pass around a notion of
 truth without passing around the underlying witnesses.  There are (at
-least) two problems with this conclusion.
+least) two problems with the conclusion that truncation is
+non-constructive.
 
 - This understanding of constructivism is correct only for certain
   variants of constructive logic.
-- Perhaps more importantly, witnesses *are* passed
-  around. [#proofirrelevance]_
+- Perhaps more importantly, witnesses *are* passed around, and this
+  can be observed [#proofirrelevance]_.
 
 For the latter, :ref:`define <translating_natural>` the type :math:`P`
 of primes numbers that are the sum of two consecutive primes.  So
@@ -223,10 +250,11 @@ What is the killer application of univalence?
 
 This is the wrong question in the same sense that one shouldn't ask
 "What is the killer application of the extensionality axiom in ZFC?"
-Univalence is an extensionality axiom in the same sense that ZFC's
-extensionality axiom is one.  The ZFC axiom says that if two sets have
-the same elements, then they are equal as sets.  Univalence,
-similarly, characterizes equality of types in terms of equivalences.
+Univalence is an :term:`extensionality` :term:`axiom` in the same
+sense that ZFC's extensionality axiom is one.  The ZFC axiom says that
+if two sets have the same elements, then they are equal as sets.
+Univalence, similarly, characterizes equality of types in terms of
+equivalences.
 
 In the end, foundations of mathematics are to be used to prove
 mathematical theorems.  Univalence helps us to phrase and prove
@@ -266,7 +294,7 @@ universe to the booleans that outputs :math:`\mathsf{false}` for
 :math:`\mathbf{0}` and :math:`\mathsf{true}` for :math:`\mathbf{1}`,
 then we could prove the principle of excluded middle.
 
-.. todo::
-
-   if you have something like induction-recursion, you're always free
-   to define something like your own universe of codes for types
+If your language has a feature such as :ref:`induction-recursion
+<induction_recursion>`, you are always free to define your own
+universe of *codes* for types.  So this allows you to seemingly do
+case analysis on a selection of types.

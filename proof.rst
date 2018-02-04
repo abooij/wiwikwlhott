@@ -1,5 +1,5 @@
-Meta-theory
-===========
+Proof theory
+============
 
 Normalization
 -------------
@@ -17,11 +17,8 @@ Normalization
      normalization, precisely because you'd get decidable equality.
 
 .. todo::
-   normalization
-
    decidable type checking
 
    models
 
-.. todo::
-   maybe rename to proof theory
+   consequences of cubicaltt formalization

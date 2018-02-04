@@ -61,5 +61,22 @@ Glossary
    HIT
    higher-inductive type
 
+      See chapter 6 of the HoTT book.
+
    n-type
    truncated type
+
+      See chapters 3 and 7 of the HoTT book.
+
+   axiom
+
+      An axiom is added to a type theory by adding a new symbol to the
+      language without any computation rules.  Function extensionality
+      and univalence are added as axioms in section A.3.1 of the HoTT
+      book.
+
+   extensionality
+
+      The idea that if two objects behave equally, then they are equal
+      as objects.  Function extensionality specifies that functions
+      are equal if they have the same input-output behavior.

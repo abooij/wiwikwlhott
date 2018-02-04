@@ -4,11 +4,14 @@ Variants of HoTT
 Book HoTT
 ---------
 
-Book HoTT is the type theory described in the HoTT book. It is
-intensional MLTT with a hierarchy of universes indexed by positive
-numerals, and additionally:
+Book HoTT is the type theory described in the HoTT book.  The theory
+is given initially as intensional MLTT with a hierarchy of universes
+indexed by positive numerals, and univalence as an :term:`axiom` (and
+function extensionality as a theorem).
 
--  univalence as an axiom (and function extensionality as a theorem),
+In addition, the HoTT book has an (intentionally) unspecified ability
+to obtain higher inductive types, and some examples are given:
+
 -  :math:`n`-truncation,
 -  suspension types,
 -  pushouts,
@@ -17,14 +20,8 @@ numerals, and additionally:
 -  the surreal numbers :math:`\mathsf{No}`,
 -  the free Cauchy completion of the rationals :math:`\mathbf{R}_C`,
 
-where the computation rules for HITs is given definitionally for points
-but propositionally for higher constructors.
-
-.. todo::
-
-   you have an unspecified ability to higher inductive types, and
-   there are some examples. but it is never specified what is the
-   allowed kind of hit, etc
+where the computation rules for HITs is given definitionally for
+points but propositionally for higher constructors.
 
 .. _cubical_type_theory:
 

@@ -133,19 +133,13 @@ nothing like their counterparts in topology. Still, they satisfy
 pointed type correctly, then the higher-inductive circles seem to have
 the same homotopy groups as their topological counterparts in
 classical mathematics (in the sense that this has been shown for a
-handful of cases). However, some properties are fundamentally
+handful of cases) [#sameclassical]_. However, some properties are fundamentally
 different in a seemingly unfixable way: as a theorem stated inside
 type theory, there do not exist any embeddings :math:`S^1\to S^3` - so
 higher-inductive types can't be naively used to formalise knot
 theory. (One further problem with such an approach is that HoTT only
 allows phrasing things that are invariant under homotopy, which things
 like "non-self-intersecting" are not.)
-
-.. todo::
-
-   by shulman and lumsdaine's paper, by pushouts, we have all spheres,
-   (even if not in a universe). so everything we can hope to prove
-   about the homotopy groups must be the same as classically.
 
 .. rubric:: footnotes
 
@@ -154,32 +148,42 @@ like "non-self-intersecting" are not.)
                      univalent type theory, such as model categories,
                      every type is interpreted by an actual space.
 
+.. [#sameclassical] By Shulman and Lumsdaine
+                    :cite:`lumsdaine:shulman:hits`, we can construct
+                    all spheres from pushouts in any "sufficiently
+                    nice" Quillen model category.  So everything we
+                    can hope to prove about the homotopy groups of
+                    spheres must be equal to the classical result.  In
+                    other words, HoTT and classical mathematics cannot
+                    disagree about the homotopy groups of spheres.
+
 Sets
 ----
 
 There are (at least) three notions of sets:
 
--  The objects studied by a theory such as ZFC. We can take
-   intersections of any two such sets, even if this does not make sense
-   from an extensional point of view: for example, we can take the
-   intersection of :math:`\pi` with the graph of :math:`x\mapsto x^2`,
-   as both objects are sets.
--  0-types, which behave simlar to ZFC sets in some aspects. For
-   example, for a map :math:`f` between two 0-types (but not between
-   arbitrary types), the following are equivalent:
+- The objects studied by a theory such as ZFC. We can take
+  intersections of any two such sets, even if this does not make sense
+  from an extensional point of view: for example, we can take the
+  intersection of :math:`\pi` with the graph of :math:`x\mapsto x^2`,
+  as both objects are sets.  ZFC is a *material* set theory, since
+  elements may be a member of several different sets.
+- 0-types, which behave simlar to ZFC sets in some aspects. For
+  example, for a map :math:`f` between two 0-types (but not between
+  arbitrary types), the following are equivalent:
 
-   -  :math:`f` is an injection (equal outputs implies equal inputs).
-   -  :math:`f` is an embedding (equal inputs is equivalent to equal
-      outputs).
-   -  :math:`f` is a monomorphism (with respect to all maps on all
-      types).
+   - :math:`f` is an injection (equal outputs implies equal inputs).
+   - :math:`f` is an embedding (equal inputs is equivalent to equal
+     outputs).
+   - :math:`f` is a monomorphism (with respect to all maps on all
+     types).
 
--  A cumulative hierarchy of sets as in e.g. chapter 10.5 of the HoTT
-   book, as an attempt to find a model of an axiomatic set theory like
-   ZFC (although this will likely require choice).
+  The set theory of 0-types is *structural*, since every element is
+  canonically a member of a fixed type.
 
-.. todo::
-   "material" set theory
+- A cumulative hierarchy of sets as in e.g. chapter 10.5 of the HoTT
+  book, as an attempt to find a model of an axiomatic set theory like
+  ZFC (although this will likely require choice).
 
 Topology
 --------

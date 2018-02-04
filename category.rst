@@ -10,7 +10,7 @@ Topos logic versus HoTT
    -  :math:`\Sigma`, :math:`\Pi` and prop trunc already in toposes
 
 .. todo::
-   a 0-topos or PW-pretopos may arise as the truncation of various *different* higher toposes
+   a 1-topos or PW-pretopos may arise as the truncation of various *different* higher toposes
 
 .. todo::
    refer to ahrens et al approach to univalent categories etc

@@ -179,15 +179,11 @@ Lean
 The Lean proof assistant includes HoTT libraries (work of Floris van
 Doorn et al.).
 
-.. todo::
+Lean 2 supports hott and has a (rather large) hott library, if you
+include the spectral libray.
 
-   lean 2 supports hott and has a (rather large) hott library, if you
-   include the spectral libray.
-
-   lean 3 doesn't support hott directly, because of changes to the
-   kernel, but nonetheless there is an experimental library for this.
-
-
+Lean 3 doesn't support hott directly, because of changes to the
+kernel, but nonetheless there is an experimental library for this.
 
 Other libraries
 ^^^^^^^^^^^^^^^

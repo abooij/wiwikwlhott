@@ -23,9 +23,9 @@ Ulrik Buchholtz.
    proof-assistants
    category
    semantics
+   proof
    variants
    features
-   meta
    glossary
 
 Changelog

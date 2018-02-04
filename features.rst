@@ -17,6 +17,8 @@ encoding: e.g. truncation as :math:`\prod_{P:\Omega}(X\to P)\to P`.
 :ref:`UniMath <proof_assistants_libraries>` uses propositional
 resizing.
 
+.. _induction_recursion:
+
 {induction,recursion}-{induction,recursion}
 -------------------------------------------
 
