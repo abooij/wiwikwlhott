@@ -2,9 +2,6 @@ Confusion arising from choice of terminology
 ============================================
 
 .. todo::
-   Path vs Id
-
-.. todo::
    should there be a separate cubical page?
 
 "Everything is up to homotopy"
@@ -213,3 +210,23 @@ topological spaces and continuous maps is one such model
 category. However, HoTT is not an internal language for *all* model
 categories. In particular, the "homotopy" of HoTT does not
 (necessarily) refer to the homotopies of point-set topology.
+
+Path vs Id
+----------
+
+MLTT comes with identity types :math:`\mathsf{Id}_X:X\to
+X\to\mathcal{U}`.  Now let us take "identities as paths" literally.
+Then, when attempting to find semantics of type theory in model
+categories, an obvious choice of semantics for those identity types
+would be the path space object.  The definition of model categories
+ensures that these exist, and that they are :ref:`fibrations
+<fibrations>`.
+
+This is a fine choice until you consider computation rules (which,
+semantically, are strict equalities).  This obvious choice of
+semantics for identity types may not satisfy the required computation
+rules.  So instead, for example in a variant of the :ref:`cubical sets
+<cubical_sets>` semantics, a slightly different choice of semantics is
+chosen for :math:`\mathsf{Id}`.  However, the obvious choice of path
+space object still exists, and this is often referred to as
+:math:`\mathsf{Path}`.

@@ -140,6 +140,8 @@ there is no contextual category on the 1-object 1-morphism category,
 since it needs countably many copies even of the terminal object, but
 there *is* a contextual category in which all objects are terminal.
 
+.. _fibrations:
+
 Fibrations
 ----------
 
@@ -173,6 +175,8 @@ Simplicial sets
 
 .. todo:: presentation in terms of coface and codegeneracy maps is
           equivalent to saying "take all order-preserving morphisms"
+
+.. _cubical_sets:
 
 Cubical sets
 ------------
