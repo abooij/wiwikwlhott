@@ -53,10 +53,10 @@ to have a notion of differential structure that is compatible with the
 homotopical structure.  But the obvious choice of homotopical
 structure - types - requires adding syntax (modalities) to obtain a
 differential structure.  And there are different ways to use
-modalities to add differential structures to types.  Under the wrong
+modalities to add differential structures to types.  Under some given
 choice, a statement like the Poincaré conjecture may be true, it may
-require choice, it may be unprovable, and it may even be provably
-false.
+require choice, it may be unprovable, and it may be provably
+false (not all at the same time).
 
 .. todo:: cross-ref to cohesive type theory
 
