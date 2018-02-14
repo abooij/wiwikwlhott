@@ -7,6 +7,12 @@ Confusion arising from choice of terminology
 .. todo::
    should there be a separate cubical page?
 
+"Everything is up to homotopy"
+------------------------------
+
+.. todo::
+   explain this dogma
+
 .. _constr_elems_pts:
 
 Constructors versus elements versus points versus terms versus proofs
@@ -78,6 +84,11 @@ Translating claims in natural language to type theory
 
    similar to in toposes: you can prove there exists something, but
    there might not be a global element
+
+.. todo::
+
+   how do you translate definitions into type theory? what is the
+   criterion for some definition to be right?
 
 .. _types_as_spaces:
 

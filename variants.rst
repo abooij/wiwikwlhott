@@ -6,8 +6,8 @@ Book HoTT
 
 Book HoTT is the type theory described in the HoTT book.  The theory
 is given initially as intensional MLTT with a hierarchy of universes
-indexed by positive numerals, and univalence as an :term:`axiom` (and
-function extensionality as a theorem).
+indexed by nonnegative numerals, and univalence as an :term:`axiom`
+(and function extensionality as a theorem).
 
 In addition, the HoTT book has an (intentionally) unspecified ability
 to obtain higher inductive types, and some examples are given:
@@ -95,4 +95,6 @@ extensionality, or the existence of any HITs. For example:
    fixed-points of any constant endomap :math:`f` on :math:`X`.
 
 .. todo::
-   computational higher type theory
+
+   - computational higher type theory
+   - cohesive type theories

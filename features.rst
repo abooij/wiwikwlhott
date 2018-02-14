@@ -1,6 +1,9 @@
 Type-theoretical features
 =========================
 
+.. todo::
+   heterogeneous Id types (used in e.g. cubicaltt)
+
 Impredicative prop / propositional resizing
 -------------------------------------------
 
