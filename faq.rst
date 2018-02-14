@@ -33,8 +33,8 @@ Namely, if a type is :math:`n`-truncated, it is also automatically
 about truncatedness is true both as a statement in HoTT, and as a
 claim about the homotopical semantics of HoTT.
 
-Univalence will let you translate results along things that should be
-considered the same.  A predicate that holds for a type :math:`A`
+Univalence tells us that predicates on objects are invariant under
+equivalences.  A predicate that holds for a type :math:`A`
 automatically also holds :math:`B` if there is an equivalence from
 :math:`A` to :math:`B`.
 
@@ -43,7 +43,32 @@ higher-dimensional zoggblobs from classical mathematics into HoTT.  It
 is unlikely you'll have such automatic invariance of predicates along
 zoggblobs that are considered equivalent [#breaks]_.  It is unlikely
 you are automatically able to make use of the higher-dimensional
-structure of types of MLTT.  We state some examples.
+structure of types of MLTT.
+
+And it may not even be obvious how to translate certain structures
+into HoTT.  If one wants to consider e.g. the Poincaré conjecture
+(which says that if you have a space homotopic to :math:`S^n`, then,
+under some conditions, it is diffeomorphic to :math:`S^n`), one wants
+to have a notion of differential structure that is compatible with the
+homotopical structure.  But the obvious choice of homotopical
+structure - types - requires adding syntax (modalities) to obtain a
+differential structure.  And there are different ways to use
+modalities to add differential structures to types.  Under the wrong
+choice, a statement like the Poincaré conjecture may be true, it may
+require choice, it may be unprovable, and it may even be provably
+false.
+
+.. todo:: cross-ref to cohesive type theory
+
+You can ask what kind of universal properties a space :math:`X` has
+when interpreted as an object of various categories of spaces.
+Similarly, you can ask what kind of universal properties :math:`X` has
+as a type.  These are all different questions, possibly with different
+answers.
+
+HoTT won't automatically help you with higher-dimensional reasoning.
+In fact, a lot of research is about which definitions give you which
+kind of help.
 
 .. todo::
    Think about some examples.
@@ -68,23 +93,6 @@ structure of types of MLTT.  We state some examples.
        you won't be able to define strict functors on these
        2-categories.
      - this is good and bad at the same time.
-
-   - hott won't automatically help you, in fact, the research is about
-     which definitions give you which kind of help.
-
-   - e.g. poincare conjecture: if you have a space homotopic to
-     :math:`S^n`, then, under some conditions, it is diffeomorphic to
-     :math:`S^n`.  whether or not this is provable depends completely on
-     how you modelled differential structures.  for example, there are
-     many different ways to use modalities to add differential
-     structures to type theory.  under the (seemingly) obvious way to
-     model differential structures, such a result may be provably false.
-
-   - you can ask of :math:`S^n`, what kind of categorical universal
-     properties does it have in different categories of spaces.  you
-     can ask what kind of categorical universal properties :math:`S^n`
-     has as a type.  these are all different questions, possibly with
-     different answers.
 
    - sometimes HoTT *does* do a better job: e.g. claims about
      (infty-)groupoids are automatically invariant. but depends on the
