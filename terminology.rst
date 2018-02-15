@@ -62,16 +62,49 @@ out to be inconsistent).
 Translating claims in natural language to type theory
 -----------------------------------------------------
 
-.. todo:: There seems to be some miscommunication regarding which
-   statements by HoTTist are internal and which ones are
-   metatheoretical, but I can't find the right words to make this
-   precise right now.
+There seems to be some miscommunication regarding which statements by
+HoTTist are internal and which ones are metatheoretical.  It may also
+sometimes be unclear what formal language to use to formalize informal
+statements.  I'm not sure exactly where the confusion starts, but here
+are some aspects to consider.
 
-   First attempt: already in classical math, some claims shouldn't be
-   translated literally. for example, the claim "we can prove theorem
-   X" doesn't presume an internal formalisation of the notion of
-   theorem, provability, an understanding of what "we" means, or any
-   kind of modal logic to model the "can".
+Already in classical mathematics, some claims shouldn't be translated
+word-for-word into formal language.  For example, the claim "we can
+prove theorem X" doesn't presume an internal formalisation of the
+notion of theorem, provability, an understanding of what "we" means,
+or any kind of modal logic to model the "can".
+
+In the context of HoTT, many claims are understood to be descriptions
+of types.  For example, "there exists a number with :math:`f(n)=0`"
+should be interpreted by the type
+:math:`\exists(n:\mathbf{N}).f(n)=0`.  Then the understanding that
+this claim is true corresponds to the understanding that somebody has
+produced a term of that type.
+
+However, this explanation of how to translate natural language into
+type theory is incomplete.
+
+- It may not be clear what the right type-theoretical definitions are
+  that correspond to classical mathematics.  This is more apparent for
+  type theory, as the things we used to think of as well-understood in
+  set theory become ambiguous in a type theory where
+  higher-dimensional structure and lack of choice axioms prevents us
+  from unifying this or that.  However, fundamentally this is not a
+  new problem, as the question "what is the right definition for
+  this?" is also very common in classical mathematics.  At the end of
+  the day, the correctness criterion for mathematical definitions is
+  primarily based on the agreement of scientists.  Definitions from
+  classical mathematics *don't* translate one-to-one into type theory,
+  and we don't *want* them to.
+- Sometimes we want to talk about the semantics of a chosen type
+  theory, irrespective of the specific foundations that those
+  semantics are built up in.  Even more confusingly, some claims are
+  true both as internal statements, that is, when translated into type
+  theory, and as statements about the semantics.  So certain pieces of
+  text may be understood to be formalisable entirely in a system that
+  is not a type theory (such as papers on semantics), and others might
+  support a fairly systematic translation of natural language to types
+  and their elements.
 
 .. todo::
 
@@ -81,11 +114,6 @@ Translating claims in natural language to type theory
 
    similar to in toposes: you can prove there exists something, but
    there might not be a global element
-
-.. todo::
-
-   how do you translate definitions into type theory? what is the
-   criterion for some definition to be right?
 
 .. _types_as_spaces:
 
