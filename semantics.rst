@@ -111,6 +111,8 @@ A further complication may be that people consider semantics in
 presheafs on an opposite category, in which case tracing the
 :math:`op`\ s around can take some effort.
 
+.. _cwf:
+
 Categories with families and other structure
 --------------------------------------------
 
@@ -123,8 +125,8 @@ allow us to interpret univalent type theories.  In Awodey&Warren
 restrict our semantics of types.  Namely, if we start with a category
 of contexts which is LCC (since we want to interpret dependent
 products), and if it has identity types, and if all morphisms are
-accepted as semantic types, then the identity type is necessarily
-extensional.
+accepted as semantic types, then we are necessarily modelling
+extensional MLTT, and so we ruled out univalence.
 
 Instead, we want to pick out a certain subset of our maps to represent
 types over contexts.  One naive approach is to just take any category
@@ -153,7 +155,7 @@ In categorical semantics of HoTT, we need to distinguish arbitrary maps
 between the objects (namely *context morphisms* or *substitutions*,
 since the objects represent contexts) from maps that represent types
 *over* a context (as types in a context are represented by maps into
-that context).
+that context) (see :ref:`cwf` above).
 
 Usually, we specify this by saying which maps are *fibrations*, and more
 generally we show that the category is a model category. So what it
@@ -173,8 +175,12 @@ types exactly the *fibrations* into the context.
 Simplicial sets
 ---------------
 
-.. todo:: presentation in terms of coface and codegeneracy maps is
-          equivalent to saying "take all order-preserving morphisms"
+.. todo::
+
+   - presentation in terms of coface and codegeneracy maps is
+     equivalent to saying "take all order-preserving morphisms"
+   - different categories :math:`\Delta` in literature, and their
+     applications: compositions, inverses, etc
 
 .. _cubical_sets:
 
