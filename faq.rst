@@ -294,13 +294,14 @@ constructors, after a body of theory has already been formalized in
 that type theory.  We want our existing theory to stay valid even if
 new type constructors are introduced.
 
-On top of such an induction principle being undesirable, it is a
-constructive taboo.  Namely, if we could tell the empty type
-:math:`\mathbf{0}` and the unit type :math:`\mathbf{1}` apart, that
-is, if we had a function :math:`f:\mathcal{U}\to\mathbf{2}` from the
-universe to the booleans that outputs :math:`\mathsf{false}` for
-:math:`\mathbf{0}` and :math:`\mathsf{true}` for :math:`\mathbf{1}`,
-then we could prove the principle of excluded middle.
+On top of induction principles for the universe being undesirable, it
+can be a constructive taboo to have one.  Namely, if we could tell the
+empty type :math:`\mathbf{0}` and the unit type :math:`\mathbf{1}`
+apart, that is, if we could use the induction principle to obtain a
+function :math:`f:\mathcal{U}\to\mathbf{2}` from the universe to the
+booleans that outputs :math:`\mathsf{false}` for :math:`\mathbf{0}`
+and :math:`\mathsf{true}` for :math:`\mathbf{1}`, then we could prove
+the principle of excluded middle.
 
 If your language has a feature such as :ref:`induction-recursion
 <induction_recursion>`, you are always free to define your own
