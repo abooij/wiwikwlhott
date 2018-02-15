@@ -1,8 +1,6 @@
 Proof assistants
 ================
 
-
-
 Differences in notation
 ---------------------------------------------
 
@@ -96,11 +94,11 @@ those types, really tactics just construct terms.  For example:
      - apply inr; intros p. apply ne, ap, p.
    Defined.
 
-prints:
+results in the term:
 
 .. code-block:: coq
 
-   decidablepaths_equiv@{Top.115 Top.116} =
+   decidablepaths_equiv =
    fun (A B : Type) (f : A -> B) (H : IsEquiv f) (d : DecidablePaths A) (x y : B) =>
    let d0 := d (_^-1 x) (_^-1 y) in
    match d0 with
@@ -110,7 +108,9 @@ prints:
 
 With some imagination, it can be seen that this is just a
 type-theoretical expression: ``fun`` indicates a lambda expression,
-``match`` is a case analysis, etcetera.
+``match`` is a case analysis, ``@`` is path concatenation, ``^`` is
+path inversion, ``^-1`` takes the inverse of an equivalence, ``_`` is
+an automatically inferred term.
 
 (The above is an example from the :ref:`hott_coq`.)
 
