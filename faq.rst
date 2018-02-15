@@ -301,7 +301,7 @@ apart, that is, if we could use the induction principle to obtain a
 function :math:`f:\mathcal{U}\to\mathbf{2}` from the universe to the
 booleans that outputs :math:`\mathsf{false}` for :math:`\mathbf{0}`
 and :math:`\mathsf{true}` for :math:`\mathbf{1}`, then we could prove
-the principle of excluded middle.
+:term:`weak excluded middle`.
 
 If your language has a feature such as :ref:`induction-recursion
 <induction_recursion>`, you are always free to define your own

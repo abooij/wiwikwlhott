@@ -34,15 +34,14 @@ Glossary
       :math:`\sum_{X:\mathcal{U}}X`.
 
    principle of excluded middle
-   weak principle of excluded middle
+   weak excluded middle
 
       These two axioms decide the truth of any proposition :math:`P`
       to various degrees.  Whereas the principle of excluded middle
       says that, given a proposition :math:`P`, we can decide the
-      truth of :math:`P`, that is, we get :math:`P+\neg P`, the weak
-      principle of excluded middle only says we can decide the truth
-      of :math:`\neg P`, that is, it tells us :math:`\neg P + \neg
-      \neg P`.
+      truth of :math:`P`, that is, we get :math:`P+\neg P`, weak
+      excluded middle only says we can decide the truth of :math:`\neg
+      P`, that is, it tells us :math:`\neg P + \neg \neg P`.
 
    context
 
