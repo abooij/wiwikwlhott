@@ -94,7 +94,15 @@ extensionality, or the existence of any HITs. For example:
    of any HITs or propositional resizing, such as the type of
    fixed-points of any constant endomap :math:`f` on :math:`X`.
 
-.. todo::
+.. _chtt:
 
-   - computational higher type theory
-   - cohesive type theories
+Computational Higher Type Theory
+--------------------------------
+
+See also: the :ref:`smlredprl` proof assistant.
+
+.. todo::
+   give some intuition that is correct.
+
+.. todo::
+   cohesive type theories

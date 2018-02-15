@@ -165,6 +165,8 @@ like "non-self-intersecting" are not.)
                     other words, HoTT and classical mathematics cannot
                     disagree about the homotopy groups of spheres.
 
+.. _sets:
+
 Sets
 ----
 
@@ -192,6 +194,9 @@ There are (at least) three notions of sets:
 - A cumulative hierarchy of sets as in e.g. chapter 10.5 of the HoTT
   book, as an attempt to find a model of an axiomatic set theory like
   ZFC (although this will likely require choice).
+
+In the context of HoTT, by "set" we mean 0-types, unless otherwise
+specified.
 
 Topology
 --------

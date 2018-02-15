@@ -1,10 +1,7 @@
 Proof assistants
 ================
 
-.. todo::
-   add redprl
 
-   https://github.com/RedPRL/sml-redprl
 
 Differences in notation
 ---------------------------------------------
@@ -129,6 +126,17 @@ cubicaltt
    -  interval is abstract (as opposed to, say, an interval of reals):
       cubical set (though necessarily *not* Kan, see semantics section)
    -  earlier iteration: cubical
+
+.. _smlredprl:
+
+`RedPRL <http://www.redprl.org/>`_
+------------------------------------------------------
+
+RedPRL is a proof assistant aims to implements :ref:`chtt`.  It is
+similar in spirit to NuPRL, which is a type theory of :ref:`sets
+<sets>`, except that RedPRL provides a type theory of higher types.
+Terms can be specified not just by the Martin-löf terms, but by
+arbitrary programs.
 
 .. _proof_assistants_libraries:
 
