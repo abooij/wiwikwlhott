@@ -22,11 +22,14 @@ resizing.
 
 .. _induction_recursion:
 
-{induction,recursion}-{induction,recursion}
--------------------------------------------
+Induction-{induction,recursion}
+-------------------------------
 
-.. todo:: they are different, and neither is a generalisation of the
-          other: see forsberg's papers
+Induction-induction is different from induction-recursion.
+
+See also `Andrej Bauer on CS.StackExchange
+<https://cs.stackexchange.com/q/64139>`_ as well as
+:cite:`forsberg:setzer:indind`.
 
 .. _w_types:
 
@@ -34,8 +37,9 @@ W-types
 --------
 
 .. todo:: aka GADTs (?): every instance of a datatype declaration is
-          really just a W-type. compare with unimath (which doesn't
-          assume to have them)
+          really just a W-type.  compare with unimath (which doesn't
+          assume to have them).  (well, this is not quite true: should
+          also consider the computation rules.)
 
 Initial algebras
 ----------------
