@@ -12,8 +12,8 @@ Confusion arising from choice of terminology
 
 .. _constr_elems_pts:
 
-Constructors versus elements versus points versus terms versus proofs
----------------------------------------------------------------------
+Constructors vs elements vs points vs terms vs proofs
+-----------------------------------------------------
 
 To say that something is a *constructor* of a type :math:`A` means that
 the type :math:`A` was defined inductively, and that you are picking one
