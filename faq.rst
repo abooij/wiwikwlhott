@@ -276,8 +276,8 @@ correspond very well with informal mathematics.
 Why isn't there an induction principle for the universe?
 --------------------------------------------------------
 
-All the basic types in MLTT seem to come with an induction or
-coinduction principle, so why not the universe?
+All the basic types of the type theory seem to come with an induction
+or coinduction principle, so why not the universe?
 
 Induction principles are a form of *pattern matching*.  That means
 that if a type :math:`X` has an induction principle, and you have a
@@ -300,8 +300,8 @@ empty type :math:`\mathbf{0}` and the unit type :math:`\mathbf{1}`
 apart, that is, if we could use the induction principle to obtain a
 function :math:`f:\mathcal{U}\to\mathbf{2}` from the universe to the
 booleans that outputs :math:`\mathsf{false}` for :math:`\mathbf{0}`
-and :math:`\mathsf{true}` for :math:`\mathbf{1}`, then we could prove
-:term:`weak excluded middle`.
+and :math:`\mathsf{true}` for :math:`\mathbf{1}`, then using
+univalence we could prove :term:`weak excluded middle`.
 
 If your language has a feature such as :ref:`induction-recursion
 <induction_recursion>`, you are always free to define your own
