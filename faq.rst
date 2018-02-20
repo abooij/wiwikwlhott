@@ -106,6 +106,72 @@ See also: :ref:`types_as_spaces`.
              you didn't used to have the invariance in classical
              mathematics in the first place.
 
+How are open sets / continuity / ... defined in HoTT?
+-----------------------------------------------------
+
+As a rule of thumb, the answer to such questions relating to
+topological definitions is "they aren't".  But confusingly, there are
+a few exceptions to this.  So really the answer is that this is
+(usually) the wrong question.
+
+See also: :ref:`types_as_spaces`.
+
+:ref:`book_hott` is *not* a theory of topological spaces, or about any
+kind of space.  It is a type theory that can be used as a *neutral*
+foundations of mathematics.  Because of this, it is often called
+*univalent type theory* or *univalent mathematics* instead, as
+homotopy theory is, from a logician's point of view, secondary to
+HoTT: it just so happens [#htpy_accident]_ that it admits semantics in
+certain Quillen model categories, and that allows us to use the
+intuition of types as spaces.
+
+If you are trained in topos logic, and you are asking a HoTT expert
+when a map in HoTT is closed, then *you* have the obligation to first
+define, in the internal language of a topos, when a map between two
+objects in a topos is closed.  HoTT does not give new expressive
+power.  If it would give new expressive power, it would not be a
+neutral foundations of mathematics.
+
+.. todo:: write something on the homotopy hypothesis, and
+          cross-reference here.
+
+The confusion starts with the exceptions: because some concepts from
+homotopy theory *can* be interpreted by the syntax of type theory.
+*In some sense*, types behave like certain *kinds* of spaces.  *In
+some sense*, we can compute homotopy groups of spheres inside HoTT,
+when homotopy groups are defined in a certain way.  *In some sense*,
+equivalences of types behave like weak equivalences in homotopy
+theory.
+
+Indeed, already such concepts could be interpreted in other
+foundations of mathematics, such as constructive set theories.  The
+reason that nobody did this, is that such foundations, by virtue of
+being *set* theories, exhibit no behavior that reminds of
+higher-dimensional homotopy theory: after all, all the objects are
+0-dimensional.  HoTT shows you the types that you have been missing
+before.
+
+*Certain* constructions in homotopy theory have analogues that can be
+expressed very succinctly in HoTT.  These constructions have in common
+that they are always invariant under equivalences of types.  And we
+think of such equivalences as weak equivalences of the spaces of
+homotopy theory: so by univalence, such constructions are thought of
+as invariant under weak equivalences of spaces, which rules out many
+definitions from point-set topology.
+
+.. rubric:: footnotes
+
+.. [#htpy_accident]
+
+   Well, this is not fair, of course:
+
+   - Historically, HoTT was designed to admit semantics in appropriate
+     categories of spaces.
+   - Most semantics of HoTT are found in categories of spaces.
+   - There is a lot of research on what parts of homotopy theory can
+     be developed within HoTT.
+
+
 What is the point of constructive mathematics?
 ----------------------------------------------------------------------------------------
 

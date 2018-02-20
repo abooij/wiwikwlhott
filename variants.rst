@@ -1,6 +1,8 @@
 Variants of HoTT
 ================
 
+.. _book_hott:
+
 Book HoTT
 ---------
 

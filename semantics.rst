@@ -169,6 +169,10 @@ So we say which maps are fibrations, so that we can define a
 corresponding (say) CwF out of the model category, which has as the
 types exactly the *fibrations* into the context.
 
+.. todo:: NB: all *semantic* maps are fibrations, but this is not true
+          as an internal statement.  see also: translating natural
+          language to type theory
+
 .. todo:: various ways to present fibrations: types in context, sigma
           type, type family
 
