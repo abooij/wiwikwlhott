@@ -339,6 +339,11 @@ Even if your entire theory can be built in MLTT, univalence can guide
 you.  It allows us to phrase and prove theorems that are natural and
 correspond very well with informal mathematics.
 
+What is univalence?
+---------------------
+
+See e.g. :cite:`escardo:self-contained`.
+
 Why isn't there an induction principle for the universe?
 --------------------------------------------------------
 
