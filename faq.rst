@@ -151,6 +151,10 @@ higher-dimensional homotopy theory: after all, all the objects are
 0-dimensional.  HoTT shows you the types that you have been missing
 before.
 
+In other words: the types in HoTT aren't space-like because HoTT has a
+more specific idea about what a type is, but because it has a *more
+general* idea of what a type is.
+
 *Certain* constructions in homotopy theory have analogues that can be
 expressed very succinctly in HoTT.  These constructions have in common
 that they are always invariant under equivalences of types.  And we
@@ -247,7 +251,7 @@ Truncation: classical or constructive?
 One understanding of the term "constructivism" is that the logic
 should always pass around explicit constructions, which may in general
 not be unique.  So existential quantifiers are understood to always be
-proved by constructing :term:`points <point>`, and logical disjunctions are
+proved by constructing witnesses, and logical disjunctions are
 understood to always give a choice of a disjunct.
 
 From this point of view, the truncation operation seems to be
@@ -274,6 +278,12 @@ and 3, which are also primes.  But any proof of the *proposition*
 projection of *any* proof of :math:`P` (recall that :math:`P` is a
 :math:`\Sigma`-type, and as such we can take the first and second
 projections of its elements) will yield the number 5.
+
+By the above reasoning, the truncation :math:`\|P\|` of :math:`P` is
+equivalent to :math:`P` itself, and hence from an element of
+:math:`\|P\|` we can get an element of :math:`P`, and hence the number
+5, even if we did not have an element of :math:`P` in the first place.
+The witness underlying :math:`\|P\|` was exposed.
 
 Another striking example of elements of truncated types carrying data
 is given by Nicolai Kraus' function that undoes the truncation map
