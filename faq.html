@@ -1,0 +1,488 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>General FAQ &#8212; wiwikwlhott 0.1 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Confusion arising from choice of terminology" href="terminology.html" />
+    <link rel="prev" title="What I Wish I Knew When Learning HoTT" href="index.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="general-faq">
+<h1>General FAQ<a class="headerlink" href="#general-faq" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="will-hott-help-me-with-my-higher-dimensional-zoggblobs">
+<h2>Will HoTT help me with my higher-dimensional zoggblobs?<a class="headerlink" href="#will-hott-help-me-with-my-higher-dimensional-zoggblobs" title="Permalink to this headline">¶</a></h2>
+<p>There is a widespread misconception that doing proofs and computations
+for arbitrary higher-dimensional mathematical objects is easier in
+HoTT, supposedly because HoTT supports higher-dimensional structures
+natively.  The reality is more involved than this, because there are
+many kinds of higher-dimensional structure, and HoTT implements one of
+them.</p>
+<p>Higher-dimensional variants of mathematical objects are often
+specified by data in countably many dimensions, together with
+coherence conditions in all those dimensions.  Still, some
+higher-dimensional can be described finitely and very succinctly in
+HoTT.  We give some notable examples.</p>
+<p>If one interprets <strong>equivalences</strong> of types (as defined in
+e.g. chapter 2.4 of the HoTT book) in homotopical semantics, such as
+simplicial sets, one obtains weak homotopy equivalences.  Normally, a
+weak homotopy equivalence is a continuous map, satisfying the
+condition that all its induced maps on homotopy groups are
+isomorphisms.  The fact that all this is expressed by the concise
+definitions of chapter 2.4 is an example of the expressive power of
+HoTT.</p>
+<p>Similarly, we can define when a type is <span class="math notranslate nohighlight">\(n\)</span>-<strong>truncated</strong>,
+without having to state any requirements above dimension <span class="math notranslate nohighlight">\(n\)</span>.
+Namely, if a type is <span class="math notranslate nohighlight">\(n\)</span>-truncated, it is also automatically
+<span class="math notranslate nohighlight">\((n+1)\)</span>-truncated.  Just like the previous example, this claim
+about truncatedness is true both as a statement in HoTT, and as a
+claim about the homotopical semantics of HoTT.</p>
+<p>Univalence tells us that predicates on objects are invariant under
+equivalences.  A predicate that holds for a type <span class="math notranslate nohighlight">\(A\)</span>
+automatically also holds <span class="math notranslate nohighlight">\(B\)</span> if there is an equivalence from
+<span class="math notranslate nohighlight">\(A\)</span> to <span class="math notranslate nohighlight">\(B\)</span>.</p>
+<p>Suppose you naively translate the widely-known definition of
+higher-dimensional zoggblobs from classical mathematics into HoTT.  It
+is unlikely you’ll have such automatic invariance of predicates along
+zoggblobs that are considered equivalent <a class="footnote-reference" href="#breaks" id="id1">[1]</a>.  It is unlikely
+you are automatically able to make use of the higher-dimensional
+structure of types of MLTT.</p>
+<p>And it may not even be obvious how to translate certain structures
+into HoTT.  If one wants to consider e.g. the Poincaré conjecture
+(which says that if you have a space homotopic to <span class="math notranslate nohighlight">\(S^n\)</span>, then,
+under some conditions, it is diffeomorphic to <span class="math notranslate nohighlight">\(S^n\)</span>), one wants
+to have a notion of differential structure that is compatible with the
+homotopical structure.  But the obvious choice of homotopical
+structure - types - requires adding syntax (modalities) to obtain a
+differential structure.  And there are different ways to use
+modalities to add differential structures to types.  Under some given
+choice, a statement like the Poincaré conjecture may be true, it may
+require choice, it may be unprovable, and it may be provably
+false (not all at the same time).</p>
+<div class="admonition-todo admonition" id="index-0">
+<p class="first admonition-title">Todo</p>
+<p class="last">cross-ref to cohesive type theory</p>
+</div>
+<p>You can ask what kind of universal properties a space <span class="math notranslate nohighlight">\(X\)</span> has
+when interpreted as an object of various categories of spaces.
+Similarly, you can ask what kind of universal properties <span class="math notranslate nohighlight">\(X\)</span> has
+as a type.  These are all different questions, possibly with different
+answers.</p>
+<p>HoTT won’t automatically help you with higher-dimensional reasoning.
+In fact, a lot of research is about which definitions give you which
+kind of help.</p>
+<div class="admonition-todo admonition" id="index-1">
+<p class="first admonition-title">Todo</p>
+<p>Think about some examples.</p>
+<ul class="last simple">
+<li><span class="math notranslate nohighlight">\((\infty,1)\)</span>-categories</li>
+<li>double categories<ul>
+<li>give a def of lax double functors and coherence for them.  if
+hott claims that it comes with an infty-categorical structure,
+then it should automatically give the higher coherence axioms.</li>
+<li>double category of cobordisms</li>
+</ul>
+</li>
+<li>knot theory</li>
+<li>semi-simplicial types</li>
+<li>2-category theory<ul>
+<li>there are different notions of functors: lax, strict, pseudo.
+not all of these (e.g. strict) are invariant under equivalence
+of 2-categories.  if you define 2-categories so that they
+typally equal iff they are equivalent (as 2-categories), then
+you won’t be able to define strict functors on these
+2-categories.</li>
+<li>this is good and bad at the same time.</li>
+</ul>
+</li>
+<li>sometimes HoTT <em>does</em> do a better job: e.g. claims about
+(infty-)groupoids are automatically invariant. but depends on the
+way you state this.</li>
+</ul>
+</div>
+<p>See also: <a class="reference internal" href="terminology.html#types-as-spaces"><span class="std std-ref">Types as spaces</span></a>.</p>
+<p class="rubric">footnotes</p>
+<table class="docutils footnote" frame="void" id="breaks" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td>This tends to break for essentially the same reasons that
+you didn’t used to have the invariance in classical
+mathematics in the first place.</td></tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="how-are-open-sets-continuity-defined-in-hott">
+<h2>How are open sets / continuity / … defined in HoTT?<a class="headerlink" href="#how-are-open-sets-continuity-defined-in-hott" title="Permalink to this headline">¶</a></h2>
+<p>As a rule of thumb, the answer to such questions relating to
+topological definitions is “they aren’t”.  But confusingly, there are
+a few exceptions to this.  So really the answer is that this is
+(usually) the wrong question.</p>
+<p>See also: <a class="reference internal" href="terminology.html#types-as-spaces"><span class="std std-ref">Types as spaces</span></a>.</p>
+<p><a class="reference internal" href="variants.html#book-hott"><span class="std std-ref">Book HoTT</span></a> is <em>not</em> a theory of topological spaces, or about any
+kind of space.  It is a type theory that can be used as a <em>neutral</em>
+foundations of mathematics.  Because of this, it is often called
+<em>univalent type theory</em> or <em>univalent mathematics</em> instead, as
+homotopy theory is, from a logician’s point of view, secondary to
+HoTT: it just so happens <a class="footnote-reference" href="#htpy-accident" id="id2">[2]</a> that it admits semantics in
+certain Quillen model categories, and that allows us to use the
+intuition of types as spaces.</p>
+<p>If you are trained in topos logic, and you are asking a HoTT expert
+when a map in HoTT is closed, then <em>you</em> have the obligation to first
+define, in the internal language of a topos, when a map between two
+objects in a topos is closed.  HoTT does not give new expressive
+power.  If it would give new expressive power, it would not be a
+neutral foundations of mathematics.</p>
+<div class="admonition-todo admonition" id="index-2">
+<p class="first admonition-title">Todo</p>
+<p class="last">write something on the homotopy hypothesis, and
+cross-reference here.</p>
+</div>
+<p>The confusion starts with the exceptions: because some concepts from
+homotopy theory <em>can</em> be interpreted by the syntax of type theory.
+<em>In some sense</em>, types behave like certain <em>kinds</em> of spaces.  <em>In
+some sense</em>, we can compute homotopy groups of spheres inside HoTT,
+when homotopy groups are defined in a certain way.  <em>In some sense</em>,
+equivalences of types behave like weak equivalences in homotopy
+theory.</p>
+<p>Indeed, already such concepts could be interpreted in other
+foundations of mathematics, such as constructive set theories.  The
+reason that nobody did this, is that such foundations, by virtue of
+being <em>set</em> theories, exhibit no behavior that reminds of
+higher-dimensional homotopy theory: after all, all the objects are
+0-dimensional.  HoTT shows you the types that you have been missing
+before.</p>
+<p>In other words: the types in HoTT aren’t space-like because HoTT has a
+more specific idea about what a type is, but because it has a <em>more
+general</em> idea of what a type is.</p>
+<p><em>Certain</em> constructions in homotopy theory have analogues that can be
+expressed very succinctly in HoTT.  These constructions have in common
+that they are always invariant under equivalences of types.  And we
+think of such equivalences as weak equivalences of the spaces of
+homotopy theory: so by univalence, such constructions are thought of
+as invariant under weak equivalences of spaces, which rules out many
+definitions from point-set topology.</p>
+<p class="rubric">footnotes</p>
+<table class="docutils footnote" frame="void" id="htpy-accident" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id2">[2]</a></td><td><p class="first">Well, this is not fair, of course:</p>
+<ul class="last simple">
+<li>Historically, HoTT was designed to admit semantics in appropriate
+categories of spaces.</li>
+<li>Most semantics of HoTT are found in categories of spaces.</li>
+<li>There is a lot of research on what parts of homotopy theory can
+be developed within HoTT.</li>
+</ul>
+</td></tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="what-is-the-point-of-constructive-mathematics">
+<h2>What is the point of constructive mathematics?<a class="headerlink" href="#what-is-the-point-of-constructive-mathematics" title="Permalink to this headline">¶</a></h2>
+<p>Classical mathematicians are concerned with the truth or falsity of
+statements, whereas type theory is usually about constructions.
+Geometric questions such as the bisection of an angle are answered by
+construction using ruler and compass, but it is neither true nor
+false.  In the same way, constructive logic offers aspects on
+mathematical questions that classical logic cannot provide.</p>
+<blockquote class="epigraph">
+<div><p>Constructive mathematics is in its infancy.  According to some, it
+is doomed to the role of scavenger.  These people conceive of
+classical mathematics as establishing the grand design and the
+imaginative insight, leaving the constructivists to add whatever
+embellishments their credos demand.  Although totally wrong, this
+viewpoint hints at a truth: The most urgent task of the
+constructivist is to give predictive embodiment to the ideas and
+techniques of classical mathematics.  Classical mathematics is not
+totally divorced from reality.  On the contrary, most of it has a
+strongly constructive cast.  Much of the constructivization of
+classical mathematics is therefore routine; constructive versions
+of many standard results are readily at hand.  This makes it easy
+to miss the point, which is <em>not</em> to find a constructive version of
+this or that, or even of every, classical result.  The point is not
+even to find elegant substitutes for whole classical theories.  The
+point rather is to use classical mathematics, at least initially,
+as a guide.  Much will be of little value to the constructivist,
+much will be constructive per se, and much will raise fundamental
+questions which classically are trivial or perhaps do not even make
+sense. The emphasis will be on the discovery of useful and incisive
+numerical information.  It is the incisiveness and scope of the
+information, not the elegencae of the format, that is relevant.</p>
+<p class="attribution">&mdash;Bishop <a class="reference internal" href="index.html#bishop-numerical-language" id="id3">[Bis70]</a></p>
+</div></blockquote>
+<p>An accessible and entertaining introduction to constructive
+mathematics is Andrej Bauer’s 2013 lecture “Five stages of accepting
+constructive mathematics”, available on <a class="reference external" href="https://www.youtube.com/watch?v=zmhd8clDd_Y">youtube</a>.  This talk was turned
+into a paper published in 2016 <a class="reference internal" href="index.html#bauer-five-stages" id="id4">[Bau16]</a>.  The five phases are:</p>
+<ol class="arabic simple">
+<li>Denial: various misconceptions about constructivism, and what is
+and isn’t considered constructive mathematics. Topics include:<ul>
+<li>Excluded Middle: false or not?</li>
+<li>The difference between “proof <em>by</em> a contradiction” and “proof
+<em>of</em> a contradiction”.</li>
+<li>Choice axioms, and how to spot them.</li>
+</ul>
+</li>
+<li>Anger: how constructivism may seem bizarre from a classical point
+of view.</li>
+<li>Bargaining: where constructive logic and mathematics occur
+naturally. Topics include:<ul>
+<li>Constructive mathematics as a generalization of classical
+mathematics.</li>
+<li>Realizability (i.e. computability) models.</li>
+<li>Sheaf models, topos theory, and continuity.</li>
+</ul>
+</li>
+<li>Depression: an interpretation of how the relevance of
+constructivism may be changing over time.</li>
+<li>Acceptance: ways to adapt to constructive mathematics, and make use
+of its power. Topics include:<ul>
+<li>How mathematics may be adapted to do away with excluded middle.</li>
+<li>How mathematics may be adapted to do away with choice.</li>
+</ul>
+</li>
+</ol>
+</div>
+<div class="section" id="truncation-classical-or-constructive">
+<h2>Truncation: classical or constructive?<a class="headerlink" href="#truncation-classical-or-constructive" title="Permalink to this headline">¶</a></h2>
+<p>One understanding of the term “constructivism” is that the logic
+should always pass around explicit constructions, which may in general
+not be unique.  So existential quantifiers are understood to always be
+proved by constructing witnesses, and logical disjunctions are
+understood to always give a choice of a disjunct.</p>
+<p>From this point of view, the truncation operation seems to be
+non-constructive: namely, it allows us to pass around a notion of
+truth without passing around the underlying witnesses.  There are (at
+least) two problems with the conclusion that truncation is
+non-constructive.</p>
+<ul class="simple">
+<li>This understanding of constructivism is correct only for certain
+variants of constructive logic.</li>
+<li>Perhaps more importantly, witnesses <em>are</em> passed around, and this
+can be observed <a class="footnote-reference" href="#proofirrelevance" id="id5">[4]</a>.</li>
+</ul>
+<p>For the latter, <a class="reference internal" href="terminology.html#translating-natural"><span class="std std-ref">define</span></a> the type <span class="math notranslate nohighlight">\(P\)</span>
+of primes numbers that are the sum of two consecutive primes.  So
+<span class="math notranslate nohighlight">\(P\)</span> is a <span class="math notranslate nohighlight">\(\Sigma\)</span>-type.  Then it can be shown that
+<span class="math notranslate nohighlight">\(P\)</span> is a proposition: any two of its elements are equal.  The
+proof of this is essentially the same as the proof that there is at
+most one prime that is the sum of two consecutive primes.  Moreover,
+the type <span class="math notranslate nohighlight">\(P\)</span> is inhabited.  One constructs an element of
+<span class="math notranslate nohighlight">\(P\)</span> by pairing the number 5 with a proof that 5 is the sum of 2
+and 3, which are also primes.  But any proof of the <em>proposition</em>
+<span class="math notranslate nohighlight">\(P\)</span> is indeed very informative: for example, the first
+projection of <em>any</em> proof of <span class="math notranslate nohighlight">\(P\)</span> (recall that <span class="math notranslate nohighlight">\(P\)</span> is a
+<span class="math notranslate nohighlight">\(\Sigma\)</span>-type, and as such we can take the first and second
+projections of its elements) will yield the number 5.</p>
+<p>By the above reasoning, the truncation <span class="math notranslate nohighlight">\(\|P\|\)</span> of <span class="math notranslate nohighlight">\(P\)</span> is
+equivalent to <span class="math notranslate nohighlight">\(P\)</span> itself, and hence from an element of
+<span class="math notranslate nohighlight">\(\|P\|\)</span> we can get an element of <span class="math notranslate nohighlight">\(P\)</span>, and hence the number
+5, even if we did not have an element of <span class="math notranslate nohighlight">\(P\)</span> in the first place.
+The witness underlying <span class="math notranslate nohighlight">\(\|P\|\)</span> was exposed.</p>
+<p>Another striking example of elements of truncated types carrying data
+is given by Nicolai Kraus’ function that undoes the truncation map
+<span class="math notranslate nohighlight">\(|\_|:\mathbb{N}\to\|\mathbb{N}\|\)</span>
+<a class="reference internal" href="index.html#kraus-truncation-invertible" id="id6">[Kra13]</a> <a class="footnote-reference" href="#truncnotation" id="id7">[3]</a>.  In this construction, for any
+natural <span class="math notranslate nohighlight">\(n:\mathbb{N}\)</span>, we consider the type</p>
+<div class="math notranslate nohighlight">
+\[\operatorname{pathto}(\mathbb{N},n)
+:=
+\sum_{Y:\sum_{X:\mathcal{U}}X}(Y=(\mathbb{N},n))\]</div>
+<p>of <a class="reference internal" href="glossary.html#term-pointed-type"><span class="xref std std-term">pointed types</span></a> that are equal to the pointed
+type <span class="math notranslate nohighlight">\((\mathbb{N},n)\)</span>.  We can show that
+<span class="math notranslate nohighlight">\(\operatorname{pathto}(\mathbb{N},n)\)</span> is a proposition.  This
+allows us to extract the incoming point <span class="math notranslate nohighlight">\(n\)</span>, even if it was
+hidden by the truncation map <span class="math notranslate nohighlight">\(|\_|\)</span>.  This construction
+shows that elements of truncated types can carry so much information
+that we can, in this case, undo the truncation, in a certain sense.</p>
+<p class="rubric">footnotes</p>
+<table class="docutils footnote" frame="void" id="truncnotation" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id7">[3]</a></td><td>Note that <span class="math notranslate nohighlight">\(|\_|\)</span> is the <em>truncation map</em>,
+that sends a point <span class="math notranslate nohighlight">\(x:X\)</span> to its <em>truncation</em>
+<span class="math notranslate nohighlight">\(|x|\)</span>, an element of the <em>truncated type</em>
+<span class="math notranslate nohighlight">\(\|X\|\)</span>.</td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="proofirrelevance" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id5">[4]</a></td><td>The fact that witnesses are important also for
+propositions shows that the logic of
+propositions is not <em>proof irrelevant</em>.</td></tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="what-is-the-difference-between-a-type-and-its-propositional-truncation">
+<h2>What is the difference between a type and its propositional truncation?<a class="headerlink" href="#what-is-the-difference-between-a-type-and-its-propositional-truncation" title="Permalink to this headline">¶</a></h2>
+<p>For any type <span class="math notranslate nohighlight">\(X\)</span>, its truncation <span class="math notranslate nohighlight">\(\|X\|\)</span> is inhabited
+(i.e. has elements) if and only if <span class="math notranslate nohighlight">\(X\)</span> is.  However, by
+definition, <span class="math notranslate nohighlight">\(\|X\|\)</span> is a proposition.</p>
+<p>This means that any two elements <span class="math notranslate nohighlight">\(x,y:X\)</span> give rise to elements
+<span class="math notranslate nohighlight">\(|x|,|y|:\|X\|\)</span>.  However, since <span class="math notranslate nohighlight">\(\|X\|\)</span> is a proposition,
+we also have a proof that the identity type <span class="math notranslate nohighlight">\(|x|=_{\|X\|}|y|\)</span> is
+inhabited.  So you can think of <span class="math notranslate nohighlight">\(\|X\|\)</span> as the type <span class="math notranslate nohighlight">\(X\)</span>,
+but with extra identities added, as well as higher identities, so that
+it becomes a proposition.</p>
+</div>
+<div class="section" id="what-is-the-killer-application-of-univalence">
+<h2>What is the killer application of univalence?<a class="headerlink" href="#what-is-the-killer-application-of-univalence" title="Permalink to this headline">¶</a></h2>
+<p>This is the wrong question in the same sense that one shouldn’t ask
+“What is the killer application of the extensionality axiom in ZFC?”
+Univalence is an <a class="reference internal" href="glossary.html#term-extensionality"><span class="xref std std-term">extensionality</span></a> <a class="reference internal" href="glossary.html#term-axiom"><span class="xref std std-term">axiom</span></a> in the same
+sense that ZFC’s extensionality axiom is one.  The ZFC axiom says that
+if two sets have the same elements, then they are equal as sets.
+Univalence, similarly, characterizes equality of types in terms of
+equivalences.</p>
+<p>In the end, foundations of mathematics are to be used to prove
+mathematical theorems.  Univalence helps us to phrase and prove
+theorems in a certain style, namely that of univalent mathematics.  It
+is often possible to obtain intuition from univalence, and make an
+initial estimate whether some claim is going to be provable or not.
+Even if your entire theory can be built in MLTT, univalence can guide
+you.  It allows us to phrase and prove theorems that are natural and
+correspond very well with informal mathematics.</p>
+</div>
+<div class="section" id="what-is-univalence">
+<h2>What is univalence?<a class="headerlink" href="#what-is-univalence" title="Permalink to this headline">¶</a></h2>
+<p>See e.g. <a class="reference internal" href="index.html#escardo-self-contained" id="id8">[HotzelEscardo18]</a>.</p>
+</div>
+<div class="section" id="why-isn-t-there-an-induction-principle-for-the-universe">
+<h2>Why isn’t there an induction principle for the universe?<a class="headerlink" href="#why-isn-t-there-an-induction-principle-for-the-universe" title="Permalink to this headline">¶</a></h2>
+<p>All the basic types of the type theory seem to come with an induction
+or coinduction principle, so why not the universe?</p>
+<p>Induction principles are a form of <em>pattern matching</em>.  That means
+that if a type <span class="math notranslate nohighlight">\(X\)</span> has an induction principle, and you have a
+point <span class="math notranslate nohighlight">\(x:X\)</span>, then you may, under various conditions, assume that
+<span class="math notranslate nohighlight">\(x\)</span> is of a certain form.  In other words, all induction
+principles limit possibilities.</p>
+<p>Having any kind of induction principle on the universe is undesirable
+because we think of the universe as being <em>open</em>, in the sense that we
+don’t want to intentionally restrict the types that our theory can
+handle.  For example, in a given univalent type theory, we may
+introduce additional type constructors, such as certain homotopical
+constructors, after a body of theory has already been formalized in
+that type theory.  We want our existing theory to stay valid even if
+new type constructors are introduced.</p>
+<p>On top of induction principles for the universe being undesirable, it
+can be a constructive taboo to have one.  Namely, if we could tell the
+empty type <span class="math notranslate nohighlight">\(\mathbf{0}\)</span> and the unit type <span class="math notranslate nohighlight">\(\mathbf{1}\)</span>
+apart, that is, if we could use the induction principle to obtain a
+function <span class="math notranslate nohighlight">\(f:\mathcal{U}\to\mathbf{2}\)</span> from the universe to the
+booleans that outputs <span class="math notranslate nohighlight">\(\mathsf{false}\)</span> for <span class="math notranslate nohighlight">\(\mathbf{0}\)</span>
+and <span class="math notranslate nohighlight">\(\mathsf{true}\)</span> for <span class="math notranslate nohighlight">\(\mathbf{1}\)</span>, then using
+univalence we could prove <a class="reference internal" href="glossary.html#term-weak-excluded-middle"><span class="xref std std-term">weak excluded middle</span></a>.</p>
+<p>If your language has a feature such as <a class="reference internal" href="features.html#induction-recursion"><span class="std std-ref">induction-recursion</span></a>, you are always free to define your own
+universe of <em>codes</em> for types.  So this allows you to seemingly do
+case analysis on a selection of types.</p>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">wiwikwlhott</a></h1>
+
+
+
+
+
+
+<p>
+<iframe src="https://ghbtns.com/github-btn.html?user=abooij&repo=wiwikwlhott&type=watch&count=true&size=large&v=2"
+  allowtransparency="true" frameborder="0" scrolling="0" width="200px" height="35px"></iframe>
+</p>
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">General FAQ</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#will-hott-help-me-with-my-higher-dimensional-zoggblobs">Will HoTT help me with my higher-dimensional zoggblobs?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#how-are-open-sets-continuity-defined-in-hott">How are open sets / continuity / … defined in HoTT?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#what-is-the-point-of-constructive-mathematics">What is the point of constructive mathematics?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#truncation-classical-or-constructive">Truncation: classical or constructive?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#what-is-the-difference-between-a-type-and-its-propositional-truncation">What is the difference between a type and its propositional truncation?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#what-is-the-killer-application-of-univalence">What is the killer application of univalence?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#what-is-univalence">What is univalence?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#why-isn-t-there-an-induction-principle-for-the-universe">Why isn’t there an induction principle for the universe?</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="terminology.html">Confusion arising from choice of terminology</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proof-assistants.html">Proof assistants</a></li>
+<li class="toctree-l1"><a class="reference internal" href="category.html">Category theory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="semantics.html">Semantics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proof.html">Proof theory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="variants.html">Variants of HoTT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="features.html">Type-theoretical features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
+</ul>
+
+
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2017-2018, Auke Booij.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.4</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/faq.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

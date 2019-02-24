@@ -1,0 +1,364 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Confusion arising from choice of terminology &#8212; wiwikwlhott 0.1 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Proof assistants" href="proof-assistants.html" />
+    <link rel="prev" title="General FAQ" href="faq.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="confusion-arising-from-choice-of-terminology">
+<h1>Confusion arising from choice of terminology<a class="headerlink" href="#confusion-arising-from-choice-of-terminology" title="Permalink to this headline">¶</a></h1>
+<div class="admonition-todo admonition" id="index-0">
+<p class="first admonition-title">Todo</p>
+<p class="last">should there be a separate cubical page?</p>
+</div>
+<div class="section" id="everything-is-up-to-homotopy">
+<h2>“Everything is up to homotopy”<a class="headerlink" href="#everything-is-up-to-homotopy" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-todo admonition" id="index-1">
+<p class="first admonition-title">Todo</p>
+<p class="last">explain this dogma</p>
+</div>
+</div>
+<div class="section" id="constructors-vs-elements-vs-points-vs-terms-vs-proofs">
+<span id="constr-elems-pts"></span><h2>Constructors vs elements vs points vs terms vs proofs<a class="headerlink" href="#constructors-vs-elements-vs-points-vs-terms-vs-proofs" title="Permalink to this headline">¶</a></h2>
+<p>To say that something is a <em>constructor</em> of a type <span class="math notranslate nohighlight">\(A\)</span> means that
+the type <span class="math notranslate nohighlight">\(A\)</span> was defined inductively, and that you are picking one
+of the options specifying its datatype. For example, <span class="math notranslate nohighlight">\(\mathbf{N}\)</span>
+has exactly <em>two</em> constructors: <span class="math notranslate nohighlight">\(0\)</span> and <span class="math notranslate nohighlight">\(S\)</span>. But since, for
+example, <span class="math notranslate nohighlight">\(S\)</span> has type <span class="math notranslate nohighlight">\(\mathbf{N}\to\mathbf{N}\)</span>,
+constructors of a type are not always elements of that type.</p>
+<p>To say that something is an <em>element</em> of a type <span class="math notranslate nohighlight">\(A\)</span> means that
+it is a variable or expression whose type is <span class="math notranslate nohighlight">\(A\)</span>. But that means
+that, in some non-trivial <a class="reference internal" href="glossary.html#term-context"><span class="xref std std-term">context</span></a>, you can have an element of
+type <span class="math notranslate nohighlight">\(\mathbf{0}\)</span>: for example in the context
+<span class="math notranslate nohighlight">\(x:\mathbf{0}\)</span>, we have the element <span class="math notranslate nohighlight">\(x\)</span> of type
+<span class="math notranslate nohighlight">\(\mathbf{0}\)</span>.</p>
+<p>Confusingly, even in the context <span class="math notranslate nohighlight">\(x:\mathbf{0}\)</span>, where we have the
+element <span class="math notranslate nohighlight">\(x\)</span> of type <span class="math notranslate nohighlight">\(\mathbf{0}\)</span>, we can show that
+<span class="math notranslate nohighlight">\(\mathbf{0}\)</span> does not have any elements, because the claim
+“<span class="math notranslate nohighlight">\(A\)</span> does not have any elements” is formalised as <span class="math notranslate nohighlight">\(\neg A\)</span>,
+that is, <span class="math notranslate nohighlight">\(A\to\mathbf{0}\)</span>, and <span class="math notranslate nohighlight">\(\mathbf{0}\to\mathbf{0}\)</span> is
+indeed inhabited (by the identity function).</p>
+<p><em>Point</em> and <em>proof</em> are synonyms for <em>element</em>.</p>
+<p>However, when we claim that some theorem is or is not <em>provable</em>, then
+this is a meta-theoretic claim.  For example, we may say that, in pure
+HoTT, the principle of excluded middle (which, being a logical claim,
+is itself encoded as some type, namely
+<span class="math notranslate nohighlight">\(PEM=\prod_{P:\mathsf{Prop}}P+\neg P\)</span>) is not <em>provable</em>:
+indeed, homotopy type theory is consistent with excluded middle, but
+also with its negation.  However, we can’t say that the type
+<span class="math notranslate nohighlight">\(PEM\)</span> has no elements, for this would be interpreted by the
+statement that the type <span class="math notranslate nohighlight">\(PEM\)</span> is <em>empty</em>, that is, that excluded
+middle is <em>false</em>!  And in pure HoTT we can’t prove that <span class="math notranslate nohighlight">\(PEM\)</span>
+is false, again, because we want to be consistent both with excluded
+middle and its negation.</p>
+<p>Finally, <em>term</em> is a strictly syntactic notion. As a first
+approximation, something is a term if it is a string of characters that,
+when inserted in a proof assistant, would parse, and have a certain
+type. There are no terms of type <span class="math notranslate nohighlight">\(\mathbf{0}\)</span> (unless HoTT turns
+out to be inconsistent).</p>
+</div>
+<div class="section" id="translating-claims-in-natural-language-to-type-theory">
+<span id="translating-natural"></span><h2>Translating claims in natural language to type theory<a class="headerlink" href="#translating-claims-in-natural-language-to-type-theory" title="Permalink to this headline">¶</a></h2>
+<p>There seems to be some miscommunication regarding which statements by
+HoTTist are internal and which ones are metatheoretical.  It may also
+sometimes be unclear what formal language to use to formalize informal
+statements.  I’m not sure exactly where the confusion starts, but here
+are some aspects to consider.</p>
+<p>Already in classical mathematics, some claims shouldn’t be translated
+word-for-word into formal language.  For example, the claim “we can
+prove theorem X” doesn’t presume an internal formalisation of the
+notion of theorem, provability, an understanding of what “we” means,
+or any kind of modal logic to model the “can”.</p>
+<p>In the context of HoTT, many claims are understood to be descriptions
+of types.  For example, “there exists a number with <span class="math notranslate nohighlight">\(f(n)=0\)</span>”
+should be interpreted by the type
+<span class="math notranslate nohighlight">\(\exists(n:\mathbf{N}).f(n)=0\)</span>.  Then the understanding that
+this claim is true corresponds to the understanding that somebody has
+produced a term of that type.</p>
+<p>However, this explanation of how to translate natural language into
+type theory is incomplete.</p>
+<ul class="simple">
+<li>It may not be clear what the right type-theoretical definitions are
+that correspond to classical mathematics.  This is more apparent for
+type theory, as the things we used to think of as well-understood in
+set theory become ambiguous in a type theory where
+higher-dimensional structure and lack of choice axioms prevents us
+from unifying this or that.  However, fundamentally this is not a
+new problem, as the question “what is the right definition for
+this?” is also very common in classical mathematics.  At the end of
+the day, the correctness criterion for mathematical definitions is
+primarily based on the agreement of scientists.  Definitions from
+classical mathematics <em>don’t</em> translate one-to-one into type theory,
+and we don’t <em>want</em> them to.</li>
+<li>Sometimes we want to talk about the semantics of a chosen type
+theory, irrespective of the specific foundations that those
+semantics are built up in.  Even more confusingly, some claims are
+true both as internal statements, that is, when translated into type
+theory, and as statements about the semantics.  So certain pieces of
+text may be understood to be formalisable entirely in a system that
+is not a type theory (such as papers on semantics), and others might
+support a fairly systematic translation of natural language to types
+and their elements.</li>
+</ul>
+<div class="admonition-todo admonition" id="index-2">
+<p class="first admonition-title">Todo</p>
+<p>set cover axiom.  <span class="math notranslate nohighlight">\((A:Type)\to \|(B:Set)\times(f:B\to A surjection)\|\)</span></p>
+<p>sets cover page on nlab: <a class="reference external" href="https://ncatlab.org/nlab/show/n-types+cover">https://ncatlab.org/nlab/show/n-types+cover</a></p>
+<p class="last">similar to in toposes: you can prove there exists something, but
+there might not be a global element</p>
+</div>
+</div>
+<div class="section" id="types-as-spaces">
+<span id="id1"></span><h2>Types as spaces<a class="headerlink" href="#types-as-spaces" title="Permalink to this headline">¶</a></h2>
+<p>There are (at least) two different notions of “space” and (at least) two
+different “circles”.</p>
+<p>First of all, every type is <em>thought of</em> <a class="footnote-reference" href="#spacesemantics" id="id2">[1]</a> as a space: and so the HIT
+<span class="math notranslate nohighlight">\(S^1\)</span> freely generated by a basepoint and a path on that basepoint
+is thought of as a homotopical circle. The space-like behavior is given
+by the type theory, and can be probed using identity types.</p>
+<p>Secondly, there is a certain subset of the real plane
+<span class="math notranslate nohighlight">\(\mathbf{R}^2\)</span> (taking <span class="math notranslate nohighlight">\(\mathbf{R}\)</span> to be, for example, the
+dedekind reals) that represents a circle, namely the subtype of points
+with radius 1. The space-like behavior of such spaces <em>internal to the
+theory</em> is given by whatever notion of space we are interested in: for
+example, <span class="math notranslate nohighlight">\(\mathbf{R}^2\)</span> is often studied as a metric space with a
+metric <span class="math notranslate nohighlight">\(d:\mathbf{R}^2\times\mathbf{R}^2\to\mathbf{R}\)</span>.</p>
+<p>These two circles are completely unrelated, unless you add extra syntax
+or axioms, such as in real-cohesive HoTT <a class="reference internal" href="index.html#shulman-real-cohesive" id="id3">[Shulman15]</a>.</p>
+<p>This can be terribly confusing. For example, the fact that every map in
+HoTT lifts to a map on the identity types (expressing that if two inputs
+to a function are equal, then we can prove the outputs are equal) is
+explained in the HoTT book by saying that this means the function is
+continuous. So from the HoTT point of view, all functions are
+“continuous” in that sense. But in the context of constructive analysis
+<em>inside</em> HoTT, it is not provable that all functions are continuous, and
+in fact it need not be true, for example if one has the principle of
+excluded middle.</p>
+<p>Even though the link between types and, say, topological spaces (as
+defined <em>inside</em> HoTT) is broken, the intuition of the internal theory
+of those spaces is still used to prove the impossibility of
+type-theoretical proofs. For example, it is not provable that any two
+points on the higher-inductive circle are equal, which is somewhat odd
+since in any drawing of a circle there are at least two obvious paths
+between any two points <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span>. As a topological
+counter-argument, it is said that the path from <span class="math notranslate nohighlight">\(x\)</span> to <span class="math notranslate nohighlight">\(y\)</span>
+cannot be chosen in a “continuous” way, in the sense that if you rotate
+<span class="math notranslate nohighlight">\(x\)</span> along the circle one full rotation, you’ll have to make a
+“jump” in your choice of path at some point. But this counter-argument
+is topological in nature, rather than type-theoretic (although there is
+a way to make it precise type-theoretically).</p>
+<p>Indeed, proofs about types such as the higher-inductive circle look
+nothing like their counterparts in topology. Still, they satisfy
+<em>some</em> of the same properties: if we define the “homotopy group” of a
+pointed type correctly, then the higher-inductive circles seem to have
+the same homotopy groups as their topological counterparts in
+classical mathematics (in the sense that this has been shown for a
+handful of cases) <a class="footnote-reference" href="#sameclassical" id="id4">[2]</a>. However, some properties are fundamentally
+different in a seemingly unfixable way: as a theorem stated inside
+type theory, there do not exist any embeddings <span class="math notranslate nohighlight">\(S^1\to S^3\)</span> - so
+higher-inductive types can’t be naively used to formalise knot
+theory. (One further problem with such an approach is that HoTT only
+allows phrasing things that are invariant under homotopy, which things
+like “non-self-intersecting” are not.)</p>
+<p class="rubric">footnotes</p>
+<table class="docutils footnote" frame="void" id="spacesemantics" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id2">[1]</a></td><td>In fact, not only do we think of a type as a
+space, but if we take geometric semantics of
+univalent type theory, such as model categories,
+every type is interpreted by an actual space.</td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="sameclassical" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id4">[2]</a></td><td>By Shulman and Lumsdaine
+<a class="reference internal" href="index.html#lumsdaine-shulman-hits" id="id5">[LeFanuLumsdaineShulman17]</a>, we can construct
+all spheres from pushouts in any “sufficiently
+nice” Quillen model category.  So everything we
+can hope to prove about the homotopy groups of
+spheres must be equal to the classical result.  In
+other words, HoTT and classical mathematics cannot
+disagree about the homotopy groups of spheres.</td></tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="sets">
+<span id="id6"></span><h2>Sets<a class="headerlink" href="#sets" title="Permalink to this headline">¶</a></h2>
+<p>There are (at least) three notions of sets:</p>
+<ul>
+<li><p class="first">The objects studied by a theory such as ZFC. We can take
+intersections of any two such sets, even if this does not make sense
+from an extensional point of view: for example, we can take the
+intersection of <span class="math notranslate nohighlight">\(\pi\)</span> with the graph of <span class="math notranslate nohighlight">\(x\mapsto x^2\)</span>,
+as both objects are sets.  ZFC is a <em>material</em> set theory, since
+elements may be a member of several different sets.</p>
+</li>
+<li><p class="first">0-types, which behave simlar to ZFC sets in some aspects. For
+example, for a map <span class="math notranslate nohighlight">\(f\)</span> between two 0-types (but not between
+arbitrary types), the following are equivalent:</p>
+<blockquote>
+<div><ul class="simple">
+<li><span class="math notranslate nohighlight">\(f\)</span> is an injection (equal outputs implies equal inputs).</li>
+<li><span class="math notranslate nohighlight">\(f\)</span> is an embedding (equal inputs is equivalent to equal
+outputs).</li>
+<li><span class="math notranslate nohighlight">\(f\)</span> is a monomorphism (with respect to all maps on all
+types).</li>
+</ul>
+</div></blockquote>
+<p>The set theory of 0-types is <em>structural</em>, since every element is
+canonically a member of a fixed type.</p>
+</li>
+<li><p class="first">A cumulative hierarchy of sets as in e.g. chapter 10.5 of the HoTT
+book, as an attempt to find a model of an axiomatic set theory like
+ZFC (although this will likely require choice).</p>
+</li>
+</ul>
+<p>In the context of HoTT, by “set” we mean 0-types, unless otherwise
+specified.</p>
+</div>
+<div class="section" id="topology">
+<h2>Topology<a class="headerlink" href="#topology" title="Permalink to this headline">¶</a></h2>
+<p>HoTT is <em>not</em> a internal language for topology.  By adding modalities
+to HoTT, we can talk about types as topological spaces
+<a class="reference internal" href="index.html#shulman-real-cohesive" id="id7">[Shulman15]</a>.</p>
+</div>
+<div class="section" id="homotopy">
+<h2>Homotopy<a class="headerlink" href="#homotopy" title="Permalink to this headline">¶</a></h2>
+<p>Within the HoTT community, “homotopy theory” refers to abstract
+homotopy theory in the sense of, for example, Quillen model
+categories, or more generally homotopy categories. The category of
+topological spaces and continuous maps is one such model
+category. However, HoTT is not an internal language for <em>all</em> model
+categories. In particular, the “homotopy” of HoTT does not
+(necessarily) refer to the homotopies of point-set topology.</p>
+</div>
+<div class="section" id="path-vs-id">
+<h2>Path vs Id<a class="headerlink" href="#path-vs-id" title="Permalink to this headline">¶</a></h2>
+<p>MLTT comes with identity types <span class="math notranslate nohighlight">\(\mathsf{Id}_X:X\to
+X\to\mathcal{U}\)</span>.  Now let us take “identities as paths” literally.
+Then, when attempting to find semantics of type theory in model
+categories, an obvious choice of semantics for those identity types
+would be the path space object.  The definition of model categories
+ensures that these exist, and that they are <a class="reference internal" href="semantics.html#fibrations"><span class="std std-ref">fibrations</span></a>.</p>
+<p>This is a fine choice until you consider computation rules (which,
+semantically, are strict equalities).  This obvious choice of
+semantics for identity types may not satisfy the required computation
+rules.  So instead, for example in a variant of the <a class="reference internal" href="semantics.html#cubical-sets"><span class="std std-ref">cubical sets</span></a> semantics, a slightly different choice of semantics is
+chosen for <span class="math notranslate nohighlight">\(\mathsf{Id}\)</span>.  However, the obvious choice of path
+space object still exists, and this is often referred to as
+<span class="math notranslate nohighlight">\(\mathsf{Path}\)</span>.</p>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">wiwikwlhott</a></h1>
+
+
+
+
+
+
+<p>
+<iframe src="https://ghbtns.com/github-btn.html?user=abooij&repo=wiwikwlhott&type=watch&count=true&size=large&v=2"
+  allowtransparency="true" frameborder="0" scrolling="0" width="200px" height="35px"></iframe>
+</p>
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="faq.html">General FAQ</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Confusion arising from choice of terminology</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#everything-is-up-to-homotopy">“Everything is up to homotopy”</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#constructors-vs-elements-vs-points-vs-terms-vs-proofs">Constructors vs elements vs points vs terms vs proofs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#translating-claims-in-natural-language-to-type-theory">Translating claims in natural language to type theory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#types-as-spaces">Types as spaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#sets">Sets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#topology">Topology</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#homotopy">Homotopy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#path-vs-id">Path vs Id</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="proof-assistants.html">Proof assistants</a></li>
+<li class="toctree-l1"><a class="reference internal" href="category.html">Category theory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="semantics.html">Semantics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proof.html">Proof theory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="variants.html">Variants of HoTT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="features.html">Type-theoretical features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
+</ul>
+
+
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2017-2018, Auke Booij.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.4</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/terminology.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

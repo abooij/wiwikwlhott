@@ -1,0 +1,158 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Glossary &#8212; wiwikwlhott 0.1 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Type-theoretical features" href="features.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="glossary">
+<h1>Glossary<a class="headerlink" href="#glossary" title="Permalink to this headline">¶</a></h1>
+<dl class="glossary docutils">
+<dt id="term-type">type<dt id="term-object">object<dt id="term-space">space</dt>
+<dd><p class="first">Type and space are synonyms.  Object may be used as another
+synonym, but it may also refer to the interpretation of contexts
+in the chosen <a class="reference internal" href="semantics.html#categorical-semantics"><span class="std std-ref">Categorical semantics</span></a>.</p>
+<p class="last">See also <a class="reference internal" href="terminology.html#types-as-spaces"><span class="std std-ref">Types as spaces</span></a>.</p>
+</dd>
+<dt id="term-constructor">constructor<dt id="term-element">element<dt id="term-point">point<dt id="term-term">term<dt id="term-proof">proof</dt>
+<dd>See <a class="reference internal" href="terminology.html#constr-elems-pts"><span class="std std-ref">Constructors vs elements vs points vs terms vs proofs</span></a>.</dd>
+<dt id="term-proposition">proposition<dt id="term-hproposition">hproposition</dt>
+<dd>A type with the property that all its elements are equal.</dd>
+<dt id="term-pointed-type">pointed type</dt>
+<dd>A pointed type is a type <span class="math notranslate nohighlight">\(X\)</span> together with a point of
+<span class="math notranslate nohighlight">\(X\)</span>.  In other words, a pointed type is an element of
+<span class="math notranslate nohighlight">\(\sum_{X:\mathcal{U}}X\)</span>.</dd>
+<dt id="term-principle-of-excluded-middle">principle of excluded middle<dt id="term-weak-excluded-middle">weak excluded middle</dt>
+<dd>These two axioms decide the truth of any proposition <span class="math notranslate nohighlight">\(P\)</span>
+to various degrees.  Whereas the principle of excluded middle
+says that, given a proposition <span class="math notranslate nohighlight">\(P\)</span>, we can decide the
+truth of <span class="math notranslate nohighlight">\(P\)</span>, that is, we get <span class="math notranslate nohighlight">\(P+\neg P\)</span>, weak
+excluded middle only says we can decide the truth of <span class="math notranslate nohighlight">\(\neg
+P\)</span>, that is, it tells us <span class="math notranslate nohighlight">\(\neg P + \neg \neg P\)</span>.</dd>
+<dt id="term-context">context</dt>
+<dd>All mathematical claims are made in a certain context.  For
+example, “<span class="math notranslate nohighlight">\(\phi\)</span> is an isomorphism that sends <span class="math notranslate nohighlight">\(g\)</span> to
+<span class="math notranslate nohighlight">\(h(x)+3\)</span>” only makes sense if we know that <span class="math notranslate nohighlight">\(\phi\)</span>,
+<span class="math notranslate nohighlight">\(g\)</span> and <span class="math notranslate nohighlight">\(h\)</span> are variables of a certain type.  In the
+logic of type theory, the concept of contexts plays an extremely
+central role, and the truth and interpretation of every type and
+term depends on the context we’re in.  So a context is just a
+list of fresh variables with type declarations.  For more
+information, see e.g. Appendix A.2 of the HoTT book, or a source
+on semantics of type theory such as
+<a class="reference internal" href="index.html#hofmann-syntax-semantics" id="id1">[Hof97]</a>.</dd>
+<dt id="term-hit">HIT<dt id="term-higher-inductive-type">higher-inductive type</dt>
+<dd>See chapter 6 of the HoTT book.</dd>
+<dt id="term-n-type">n-type<dt id="term-truncated-type">truncated type</dt>
+<dd>See chapters 3 and 7 of the HoTT book.</dd>
+<dt id="term-axiom">axiom</dt>
+<dd>An axiom is added to a type theory by adding a new symbol to the
+language without any computation rules.  Function extensionality
+and univalence are added as axioms in section A.3.1 of the HoTT
+book.</dd>
+<dt id="term-extensionality">extensionality</dt>
+<dd>The idea that if two objects behave equally, then they are equal
+as objects.  Function extensionality specifies that functions
+are equal if they have the same input-output behavior.</dd>
+</dl>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">wiwikwlhott</a></h1>
+
+
+
+
+
+
+<p>
+<iframe src="https://ghbtns.com/github-btn.html?user=abooij&repo=wiwikwlhott&type=watch&count=true&size=large&v=2"
+  allowtransparency="true" frameborder="0" scrolling="0" width="200px" height="35px"></iframe>
+</p>
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="faq.html">General FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="terminology.html">Confusion arising from choice of terminology</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proof-assistants.html">Proof assistants</a></li>
+<li class="toctree-l1"><a class="reference internal" href="category.html">Category theory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="semantics.html">Semantics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proof.html">Proof theory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="variants.html">Variants of HoTT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="features.html">Type-theoretical features</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Glossary</a></li>
+</ul>
+
+
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2017-2018, Auke Booij.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.4</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/glossary.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

@@ -1,0 +1,268 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>What I Wish I Knew When Learning HoTT &#8212; wiwikwlhott 0.1 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="General FAQ" href="faq.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="what-i-wish-i-knew-when-learning-hott">
+<h1>What I Wish I Knew When Learning HoTT<a class="headerlink" href="#what-i-wish-i-knew-when-learning-hott" title="Permalink to this headline">¶</a></h1>
+<p>Auke Booij</p>
+<p>This document intends to refer to concepts one may not be aware of on
+a first reading of the HoTT book, and intends to give a crude,
+possibly unhelpful intuition for them.</p>
+<p>Thanks for additional input from Sina Hazratapour, Manfred Kerber,
+Ulrik Buchholtz and Andrej Bauer.</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">General FAQ</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="faq.html#will-hott-help-me-with-my-higher-dimensional-zoggblobs">Will HoTT help me with my higher-dimensional zoggblobs?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="faq.html#how-are-open-sets-continuity-defined-in-hott">How are open sets / continuity / … defined in HoTT?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="faq.html#what-is-the-point-of-constructive-mathematics">What is the point of constructive mathematics?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="faq.html#truncation-classical-or-constructive">Truncation: classical or constructive?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="faq.html#what-is-the-difference-between-a-type-and-its-propositional-truncation">What is the difference between a type and its propositional truncation?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="faq.html#what-is-the-killer-application-of-univalence">What is the killer application of univalence?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="faq.html#what-is-univalence">What is univalence?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="faq.html#why-isn-t-there-an-induction-principle-for-the-universe">Why isn’t there an induction principle for the universe?</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="terminology.html">Confusion arising from choice of terminology</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="terminology.html#everything-is-up-to-homotopy">“Everything is up to homotopy”</a></li>
+<li class="toctree-l2"><a class="reference internal" href="terminology.html#constructors-vs-elements-vs-points-vs-terms-vs-proofs">Constructors vs elements vs points vs terms vs proofs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="terminology.html#translating-claims-in-natural-language-to-type-theory">Translating claims in natural language to type theory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="terminology.html#types-as-spaces">Types as spaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="terminology.html#sets">Sets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="terminology.html#topology">Topology</a></li>
+<li class="toctree-l2"><a class="reference internal" href="terminology.html#homotopy">Homotopy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="terminology.html#path-vs-id">Path vs Id</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="proof-assistants.html">Proof assistants</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="proof-assistants.html#differences-in-notation">Differences in notation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="proof-assistants.html#coq">Coq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="proof-assistants.html#agda">Agda</a></li>
+<li class="toctree-l2"><a class="reference internal" href="proof-assistants.html#cubicaltt">cubicaltt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="proof-assistants.html#smlredprl">RedPRL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="proof-assistants.html#libraries">Libraries</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="category.html">Category theory</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="category.html#topos-logic-versus-hott">Topos logic versus HoTT</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="semantics.html">Semantics</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="semantics.html#intended-models">Intended models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="semantics.html#categorical-semantics">Categorical semantics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="semantics.html#presheaf-semantics">Presheaf semantics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="semantics.html#categories-with-families-and-other-structure">Categories with families and other structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="semantics.html#fibrations">Fibrations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="semantics.html#simplicial-sets">Simplicial sets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="semantics.html#cubical-sets">Cubical sets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="semantics.html#infty-toposes"><span class="math notranslate nohighlight">\(\infty\)</span>-toposes</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="proof.html">Proof theory</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="proof.html#normalization">Normalization</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="variants.html">Variants of HoTT</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="variants.html#book-hott">Book HoTT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variants.html#cubical-type-theory">Cubical type theory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variants.html#hott-as-a-dsl">HoTT as a DSL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variants.html#hott-as-an-approach-to-mltt">HoTT as an approach to MLTT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variants.html#computational-higher-type-theory">Computational Higher Type Theory</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="features.html">Type-theoretical features</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="features.html#impredicative-prop-propositional-resizing">Impredicative prop / propositional resizing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="features.html#induction-induction-recursion">Induction-{induction,recursion}</a></li>
+<li class="toctree-l2"><a class="reference internal" href="features.html#w-types">W-types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="features.html#initial-algebras">Initial algebras</a></li>
+<li class="toctree-l2"><a class="reference internal" href="features.html#coinduction">Coinduction</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
+</ul>
+</div>
+<div class="section" id="changelog">
+<h2>Changelog<a class="headerlink" href="#changelog" title="Permalink to this headline">¶</a></h2>
+<p><strong>0.1</strong></p>
+<p>first release (?)</p>
+</div>
+<div class="section" id="biblography">
+<h2>Biblography<a class="headerlink" href="#biblography" title="Permalink to this headline">¶</a></h2>
+<p id="bibtex-bibliography-index-0"><table class="docutils citation" frame="void" id="awodey-warren-models" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[AW09]</td><td>Steve Awodey and Michael&nbsp;A. Warren. Homotopy theoretic models of identity types. <em>Mathematical Proceedings of the Cambridge Philosophical Society</em>, 146(1):45–55, 2009. <a class="reference external" href="https://arxiv.org/abs/0709.0248">arXiv:0709.0248</a>, <a class="reference external" href="https://doi.org/10.1017/S0305004108001783">doi:10.1017/S0305004108001783</a>.</td></tr>
+</tbody>
+</table>
+<table class="docutils citation" frame="void" id="bauer-five-stages" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[Bau16]</td><td>Andrej Bauer. Five stages of accepting constructive mathematics. <em>Bulletin of the American Mathematical Society</em>, 2016. <a class="reference external" href="https://doi.org/10.1090/bull/1556">doi:10.1090/bull/1556</a>.</td></tr>
+</tbody>
+</table>
+<table class="docutils citation" frame="void" id="bauer-hott-library" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[BGL+17]</td><td>Andrej Bauer, Jason Gross, Peter&nbsp;LeFanu Lumsdaine, Michael Shulman, Matthieu Sozeau, and Bas Spitters. The HoTT library: a formalization of homotopy type theory in Coq. In <em>Proceedings of the 6th ACM SIGPLAN Conference on Certified Programs and Proofs</em>, CPP 2017, 164–172. New York, NY, USA, 2017. ACM. <a class="reference external" href="https://arxiv.org/abs/1610.04591">arXiv:1610.04591</a>, <a class="reference external" href="https://doi.org/10.1145/3018610.3018615">doi:10.1145/3018610.3018615</a>.</td></tr>
+</tbody>
+</table>
+<table class="docutils citation" frame="void" id="bishop-numerical-language" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[Bis70]</td><td>Errett Bishop. Mathematics as a numerical language. In A.&nbsp;Kino, J.&nbsp;Myhill, and R.E. Vesley, editors, <em>Intuitionism and Proof Theory: Proceedings of the Summer Conference at Buffalo N.Y. 1968</em>, volume&nbsp;60 of Studies in Logic and the Foundations of Mathematics, pages 53–71. Elsevier, 1970. <a class="reference external" href="https://doi.org/10.1016/S0049-237X(08)70740-7">doi:10.1016/S0049-237X(08)70740-7</a>.</td></tr>
+</tbody>
+</table>
+<table class="docutils citation" frame="void" id="cchm-cubical-type-theory" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[CCHMortberg17]</td><td>Cyril Cohen, Thierry Coquand, Simon Huber, and Anders Mörtberg. Cubical type theory: a constructive interpretation of the univalence axiom. Linked via the cubicaltt github repository, 2017. URL: <a class="reference external" href="http://www.cse.chalmers.se/~coquand/cubicaltt.pdf">http://www.cse.chalmers.se/~coquand/cubicaltt.pdf</a>, <a class="reference external" href="https://arxiv.org/abs/1611.02108">arXiv:1611.02108</a>.</td></tr>
+</tbody>
+</table>
+<table class="docutils citation" frame="void" id="hofmann-syntax-semantics" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[Hof97]</td><td>Martin Hofmann. Syntax and semantics of dependent types. In <em>Semantics and Logics of Computation</em>, 79–130. Cambridge University Press, 1997.</td></tr>
+</tbody>
+</table>
+<table class="docutils citation" frame="void" id="kraus-truncation-invertible" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[Kra13]</td><td>Nicolai Kraus. The truncation map |_| : ℕ -&gt; ‖ℕ‖ is nearly invertible. Homotopy Type Theory blog, October 2013. URL: <a class="reference external" href="https://homotopytypetheory.org/2013/10/28/the-truncation-map-_-\%e2\%84\%95-\%e2\%80\%96\%e2\%84\%95\%e2\%80\%96-is-nearly-invertible/">https://homotopytypetheory.org/2013/10/28/the-truncation-map-_-\%e2\%84\%95-\%e2\%80\%96\%e2\%84\%95\%e2\%80\%96-is-nearly-invertible/</a>.</td></tr>
+</tbody>
+</table>
+<table class="docutils citation" frame="void" id="forsberg-setzer-indind" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[NFS12]</td><td>Fredrik Nordvall&nbsp;Forsberg and Anton Setzer. A finite axiomatisation of inductive-inductive definitions. In Ulrich Berger, Diener Hannes, Peter Schuster, and Monika Seisenberger, editors, <em>Logic, Construction, Computation</em>, volume&nbsp;3 of Ontos mathematical logic, pages 259–287. Ontos Verlag, 2012.</td></tr>
+</tbody>
+</table>
+<table class="docutils citation" frame="void" id="escardo-self-contained" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[HotzelEscardo18]</td><td>Martín Hötzel Escardó. A self-contained, brief and complete formulation of Voevodsky’s Univalence Axiom. <em>ArXiv e-prints</em>, March 2018. <a class="reference external" href="https://arxiv.org/abs/1803.02294">arXiv:1803.02294</a>.</td></tr>
+</tbody>
+</table>
+<table class="docutils citation" frame="void" id="lumsdaine-shulman-hits" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[LeFanuLumsdaineShulman17]</td><td>Peter LeFanu Lumsdaine and Michael Shulman. Semantics of higher inductive types. <em>ArXiv e-prints</em>, May 2017. <a class="reference external" href="https://arxiv.org/abs/1705.07088">arXiv:1705.07088</a>.</td></tr>
+</tbody>
+</table>
+<table class="docutils citation" frame="void" id="riehl-shulman-categories" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[RiehlShulman17]</td><td>Emily Riehl and Michael Shulman. A type theory for synthetic ∞-categories. <em>ArXiv e-prints</em>, May 2017. <a class="reference external" href="https://arxiv.org/abs/1705.07442">arXiv:1705.07442</a>.</td></tr>
+</tbody>
+</table>
+<table class="docutils citation" frame="void" id="shulman-real-cohesive" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[Shulman15]</td><td>Michael Shulman. Brouwer’s fixed-point theorem in real-cohesive homotopy type theory. <em>ArXiv e-prints</em>, September 2015. <a class="reference external" href="https://arxiv.org/abs/1509.07584">arXiv:1509.07584</a>.</td></tr>
+</tbody>
+</table>
+</p>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="#">wiwikwlhott</a></h1>
+
+
+
+
+
+
+<p>
+<iframe src="https://ghbtns.com/github-btn.html?user=abooij&repo=wiwikwlhott&type=watch&count=true&size=large&v=2"
+  allowtransparency="true" frameborder="0" scrolling="0" width="200px" height="35px"></iframe>
+</p>
+
+
+
+
+
+<h3>Navigation</h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">General FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="terminology.html">Confusion arising from choice of terminology</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proof-assistants.html">Proof assistants</a></li>
+<li class="toctree-l1"><a class="reference internal" href="category.html">Category theory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="semantics.html">Semantics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proof.html">Proof theory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="variants.html">Variants of HoTT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="features.html">Type-theoretical features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
+</ul>
+
+
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2017-2018, Auke Booij.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.4</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/index.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

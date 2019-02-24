@@ -1,0 +1,279 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Proof assistants &#8212; wiwikwlhott 0.1 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Category theory" href="category.html" />
+    <link rel="prev" title="Confusion arising from choice of terminology" href="terminology.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="proof-assistants">
+<h1>Proof assistants<a class="headerlink" href="#proof-assistants" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="differences-in-notation">
+<h2>Differences in notation<a class="headerlink" href="#differences-in-notation" title="Permalink to this headline">¶</a></h2>
+<p>Scientists use a variety of notations for <span class="math notranslate nohighlight">\(\Pi\)</span>- and
+<span class="math notranslate nohighlight">\(\Sigma\)</span>-types, primarily depending on the field they are working in.</p>
+<p>The <strong>mathematical</strong> notation for these types normally looks like</p>
+<div class="math notranslate nohighlight">
+\[\prod_{x:A}B(x) \qquad \sum_{x:A}B(x)\]</div>
+<p>Here, <span class="math notranslate nohighlight">\(B:A\to\mathcal{U}\)</span> is a dependent type, seen as a
+function, evaluated at the point <span class="math notranslate nohighlight">\(x:A\)</span>.</p>
+<p>In <strong>logic</strong>, one often sees</p>
+<div class="math notranslate nohighlight">
+\[\prod_{x:A}B \qquad \sum_{x:A}B\]</div>
+<p>where <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> are now seen as syntactic expressions,
+and in particular the expression <span class="math notranslate nohighlight">\(B\)</span> may use the variable
+<span class="math notranslate nohighlight">\(x\)</span> of type <span class="math notranslate nohighlight">\(A\)</span>.  Hence the “evaluation” of <span class="math notranslate nohighlight">\(B\)</span> at
+<span class="math notranslate nohighlight">\(x\)</span> is dropped, compared to the mathematical notation.</p>
+<p>In <strong>Agda-style</strong> proof assistants, <span class="math notranslate nohighlight">\(\Pi\)</span>-types are denoted</p>
+<div class="highlight-agda notranslate"><div class="highlight"><pre><span></span><span class="o">(</span>x <span class="ow">:</span> A<span class="o">)</span> <span class="ow">-&gt;</span> B x
+</pre></div>
+</div>
+<p>and <span class="math notranslate nohighlight">\(\Sigma\)</span>-types as</p>
+<div class="highlight-agda notranslate"><div class="highlight"><pre><span></span><span class="o">(</span>x <span class="ow">:</span> A<span class="o">)</span> * B x
+</pre></div>
+</div>
+<p>The motivation behind these notations is that <code class="docutils literal notranslate"><span class="pre">(x</span> <span class="pre">:</span> <span class="pre">A)</span> <span class="pre">-&gt;</span> <span class="pre">B</span> <span class="pre">x</span></code> is
+like a visual generalization of the independent function type <code class="docutils literal notranslate"><span class="pre">A</span> <span class="pre">-&gt;</span>
+<span class="pre">B</span></code>, and that <code class="docutils literal notranslate"><span class="pre">(x</span> <span class="pre">:</span> <span class="pre">A)</span> <span class="pre">*</span> <span class="pre">B</span> <span class="pre">x</span></code> is a visual generalization of the
+independent product type <code class="docutils literal notranslate"><span class="pre">A</span> <span class="pre">*</span> <span class="pre">B</span></code>.</p>
+<p>In <strong>Coq-style</strong> proof assistants, the <span class="math notranslate nohighlight">\(\Pi\)</span>-types are denoted</p>
+<div class="highlight-coq notranslate"><div class="highlight"><pre><span></span><span class="k">forall</span> <span class="n">x</span> <span class="o">:</span> <span class="n">A</span><span class="o">,</span> <span class="n">B</span> <span class="n">x</span>
+</pre></div>
+</div>
+<p>which may be somewhat confusing since the “forall-quantifier”
+<span class="math notranslate nohighlight">\(\forall\)</span> is used in HoTT solely for logical notation of
+propositions as in Definition 3.7.1 in the HoTT book.
+<span class="math notranslate nohighlight">\(\Sigma\)</span>-types are written as in Agda, but also as</p>
+<div class="highlight-coq notranslate"><div class="highlight"><pre><span></span><span class="o">{</span> <span class="n">x</span> <span class="o">:</span> <span class="n">A</span> <span class="o">&amp;</span> <span class="n">B</span> <span class="n">x</span> <span class="o">}</span>
+</pre></div>
+</div>
+<p>which reminds of set comprehension.  However, this notation is used
+rarely, unless each <code class="docutils literal notranslate"><span class="pre">B</span> <span class="pre">x</span></code> is a proposition.</p>
+<p>Many libraries define their own notation for <span class="math notranslate nohighlight">\(\Pi\)</span>- and
+<span class="math notranslate nohighlight">\(\Sigma\)</span>-types, commonly making use of unicode support of the
+underlying language.</p>
+<p>Finally, inductively defined types in proof assistants correspond to
+<a class="reference internal" href="features.html#w-types"><span class="std std-ref">W-types</span></a>.</p>
+<div class="admonition-todo admonition" id="index-0">
+<p class="first admonition-title">Todo</p>
+<p class="last">is the last thing true? up to homotopy, maybe. computational
+behavior is not specified the same way.</p>
+</div>
+</div>
+<div class="section" id="coq">
+<h2>Coq<a class="headerlink" href="#coq" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-todo admonition" id="index-1">
+<p class="first admonition-title">Todo</p>
+<p class="last">say something about <code class="docutils literal notranslate"><span class="pre">Prop</span></code> and <code class="docutils literal notranslate"><span class="pre">Set</span></code> and <code class="docutils literal notranslate"><span class="pre">Type</span></code></p>
+</div>
+<p>Coq consists of several layers of programming languages. The most
+famous one is the tactic language that is used to prove theorems. But
+since theorems are interpreted by types, and proofs by elements of
+those types, really tactics just construct terms.  For example:</p>
+<div class="highlight-coq notranslate"><div class="highlight"><pre><span></span><span class="kn">Definition</span> <span class="n">decidablepaths_equiv</span>
+           <span class="o">(</span><span class="n">A</span> <span class="o">:</span> <span class="kt">Type</span><span class="o">)</span> <span class="o">{</span><span class="n">B</span> <span class="o">:</span> <span class="kt">Type</span><span class="o">}</span> <span class="o">(</span><span class="n">f</span> <span class="o">:</span> <span class="n">A</span> <span class="o">-&gt;</span> <span class="n">B</span><span class="o">)</span> <span class="o">`{</span><span class="n">IsEquiv</span> <span class="n">A</span> <span class="n">B</span> <span class="n">f</span><span class="o">}</span>
+<span class="o">:</span> <span class="n">DecidablePaths</span> <span class="n">A</span> <span class="o">-&gt;</span> <span class="n">DecidablePaths</span> <span class="n">B</span><span class="o">.</span>
+<span class="kn">Proof</span><span class="o">.</span>
+  <span class="k">intros</span> <span class="n">d</span> <span class="n">x</span> <span class="n">y</span><span class="o">.</span>
+  <span class="k">destruct</span> <span class="o">(</span><span class="n">d</span> <span class="o">(</span><span class="n">f</span><span class="o">^-</span><span class="mi">1</span> <span class="n">x</span><span class="o">)</span> <span class="o">(</span><span class="n">f</span><span class="o">^-</span><span class="mi">1</span> <span class="n">y</span><span class="o">))</span> <span class="k">as</span> <span class="o">[</span><span class="n">e</span><span class="o">|</span><span class="n">ne</span><span class="o">].</span>
+  <span class="o">-</span> <span class="k">apply</span> <span class="n">inl</span><span class="o">.</span> <span class="kp">exact</span> <span class="o">((</span><span class="n">eisretr</span> <span class="n">f</span> <span class="n">x</span><span class="o">)^</span> <span class="o">@</span> <span class="n">ap</span> <span class="n">f</span> <span class="n">e</span> <span class="o">@</span> <span class="n">eisretr</span> <span class="n">f</span> <span class="n">y</span><span class="o">).</span>
+  <span class="o">-</span> <span class="k">apply</span> <span class="n">inr</span><span class="o">;</span> <span class="k">intros</span> <span class="n">p</span><span class="o">.</span> <span class="k">apply</span> <span class="n">ne</span><span class="o">,</span> <span class="n">ap</span><span class="o">,</span> <span class="n">p</span><span class="o">.</span>
+<span class="kn">Defined</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>results in the term:</p>
+<div class="highlight-coq notranslate"><div class="highlight"><pre><span></span><span class="n">decidablepaths_equiv</span> <span class="o">=</span>
+<span class="k">fun</span> <span class="o">(</span><span class="n">A</span> <span class="n">B</span> <span class="o">:</span> <span class="kt">Type</span><span class="o">)</span> <span class="o">(</span><span class="n">f</span> <span class="o">:</span> <span class="n">A</span> <span class="o">-&gt;</span> <span class="n">B</span><span class="o">)</span> <span class="o">(</span><span class="n">H</span> <span class="o">:</span> <span class="n">IsEquiv</span> <span class="n">f</span><span class="o">)</span> <span class="o">(</span><span class="n">d</span> <span class="o">:</span> <span class="n">DecidablePaths</span> <span class="n">A</span><span class="o">)</span> <span class="o">(</span><span class="n">x</span> <span class="n">y</span> <span class="o">:</span> <span class="n">B</span><span class="o">)</span> <span class="o">=&gt;</span>
+<span class="k">let</span> <span class="n">d0</span> <span class="o">:=</span> <span class="n">d</span> <span class="o">(_^-</span><span class="mi">1</span> <span class="n">x</span><span class="o">)</span> <span class="o">(_^-</span><span class="mi">1</span> <span class="n">y</span><span class="o">)</span> <span class="k">in</span>
+<span class="k">match</span> <span class="n">d0</span> <span class="k">with</span>
+<span class="o">|</span> <span class="n">inl</span> <span class="n">e</span> <span class="o">=&gt;</span> <span class="n">inl</span> <span class="o">(((</span><span class="n">eisretr</span> <span class="o">_</span> <span class="n">x</span><span class="o">)^</span> <span class="o">@</span> <span class="n">ap</span> <span class="n">f</span> <span class="n">e</span><span class="o">)</span> <span class="o">@</span> <span class="n">eisretr</span> <span class="o">_</span> <span class="n">y</span><span class="o">)</span>
+<span class="o">|</span> <span class="n">inr</span> <span class="n">ne</span> <span class="o">=&gt;</span> <span class="n">inr</span> <span class="o">(</span><span class="k">fun</span> <span class="n">p</span> <span class="o">:</span> <span class="n">x</span> <span class="o">=</span> <span class="n">y</span> <span class="o">=&gt;</span> <span class="n">ne</span> <span class="o">(</span><span class="n">ap</span> <span class="n">f</span><span class="o">^-</span><span class="mi">1</span> <span class="n">p</span><span class="o">))</span>
+<span class="k">end</span>
+</pre></div>
+</div>
+<p>With some imagination, it can be seen that this is just a
+type-theoretical expression: <code class="docutils literal notranslate"><span class="pre">fun</span></code> indicates a lambda expression,
+<code class="docutils literal notranslate"><span class="pre">match</span></code> is a case analysis, <code class="docutils literal notranslate"><span class="pre">&#64;</span></code> is path concatenation, <code class="docutils literal notranslate"><span class="pre">^</span></code> is
+path inversion, <code class="docutils literal notranslate"><span class="pre">^-1</span></code> takes the inverse of an equivalence, <code class="docutils literal notranslate"><span class="pre">_</span></code> is
+an automatically inferred term.</p>
+<p>(The above is an example from the <a class="reference internal" href="#hott-coq"><span class="std std-ref">HoTT Coq library</span></a>.)</p>
+</div>
+<div class="section" id="agda">
+<h2>Agda<a class="headerlink" href="#agda" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="cubicaltt">
+<span id="proof-assistant-cubical"></span><h2>cubicaltt<a class="headerlink" href="#cubicaltt" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-todo admonition" id="index-2">
+<p class="first admonition-title">Todo</p>
+<ul class="last simple">
+<li>interval is abstract (as opposed to, say, an interval of reals):
+cubical set (though necessarily <em>not</em> Kan, see semantics section)</li>
+<li>earlier iteration: cubical</li>
+</ul>
+</div>
+</div>
+<div class="section" id="smlredprl">
+<span id="id1"></span><h2><a class="reference external" href="http://www.redprl.org/">RedPRL</a><a class="headerlink" href="#smlredprl" title="Permalink to this headline">¶</a></h2>
+<p>RedPRL is a proof assistant aims to implements <a class="reference internal" href="variants.html#chtt"><span class="std std-ref">Computational Higher Type Theory</span></a>.  It is
+similar in spirit to NuPRL, which is a type theory of <a class="reference internal" href="terminology.html#sets"><span class="std std-ref">sets</span></a>, except that RedPRL provides a type theory of higher types.
+Terms can be specified not just by the Martin-löf terms, but by
+arbitrary programs.</p>
+</div>
+<div class="section" id="libraries">
+<span id="proof-assistants-libraries"></span><h2>Libraries<a class="headerlink" href="#libraries" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="unimath">
+<h3>UniMath<a class="headerlink" href="#unimath" title="Permalink to this headline">¶</a></h3>
+<p>In February 2010, Vladimir Voevodsky started writing the <em>Foundations</em>
+library to make precise his ideas collected in <em>A very short note on
+the homotopy λ-calculus</em>.  Other libraries were
+subsequently built on top of this.  UniMath was founded in spring
+2014, by combining some libraries.</p>
+<p>See also Benedikt Ahrens’ <a class="reference external" href="https://unimath.github.io/bham2017/UniMath_origins-present-future.pdf">UniMath: its origins, present, and future</a>.</p>
+<p>The code can be found on the <a class="reference external" href="https://github.com/UniMath/UniMath/">UniMath github</a>.</p>
+</div>
+<div class="section" id="hott-coq-library">
+<span id="hott-coq"></span><h3>HoTT Coq library<a class="headerlink" href="#hott-coq-library" title="Permalink to this headline">¶</a></h3>
+<p>Compared to UniMath, this library uses more features of Coq.  See the
+paper for a description <a class="reference internal" href="index.html#bauer-hott-library" id="id2">[BGL+17]</a>.</p>
+<p>The code can be found on the <a class="reference external" href="https://github.com/HoTT/HoTT/">HoTT github</a>.</p>
+</div>
+<div class="section" id="hott-agda-library">
+<h3>HoTT agda library<a class="headerlink" href="#hott-agda-library" title="Permalink to this headline">¶</a></h3>
+<p>The code can be found on the <a class="reference external" href="https://github.com/HoTT/HoTT-Agda/">HoTT-Agda github</a>.</p>
+</div>
+<div class="section" id="id3">
+<h3>cubicaltt<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p>The cubicaltt compiler, that implements <a class="reference internal" href="variants.html#cubical-type-theory"><span class="std std-ref">Cubical type theory</span></a>,
+ships with code implementing various parts of HoTT.</p>
+<p>The code can be found on the <a class="reference external" href="https://github.com/mortberg/cubicaltt/tree/master/examples">cubicaltt github</a>.</p>
+</div>
+<div class="section" id="lean">
+<h3>Lean<a class="headerlink" href="#lean" title="Permalink to this headline">¶</a></h3>
+<p>The Lean proof assistant includes HoTT libraries (work of Floris van
+Doorn et al.).</p>
+<p>Lean 2 supports hott and has a (rather large) hott library, if you
+include the spectral libray.</p>
+<p>Lean 3 doesn’t support hott directly, because of changes to the
+kernel, but nonetheless there is an experimental library for this.</p>
+</div>
+<div class="section" id="other-libraries">
+<h3>Other libraries<a class="headerlink" href="#other-libraries" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>The <a class="reference external" href="https://github.com/dlicata335/hott-agda">cubical agda library by Dan Licata et
+al.</a>, which aims to
+optimize some homotopical proofs in a type theory in which the
+higher constructors of HITs satisfy a <em>typal</em> computation rule,
+rather than a judgmental one.</li>
+<li>Various scientists have a personal library for doing HoTT.</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">wiwikwlhott</a></h1>
+
+
+
+
+
+
+<p>
+<iframe src="https://ghbtns.com/github-btn.html?user=abooij&repo=wiwikwlhott&type=watch&count=true&size=large&v=2"
+  allowtransparency="true" frameborder="0" scrolling="0" width="200px" height="35px"></iframe>
+</p>
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="faq.html">General FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="terminology.html">Confusion arising from choice of terminology</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Proof assistants</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#differences-in-notation">Differences in notation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#coq">Coq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#agda">Agda</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#cubicaltt">cubicaltt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#smlredprl">RedPRL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#libraries">Libraries</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="category.html">Category theory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="semantics.html">Semantics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proof.html">Proof theory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="variants.html">Variants of HoTT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="features.html">Type-theoretical features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
+</ul>
+
+
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2017-2018, Auke Booij.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.4</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/proof-assistants.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

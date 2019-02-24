@@ -1,0 +1,163 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Type-theoretical features &#8212; wiwikwlhott 0.1 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Glossary" href="glossary.html" />
+    <link rel="prev" title="Variants of HoTT" href="variants.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="type-theoretical-features">
+<h1>Type-theoretical features<a class="headerlink" href="#type-theoretical-features" title="Permalink to this headline">¶</a></h1>
+<div class="admonition-todo admonition" id="index-0">
+<p class="first admonition-title">Todo</p>
+<p class="last">heterogeneous Id types (used in e.g. cubicaltt)</p>
+</div>
+<div class="section" id="impredicative-prop-propositional-resizing">
+<h2>Impredicative prop / propositional resizing<a class="headerlink" href="#impredicative-prop-propositional-resizing" title="Permalink to this headline">¶</a></h2>
+<p>The principle that there is only one type <span class="math notranslate nohighlight">\(\Omega\)</span> of
+propositions, and it is a member of <span class="math notranslate nohighlight">\(\mathcal{U}_0\)</span>: so all types
+of propositions <span class="math notranslate nohighlight">\(\mathsf{Prop}_i\)</span> are equal, and it is a type in
+the lowest universe.</p>
+<p>Assuming this principle, the set of types of any universe is a topos.</p>
+<p>Assuming this principle, some HITs become definable by impredicative
+encoding: e.g. truncation as <span class="math notranslate nohighlight">\(\prod_{P:\Omega}(X\to P)\to P\)</span>.</p>
+<p><a class="reference internal" href="proof-assistants.html#proof-assistants-libraries"><span class="std std-ref">UniMath</span></a> uses propositional
+resizing.</p>
+</div>
+<div class="section" id="induction-induction-recursion">
+<span id="induction-recursion"></span><h2>Induction-{induction,recursion}<a class="headerlink" href="#induction-induction-recursion" title="Permalink to this headline">¶</a></h2>
+<p>Induction-induction is different from induction-recursion.</p>
+<p>See also <a class="reference external" href="https://cs.stackexchange.com/q/64139">Andrej Bauer on CS.StackExchange</a> as well as
+<a class="reference internal" href="index.html#forsberg-setzer-indind" id="id1">[NFS12]</a>.</p>
+</div>
+<div class="section" id="w-types">
+<span id="id2"></span><h2>W-types<a class="headerlink" href="#w-types" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-todo admonition" id="index-1">
+<p class="first admonition-title">Todo</p>
+<p class="last">aka GADTs (?): every instance of a datatype declaration is
+really just a W-type.  compare with unimath (which doesn’t
+assume to have them).  (well, this is not quite true: should
+also consider the computation rules.)</p>
+</div>
+</div>
+<div class="section" id="initial-algebras">
+<h2>Initial algebras<a class="headerlink" href="#initial-algebras" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="coinduction">
+<h2>Coinduction<a class="headerlink" href="#coinduction" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-todo admonition" id="index-2">
+<p class="first admonition-title">Todo</p>
+<ul class="last simple">
+<li>pi-types</li>
+<li>altenkirch’s presentation?</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">wiwikwlhott</a></h1>
+
+
+
+
+
+
+<p>
+<iframe src="https://ghbtns.com/github-btn.html?user=abooij&repo=wiwikwlhott&type=watch&count=true&size=large&v=2"
+  allowtransparency="true" frameborder="0" scrolling="0" width="200px" height="35px"></iframe>
+</p>
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="faq.html">General FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="terminology.html">Confusion arising from choice of terminology</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proof-assistants.html">Proof assistants</a></li>
+<li class="toctree-l1"><a class="reference internal" href="category.html">Category theory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="semantics.html">Semantics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proof.html">Proof theory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="variants.html">Variants of HoTT</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Type-theoretical features</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#impredicative-prop-propositional-resizing">Impredicative prop / propositional resizing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#induction-induction-recursion">Induction-{induction,recursion}</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#w-types">W-types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#initial-algebras">Initial algebras</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#coinduction">Coinduction</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
+</ul>
+
+
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2017-2018, Auke Booij.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.4</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/features.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

@@ -1,0 +1,212 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Variants of HoTT &#8212; wiwikwlhott 0.1 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Type-theoretical features" href="features.html" />
+    <link rel="prev" title="Proof theory" href="proof.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="variants-of-hott">
+<h1>Variants of HoTT<a class="headerlink" href="#variants-of-hott" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="book-hott">
+<span id="id1"></span><h2>Book HoTT<a class="headerlink" href="#book-hott" title="Permalink to this headline">¶</a></h2>
+<p>Book HoTT is the type theory described in the HoTT book.  The theory
+is given initially as intensional MLTT with a hierarchy of universes
+indexed by nonnegative numerals, and univalence as an <a class="reference internal" href="glossary.html#term-axiom"><span class="xref std std-term">axiom</span></a>
+(and function extensionality as a theorem).</p>
+<p>In addition, the HoTT book has an (intentionally) unspecified ability
+to obtain higher inductive types, and some examples are given:</p>
+<ul class="simple">
+<li><span class="math notranslate nohighlight">\(n\)</span>-truncation,</li>
+<li>suspension types,</li>
+<li>pushouts,</li>
+<li>set quotients,</li>
+<li>the cumulative hierarchy <span class="math notranslate nohighlight">\(V\)</span>,</li>
+<li>the surreal numbers <span class="math notranslate nohighlight">\(\mathsf{No}\)</span>,</li>
+<li>the free Cauchy completion of the rationals <span class="math notranslate nohighlight">\(\mathbf{R}_C\)</span>,</li>
+</ul>
+<p>where the computation rules for HITs is given definitionally for
+points but propositionally for higher constructors.</p>
+</div>
+<div class="section" id="cubical-type-theory">
+<span id="id2"></span><h2>Cubical type theory<a class="headerlink" href="#cubical-type-theory" title="Permalink to this headline">¶</a></h2>
+<p>See also <a class="reference internal" href="proof-assistants.html#proof-assistant-cubical"><span class="std std-ref">the proof assistant section</span></a>
+and CCHM <a class="reference internal" href="index.html#cchm-cubical-type-theory" id="id3">[CCHMortberg17]</a>.  To get started
+understanding cubical type theory, it may be worth reading the demo
+code from the proof assistant.</p>
+<p>Cubical type theory is a type theory for which univalence is a
+theorem.  It adds an interval <em>pretype</em> which is used to define
+identity types.  This interval is necessarily not a type.  In
+practice, this means that you can talk about the type <span class="math notranslate nohighlight">\(I\to A\)</span>
+of functions from the interval to a type, but you can not talk about
+the interval <span class="math notranslate nohighlight">\(I\)</span> as a free-standing type.</p>
+<p>Cubical type theory was implemented in the <strong>cubicaltt</strong> proof assistant
+and the agda <code class="docutils literal notranslate"><span class="pre">--cubical</span></code> mode.</p>
+<p>Although univalence is a theorem, the normal form is huge (megabytes),
+although it is argued that this is due to the proof rather than the
+design of cubical type theory.</p>
+<div class="admonition-todo admonition" id="index-0">
+<p class="first admonition-title">Todo</p>
+<p class="last">there are variants of cubicaltt itself: “gothenburg” cubicaltt,
+computational type theory, conor mcbride’s work “cubical
+adventures”</p>
+</div>
+<div class="admonition-todo admonition" id="index-1">
+<p class="first admonition-title">Todo</p>
+<p class="last">NB: cubical sets != cubical TT. cubical sets is a semantics of
+<em>two</em> type theories: book hott and cubicaltt.</p>
+</div>
+<div class="admonition-todo admonition" id="index-2">
+<p class="first admonition-title">Todo</p>
+<p class="last">you have identity types, and path types, and they are
+computationally not the same (although they are htpy-equiv).</p>
+</div>
+</div>
+<div class="section" id="hott-as-a-dsl">
+<h2>HoTT as a DSL<a class="headerlink" href="#hott-as-a-dsl" title="Permalink to this headline">¶</a></h2>
+<p>Dan Licata <a class="reference external" href="http://dlicata.web.wesleyan.edu/pubs/l17small/l17small.pdf">argues</a> we
+should think of HoTT as a language to which we add features depending
+on how we plan to use it, in the same way that we write specialized
+programming languages for specific use-cases. For example, cubical
+type theory is a domain-specific language for programming with Kan
+cubical sets, and real-cohesive HoTT is a language for programming
+topological spaces. Shulman and Riehl have a language for programming
+<span class="math notranslate nohighlight">\((\infty,1)\)</span>-categories <a class="reference internal" href="index.html#riehl-shulman-categories" id="id4">[RiehlShulman17]</a>.</p>
+<p>In this sense, HoTT becomes a class of type theories.</p>
+</div>
+<div class="section" id="hott-as-an-approach-to-mltt">
+<h2>HoTT as an approach to MLTT<a class="headerlink" href="#hott-as-an-approach-to-mltt" title="Permalink to this headline">¶</a></h2>
+<p>Parts of HoTT can be developed in intensional MLTT, that is, without
+assuming univalence, function extensionality, propositional
+extensionality, or the existence of any HITs. For example:</p>
+<ul class="simple">
+<li>The fact that h-levels are cumulative (if <span class="math notranslate nohighlight">\(A\)</span> is an
+<span class="math notranslate nohighlight">\(n\)</span>-type then it is also an <span class="math notranslate nohighlight">\((n+1)\)</span>-type) does not
+require univalence.</li>
+<li>The groupoid laws of identity types and iterated identity types can
+be proved by simple path inductions.</li>
+<li>Some propositional truncations exist without assuming the existence
+of any HITs or propositional resizing, such as the type of
+fixed-points of any constant endomap <span class="math notranslate nohighlight">\(f\)</span> on <span class="math notranslate nohighlight">\(X\)</span>.</li>
+</ul>
+</div>
+<div class="section" id="computational-higher-type-theory">
+<span id="chtt"></span><h2>Computational Higher Type Theory<a class="headerlink" href="#computational-higher-type-theory" title="Permalink to this headline">¶</a></h2>
+<p>See also: the <a class="reference internal" href="proof-assistants.html#smlredprl"><span class="std std-ref">RedPRL</span></a> proof assistant.</p>
+<div class="admonition-todo admonition" id="index-3">
+<p class="first admonition-title">Todo</p>
+<p class="last">give some intuition that is correct.</p>
+</div>
+<div class="admonition-todo admonition" id="index-4">
+<p class="first admonition-title">Todo</p>
+<p class="last">cohesive type theories</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">wiwikwlhott</a></h1>
+
+
+
+
+
+
+<p>
+<iframe src="https://ghbtns.com/github-btn.html?user=abooij&repo=wiwikwlhott&type=watch&count=true&size=large&v=2"
+  allowtransparency="true" frameborder="0" scrolling="0" width="200px" height="35px"></iframe>
+</p>
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="faq.html">General FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="terminology.html">Confusion arising from choice of terminology</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proof-assistants.html">Proof assistants</a></li>
+<li class="toctree-l1"><a class="reference internal" href="category.html">Category theory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="semantics.html">Semantics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proof.html">Proof theory</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Variants of HoTT</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#book-hott">Book HoTT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#cubical-type-theory">Cubical type theory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#hott-as-a-dsl">HoTT as a DSL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#hott-as-an-approach-to-mltt">HoTT as an approach to MLTT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#computational-higher-type-theory">Computational Higher Type Theory</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="features.html">Type-theoretical features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
+</ul>
+
+
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2017-2018, Auke Booij.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.4</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/variants.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

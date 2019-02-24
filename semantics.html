@@ -1,0 +1,298 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Semantics &#8212; wiwikwlhott 0.1 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Proof theory" href="proof.html" />
+    <link rel="prev" title="Category theory" href="category.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="semantics">
+<h1>Semantics<a class="headerlink" href="#semantics" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="intended-models">
+<h2>Intended models<a class="headerlink" href="#intended-models" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-todo admonition" id="index-0">
+<p class="first admonition-title">Todo</p>
+<p>write: what do we want, and how far did we get</p>
+<p>kapulkin et al. tribes. sometimes, have models in LCC infty-cats.</p>
+<p>shulman’s papers: models of hott in some presentations of some
+infty-toposes (“reedy category stuff”)</p>
+<p class="last">knapp et al.</p>
+</div>
+</div>
+<div class="section" id="categorical-semantics">
+<span id="id1"></span><h2>Categorical semantics<a class="headerlink" href="#categorical-semantics" title="Permalink to this headline">¶</a></h2>
+<p>In the HoTT book, Appendix A.2, the formal type theory is presented by
+giving three types of judgments:</p>
+<ul class="simple">
+<li>contexts judgments (that express that some context is well-formed),</li>
+<li>typing judgments (that express that some term is well-formed and has
+some type), and</li>
+<li>appropriate judgmental equality rules.</li>
+</ul>
+<p>In this presentation, the elements of universes are exactly types.
+This is known as a type universe à la Russell.</p>
+<p>However, semantically, a different presentation is preferred, in which
+the elements of universes are thought of as <em>codes</em> for types, which
+may be instantiated to obtain actual types.  This is known as a type
+universe à la Tarski.  So when studying semantics, type theory is
+presented by:</p>
+<ul class="simple">
+<li>context judgments (that express that some context is well-formed),</li>
+<li>type judgments (that express that some expression is a well-formed type),</li>
+<li>term judgments (that express that some term is well-formed and has
+some type), and</li>
+<li>appropriate judgmental equality rules (for both types and terms).</li>
+</ul>
+<p>The semantics of a type theory in this second style needs to interpret
+the three kinds of objects, namely contexts, types, and terms, and it
+needs to respect judgmental equality, in the sense that if two types
+(say) are judgmentally equal in the type theory, then they are
+semantically equal.</p>
+<p>One way to construct a semantics of type theory is to take the
+interpretations to be the syntax itself, modulo judgmental equality
+rules.  In such a syntactic models of type theory, the semantics
+respects judgmental equality automatically, since judgmental equality
+is exactly what is divided out when constructing the model.</p>
+<p>In categorical semantics, the contexts <span class="math notranslate nohighlight">\(\Gamma\)</span> of the type
+theory are interpreted by objects <span class="math notranslate nohighlight">\(G\)</span> of some fixed category
+<span class="math notranslate nohighlight">\(\mathcal{C}\)</span>, with the morphisms modelling
+substitutions. Typically, the empty context <span class="math notranslate nohighlight">\(\cdot\)</span> (rule
+ctx-EMP in Appendix A.2) is interpreted by the terminal object. To
+interpret the context extension rule (ctx-EXT in Appendix A.2), we
+need a semantic context extension. But to say what that is, we first
+need to understand how to interpret types.</p>
+<p>The types in a fixed context <span class="math notranslate nohighlight">\(\Gamma\)</span> are interpreted by certain
+morphism <span class="math notranslate nohighlight">\(A:GA\to G\)</span> into the interpretation <span class="math notranslate nohighlight">\(G\)</span> of that
+context <span class="math notranslate nohighlight">\(\Gamma\)</span>. (In the case of HoTT, necessarily not all
+morphisms are eligible - see below.)</p>
+<p>Finally, given a semantic context <span class="math notranslate nohighlight">\(G\)</span> and a semantic type in that
+context, the terms of that type are interpreted as sections
+<span class="math notranslate nohighlight">\(s:G \to GA\)</span> of the morphism <span class="math notranslate nohighlight">\(A:GA\to G\)</span> that models the
+type.</p>
+<p>For more information on categorical semantics of type theory with a
+universe à la Tarski, see e.g. Hofmann
+<a class="reference internal" href="index.html#hofmann-syntax-semantics" id="id2">[Hof97]</a>.</p>
+</div>
+<div class="section" id="presheaf-semantics">
+<h2>Presheaf semantics<a class="headerlink" href="#presheaf-semantics" title="Permalink to this headline">¶</a></h2>
+<p>We now consider categorical semantics in the case that the underlying
+category <span class="math notranslate nohighlight">\(\mathcal{C}\)</span> of our semantics is a presheaf category
+<span class="math notranslate nohighlight">\(\mathbf{Set}^{\mathcal{D}^{op}}\)</span>.</p>
+<p>Usually, the semantics are somewhat obscured as semantic types are
+presented differently: instead of maps into contexts, a semantic type
+<span class="math notranslate nohighlight">\(A\)</span> in the semantic context <span class="math notranslate nohighlight">\(G\)</span> (where <span class="math notranslate nohighlight">\(G\)</span> is an
+object of our category, that is, a presheaf
+<span class="math notranslate nohighlight">\(G:\mathcal{D}^{op}\to\mathbf{Set}\)</span>) is defined to be a family of
+sets <span class="math notranslate nohighlight">\((A_{d,g})_{d\in\mathcal{D},\,g\in G(d)}\)</span> together with maps
+<span class="math notranslate nohighlight">\((A_{d',g'}\to A_{d,G(i)(g')})_{i:d\to d',\, g'\in G(d')}\)</span>.
+Additionally, these families are supposed to satisfy certain
+functoriality conditions.</p>
+<p>We can translate such families to our presentation above by defining a
+new presheaf <span class="math notranslate nohighlight">\(GA\)</span> by <span class="math notranslate nohighlight">\(GA(d):=\bigsqcup_{g\in G(d)}A_{d,g}\)</span>,
+and similarly for the morphisms, and with the natural transformation
+<span class="math notranslate nohighlight">\(A:GA\to G\)</span> sending all elements of <span class="math notranslate nohighlight">\(A_{d,g}\)</span> to
+<span class="math notranslate nohighlight">\(g\in G(d)\)</span>.</p>
+<p>Conversely, given a presheaf <span class="math notranslate nohighlight">\(GA\)</span> and a natural transformation
+<span class="math notranslate nohighlight">\(A:GA\to G\)</span>, we define <span class="math notranslate nohighlight">\(A_{d,g}:=A^{-1}_d(g)\)</span> (noting that
+<span class="math notranslate nohighlight">\(A_{d,g}\subseteq GA(d)\)</span>), and the map
+<span class="math notranslate nohighlight">\(A_{d',g'}\to A_{d,G(i)(g')}\)</span> is defined by restriction of
+<span class="math notranslate nohighlight">\(GA(i):GA(d')\to GA(d)\)</span>.</p>
+<p>A further complication may be that people consider semantics in
+presheafs on an opposite category, in which case tracing the
+<span class="math notranslate nohighlight">\(op\)</span>s around can take some effort.</p>
+</div>
+<div class="section" id="categories-with-families-and-other-structure">
+<span id="cwf"></span><h2>Categories with families and other structure<a class="headerlink" href="#categories-with-families-and-other-structure" title="Permalink to this headline">¶</a></h2>
+<p>As a naive attempt at finding semantics for type theory, we interpret
+a context <span class="math notranslate nohighlight">\(\Gamma\)</span> by an object <span class="math notranslate nohighlight">\(G\)</span> of some ordinary
+category <span class="math notranslate nohighlight">\(\mathcal{C}\)</span>, and interpret types in <span class="math notranslate nohighlight">\(\Gamma\)</span> by
+a map into <span class="math notranslate nohighlight">\(G\)</span>.  However, such a naive interpretation will not
+allow us to interpret univalent type theories.  In Awodey&amp;Warren
+<a class="reference internal" href="index.html#awodey-warren-models" id="id3">[AW09]</a>, Proposition 2.1, we see why we need to
+restrict our semantics of types.  Namely, if we start with a category
+of contexts which is LCC (since we want to interpret dependent
+products), and if it has identity types, and if all morphisms are
+accepted as semantic types, then we are necessarily modelling
+extensional MLTT, and so we ruled out univalence.</p>
+<p>Instead, we want to pick out a certain subset of our maps to represent
+types over contexts.  One naive approach is to just take any category
+and ask for extra data, so that we can tell types apart from arbitrary
+maps.  This approach has resulted in various definitions of this extra
+data: categories with families, categories with attributes, contextual
+categories (aka C-system), display map categories, and comprehension
+categories.</p>
+<p>These various definitions are unsatisfying since they are <strong>not</strong>
+invariant under equivalence of the underlying category. For example,
+there is no contextual category on the 1-object 1-morphism category,
+since it needs countably many copies even of the terminal object, but
+there <em>is</em> a contextual category in which all objects are terminal.</p>
+</div>
+<div class="section" id="fibrations">
+<span id="id4"></span><h2>Fibrations<a class="headerlink" href="#fibrations" title="Permalink to this headline">¶</a></h2>
+<p>(NB: In category theory, there is the notion of Grothendieck fibration,
+which is sometimes referred to plainly as a fibration. It is not the
+same as this concept.)</p>
+<p>In categorical semantics of HoTT, we need to distinguish arbitrary maps
+between the objects (namely <em>context morphisms</em> or <em>substitutions</em>,
+since the objects represent contexts) from maps that represent types
+<em>over</em> a context (as types in a context are represented by maps into
+that context) (see <a class="reference internal" href="#cwf"><span class="std std-ref">Categories with families and other structure</span></a> above).</p>
+<p>Usually, we specify this by saying which maps are <em>fibrations</em>, and more
+generally we show that the category is a model category. So what it
+means for a certain semantic object to be a fibration depends on the
+chosen model category structure. For example, in simplicial sets, a map
+is defined to be a fibration if it is Kan. Because of the importance of
+the Kan condition, in semantics of type theory, we sometimes refer to
+the fibrations as <em>Kan fibrations</em>.</p>
+<p>So we say which maps are fibrations, so that we can define a
+corresponding (say) CwF out of the model category, which has as the
+types exactly the <em>fibrations</em> into the context.</p>
+<div class="admonition-todo admonition" id="index-1">
+<p class="first admonition-title">Todo</p>
+<p class="last">NB: all <em>semantic</em> maps are fibrations, but this is not true
+as an internal statement.  see also: translating natural
+language to type theory</p>
+</div>
+<div class="admonition-todo admonition" id="index-2">
+<p class="first admonition-title">Todo</p>
+<p class="last">various ways to present fibrations: types in context, sigma
+type, type family</p>
+</div>
+</div>
+<div class="section" id="simplicial-sets">
+<h2>Simplicial sets<a class="headerlink" href="#simplicial-sets" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-todo admonition" id="index-3">
+<p class="first admonition-title">Todo</p>
+<ul class="last simple">
+<li>presentation in terms of coface and codegeneracy maps is
+equivalent to saying “take all order-preserving morphisms”</li>
+<li>different categories <span class="math notranslate nohighlight">\(\Delta\)</span> in literature, and their
+applications: compositions, inverses, etc</li>
+</ul>
+</div>
+</div>
+<div class="section" id="cubical-sets">
+<span id="id5"></span><h2>Cubical sets<a class="headerlink" href="#cubical-sets" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-todo admonition" id="index-4">
+<p class="first admonition-title">Todo</p>
+<p class="last">various iterations</p>
+</div>
+</div>
+<div class="section" id="infty-toposes">
+<h2><span class="math notranslate nohighlight">\(\infty\)</span>-toposes<a class="headerlink" href="#infty-toposes" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-todo admonition" id="index-5">
+<p class="first admonition-title">Todo</p>
+<p class="last">write</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">wiwikwlhott</a></h1>
+
+
+
+
+
+
+<p>
+<iframe src="https://ghbtns.com/github-btn.html?user=abooij&repo=wiwikwlhott&type=watch&count=true&size=large&v=2"
+  allowtransparency="true" frameborder="0" scrolling="0" width="200px" height="35px"></iframe>
+</p>
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="faq.html">General FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="terminology.html">Confusion arising from choice of terminology</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proof-assistants.html">Proof assistants</a></li>
+<li class="toctree-l1"><a class="reference internal" href="category.html">Category theory</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Semantics</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#intended-models">Intended models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#categorical-semantics">Categorical semantics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#presheaf-semantics">Presheaf semantics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#categories-with-families-and-other-structure">Categories with families and other structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#fibrations">Fibrations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#simplicial-sets">Simplicial sets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#cubical-sets">Cubical sets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#infty-toposes"><span class="math notranslate nohighlight">\(\infty\)</span>-toposes</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="proof.html">Proof theory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="variants.html">Variants of HoTT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="features.html">Type-theoretical features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
+</ul>
+
+
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2017-2018, Auke Booij.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.4</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/semantics.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
